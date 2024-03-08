@@ -1,0 +1,13 @@
+/*
+!wp-content
+!.gitignore
+wp-content/*
+
+!wp-content/plugins
+wp-content/plugins/*
+!wp-content/plugins/busicon-elementor-addons
+!wp-content/plugins/busicon-toolkit
+
+!wp-content/themes
+wp-content/themes/*  
+!/wp-content/themes/busicon/
