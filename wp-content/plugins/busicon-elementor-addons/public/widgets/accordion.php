@@ -1,8 +1,5 @@
 <?php
 
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-
 if(!defined('ABSPATH')) exit;
 
 class busiconAccordion extends \Elementor\Widget_Base{
@@ -28,7 +25,7 @@ class busiconAccordion extends \Elementor\Widget_Base{
         $this->start_controls_section(
             'accordion_section',
             [
-                'label' => __( 'Accordion', 'busicon-elementor-extension' ),
+                'label' => __( 'Accordion', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -38,34 +35,34 @@ class busiconAccordion extends \Elementor\Widget_Base{
         
         $repeater->add_control(
             'list_title', [
-                'label' => __( 'Title', 'busicon-elementor-extension' ),
+                'label' => __( 'Title', 'busicon-elementor-addons' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'General coaching and advisory services' , 'busicon-elementor-extension' ),
+                'default' => __( 'General coaching and advisory services' , 'busicon-elementor-addons' ),
                 'label_block' => true,
             ]
         );
         $repeater->add_control(
             'list_description',
             [
-                'label' => esc_html__( 'Description', 'busicon-elementor-extension' ),
+                'label' => esc_html__( 'Description', 'busicon-elementor-addons' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
                 'rows' => 10,
-                'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrices gravida. Risus commodo viverra maecenas..', 'busicon-elementor-extension' ),
-                'placeholder' => esc_html__( 'Type your description here', 'busicon-elementor-extension' ),
+                'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrices gravida. Risus commodo viverra maecenas..', 'busicon-elementor-addons' ),
+                'placeholder' => esc_html__( 'Type your description here', 'busicon-elementor-addons' ),
             ]
         );
         $this->add_control(
             'list',
             [
-                'label' => __( 'Repeater List', 'busicon-elementor-extension' ),
+                'label' => __( 'Repeater List', 'busicon-elementor-addons' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'list_title' => __( 'General coaching and advisory services', 'busicon-elementor-extension' ),
+                        'list_title' => __( 'General coaching and advisory services', 'busicon-elementor-addons' ),
                     ],
                     [
-                        'list_title' => __( 'Experience A Ranking Factor?', 'busicon-elementor-extension' ),
+                        'list_title' => __( 'Experience A Ranking Factor?', 'busicon-elementor-addons' ),
                     ],
                 ],
                 'title_field' => '{{{ list_title }}}',
@@ -84,7 +81,7 @@ Style Tab
         $this->start_controls_section(
             'general_section',
             [
-                'label' => __( 'General', 'busicon-elementor-extension' ),
+                'label' => __( 'General', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -92,13 +89,13 @@ Style Tab
             $this->add_control(
                 'select_style',
                 [
-                    'label' => __( 'Select Style', 'busicon-elementor-extension' ),
+                    'label' => __( 'Select Style', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => [
-                        'one' => __( 'One', 'busicon-elementor-extension' ),
-                        'two' => __( 'Two', 'busicon-elementor-extension' ),
-                        'three' => __( 'Three', 'busicon-elementor-extension' ),
-                        'four' => __( 'Four', 'busicon-elementor-extension' ),
+                        'one' => __( 'One', 'busicon-elementor-addons' ),
+                        'two' => __( 'Two', 'busicon-elementor-addons' ),
+                        'three' => __( 'Three', 'busicon-elementor-addons' ),
+                        'four' => __( 'Four', 'busicon-elementor-addons' ),
                     ],
                     'default' => 'one',
                     
@@ -109,17 +106,17 @@ Style Tab
 
         $this->start_controls_section(
             'icon_style', [
-                'label' => __( 'Icon', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Icon', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
         
             $this->add_control(
                 'icon_background', [
-                    'label' => __( 'Background Color', 'busicon-elementor-extension' ),
-                    'type' => Controls_Manager::COLOR,
+                    'label' => __( 'Background Color', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
-                        '{{WRAPPER}} .accordion a i' => 'background-color: {{VALUE}};',
+                        '{{WRAPPER}} .accordion .title i' => 'background-color: {{VALUE}};',
                     ],
                 ]
             );
@@ -128,45 +125,45 @@ Style Tab
 
         $this->start_controls_section(
             'style_title', [
-                'label' => __( 'Title', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Title', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'color_title', [
-                'label' => __( 'Text Color', 'busicon-elementor-extension' ),
-                'type' => Controls_Manager::COLOR,
+                'label' => __( 'Text Color', 'busicon-elementor-addons' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .accordion a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .accordion .title' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_group_control(
-            Group_Control_Typography::get_type(), [
+            \Elementor\Group_Control_Typography::get_type(), [
                 'name' => 'typography_title',
-                'selector' => '{{WRAPPER}} .accordion a',
+                'selector' => '{{WRAPPER}} .accordion .title',
             ]
         );
         $this->end_controls_section();
 
         $this->start_controls_section(
             'description_style', [
-                'label' => __( 'Description', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Description', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
             $this->add_control(
                 'description_color', [
-                    'label' => __( 'Text Color', 'busicon-elementor-extension' ),
-                    'type' => Controls_Manager::COLOR,
+                    'label' => __( 'Text Color', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .accordion li p' => 'color: {{VALUE}};',
                     ],
                 ]
             );
             $this->add_group_control(
-                Group_Control_Typography::get_type(), [
+                \Elementor\Group_Control_Typography::get_type(), [
                     'name' => 'description_typography',
                     'selector' => '{{WRAPPER}} .accordion li p',
                 ]
@@ -187,7 +184,11 @@ Style Tab
         <ul class="accordion style1">
             <?php foreach (  $settings['list'] as $item ) { ?>
                 <li>
-                    <a><i class="bi bi-chat-quote"></i><?php echo $item['list_title']; ?></a>
+                    <h3 class="title">
+                        <?php echo $item['list_title']; ?>
+                        <i class="fa-regular fa-plus"></i>
+                        <i class="fa-solid fa-minus"></i>
+                    </h3>
                     <p><?php echo $item['list_description']; ?></p>
                 </li>
             <?php } ?>
@@ -197,9 +198,9 @@ Style Tab
             jQuery(document).ready(function($) {
                 "use strict";
 
-                $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
+                $('.accordion > li:eq(0) .title').addClass('active').next().slideDown();
 
-                $('.accordion a').click(function(j) {
+                $('.accordion .title').click(function(j) {
                     var dropDown = $(this).closest('li').find('p');
 
                     $(this).closest('.accordion').find('p').not(dropDown).slideUp();
@@ -207,7 +208,7 @@ Style Tab
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
                     } else {
-                        $(this).closest('.accordion').find('a.active').removeClass('active');
+                        $(this).closest('.accordion').find('.title.active').removeClass('active');
                         $(this).addClass('active');
                     }
 

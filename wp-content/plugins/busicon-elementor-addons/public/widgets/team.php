@@ -1,14 +1,11 @@
 <?php
 
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-
 if(!defined('ABSPATH')) exit;
 
 class Team extends \Elementor\Widget_Base{
 
 	public function get_name(){
-		return "team";
+		return "busicon-team";
 	}
 	
 	public function get_title(){
@@ -23,20 +20,20 @@ class Team extends \Elementor\Widget_Base{
 		return ['busicon-category'];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'team_section',
 			[
-				'label' => esc_html__( 'Team', 'busicon-elementor-extension' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'label' => esc_html__( 'Team', 'busicon-elementor-addons' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
             $this->add_control(
                 'member_image',
                 [
-                    'label' => __( 'Member Image', 'busicon-elementor-extension' ),
+                    'label' => __( 'Member Image', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::MEDIA,
                     'default' => [
                         'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -45,17 +42,17 @@ class Team extends \Elementor\Widget_Base{
             );
             $this->add_control(
                 'member_name', [
-                    'label' => __( 'Name', 'busicon-elementor-extension' ),
+                    'label' => __( 'Name', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'David Smith' , 'busicon-elementor-extension' ),
+                    'default' => __( 'David Smith' , 'busicon-elementor-addons' ),
                     'label_block' => true,
                 ]
             );
             $this->add_control(
                 'member_designation', [
-                    'label' => __( 'Designation', 'busicon-elementor-extension' ),
+                    'label' => __( 'Designation', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Developer' , 'busicon-elementor-extension' ),
+                    'default' => __( 'Developer' , 'busicon-elementor-addons' ),
                     'label_block' => true,
                 ]
             );
@@ -65,31 +62,31 @@ class Team extends \Elementor\Widget_Base{
             $repeater->add_control(
                 'icon',
                 [
-                    'label' => esc_html__( 'Icon', 'busicon-elementor-extension' ),
+                    'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::ICONS,
                     'default' => [
-                        'value' => 'fas fa-star',
-                        'library' => 'solid',
+                        'value' => 'fab fa-facebook-f',
+                        'library' => 'brand',
                     ],
                 ]
             );
             $repeater->add_control(
                 'social_name', [
-                    'label' => __( 'Social Media Name', 'busicon-elementor-extension' ),
+                    'label' => __( 'Social Media Name', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Facebook' , 'busicon-elementor-extension' ),
+                    'default' => __( 'Facebook' , 'busicon-elementor-addons' ),
                     'label_block' => true,
                 ]
             );
             $repeater->add_control(
                 'social_link',
                 [
-                    'label' => __( 'Link', 'busicon-elementor-extension' ),
+                    'label' => __( 'Link', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'busicon-elementor-extension' ),
+                    'placeholder' => __( 'https://your-link.com', 'busicon-elementor-addons' ),
                     'show_external' => true,
                     'default' => [
-                        'url' => '',
+                        'url' => '#',
                         'is_external' => true,
                         'nofollow' => true,
                     ],
@@ -98,15 +95,15 @@ class Team extends \Elementor\Widget_Base{
             $this->add_control(
                 'list',
                 [
-                    'label' => __( 'Social Links', 'busicon-elementor-extension' ),
+                    'label' => __( 'Social Links', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::REPEATER,
                     'fields' => $repeater->get_controls(),
                     'default' => [
                         [
-                            'social_name' => __( 'Facebook', 'busicon-elementor-extension' ),
+                            'social_name' => __( 'Facebook', 'busicon-elementor-addons' ),
                         ],
                         [
-                            'social_name' => __( 'Twitter', 'busicon-elementor-extension' ),
+                            'social_name' => __( 'Twitter', 'busicon-elementor-addons' ),
                         ],
                     ],
                     'title_field' => '{{{ social_name }}}',
@@ -124,20 +121,20 @@ Style Tab
         $this->start_controls_section(
             'general_section',
             [
-                'label' => __( 'General', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'General', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'select_style',
                 [
-                    'label' => __( 'Select Style', 'busicon-elementor-extension' ),
-                    'type' => Controls_Manager::SELECT,
+                    'label' => __( 'Select Style', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => [
-                        'one' => __( 'One', 'busicon-elementor-extension' ),
-                        'two' => __( 'Two', 'busicon-elementor-extension' ),
-                        'three' => __( 'Three', 'busicon-elementor-extension' ),
-                        'four' => __( 'Four', 'busicon-elementor-extension' ),
+                        'one' => __( 'One', 'busicon-elementor-addons' ),
+                        'two' => __( 'Two', 'busicon-elementor-addons' ),
+                        'three' => __( 'Three', 'busicon-elementor-addons' ),
+                        'four' => __( 'Four', 'busicon-elementor-addons' ),
                     ],
                     'default' => 'one',
                     
@@ -149,17 +146,17 @@ Style Tab
         $this->start_controls_section(
             'name_style',
             [
-                'label' => __( 'Name', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Name', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'name_color',
                 [
-                    'label' => __( 'Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
-                        '{{WRAPPER}} .single-team .bio h3' => 'color: {{VALUE}}',
+                        '{{WRAPPER}} .single-team .bio .name' => 'color: {{VALUE}}',
                     ],
                 ]
             );
@@ -167,18 +164,18 @@ Style Tab
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'name_typography',
-                    'label' => __( 'Typography', 'busicon-elementor-extension' ),
-                    'selector' => '{{WRAPPER}} .single-team .bio h3',
+                    'label' => __( 'Typography', 'busicon-elementor-addons' ),
+                    'selector' => '{{WRAPPER}} .single-team .bio .name',
                 ]
             );
             $this->add_responsive_control(
                 'name_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
-                    'type' => Controls_Manager::DIMENSIONS,
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
-                        '{{WRAPPER}} .single-team .bio h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .single-team .bio .name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
@@ -187,14 +184,14 @@ Style Tab
         $this->start_controls_section(
             'designation_style',
             [
-                'label' => __( 'Designation', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Designation', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'designation_color',
                 [
-                    'label' => __( 'Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .single-team .bio .designation' => 'color: {{VALUE}}',
@@ -205,15 +202,15 @@ Style Tab
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'designation_typography',
-                    'label' => __( 'Typography', 'busicon-elementor-extension' ),
+                    'label' => __( 'Typography', 'busicon-elementor-addons' ),
                     'selector' => '{{WRAPPER}} .single-team .bio .designation',
                 ]
             );
             $this->add_responsive_control(
                 'designation_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
-                    'type' => Controls_Manager::DIMENSIONS,
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
                         '{{WRAPPER}} .single-team .bio .designation' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -225,14 +222,14 @@ Style Tab
         $this->start_controls_section(
             'social_style',
             [
-                'label' => __( 'Social Icon', 'busicon-elementor-extension' ),
-                'tab' => Controls_Manager::TAB_STYLE,
+                'label' => __( 'Social Icon', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'social_color',
                 [
-                    'label' => __( 'Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .single-team .profile-picture .social-icons a' => 'color: {{VALUE}}',
@@ -245,7 +242,7 @@ Style Tab
                 \Elementor\Group_Control_Background::get_type(),
                 [
                     'name' => 'social_background',
-                    'label' => __( 'Background', 'busicon-elementor-extension' ),
+                    'label' => __( 'Background', 'busicon-elementor-addons' ),
                     'types' => [ 'classic', 'gradient' ],
                     'selector' => '{{WRAPPER}} .single-team .profile-picture .social-icons a, .single-team.style2 .team-content .social-icons2 a',
                 ]
@@ -263,12 +260,21 @@ Style Tab
             <?php if($settings['select_style']=='one'){ ?>
 
                 <div class="single-team style1">
-                    <div class="profile-picture">
-                        <img src="<?php echo $settings['member_image']['url']; ?>" alt="">
-                    </div>
                     <div class="bio">
                         <h3 class="name"><?php echo $settings['member_name']; ?></h3>
                         <p class="designation"><?php echo $settings['member_designation']; ?></p>
+                    </div>
+                    <div class="profile-picture">
+                        <img src="<?php echo $settings['member_image']['url']; ?>" alt="team-member">
+                        <ul class="social-icons">
+                            <?php foreach (  $settings['list'] as $item ) { ?>
+                            <li>
+                                <a href="<?php echo esc_url($item['social_link']['url']); ?>">
+                                    <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                </a>
+                            </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
 
@@ -276,20 +282,21 @@ Style Tab
 
                 <div class="single-team style2">
                     <div class="profile-picture">
-                        <img src="<?php echo $settings['member_image']['url']; ?>" alt="">
-                    </div>
-                    <div class="team-content">
-                        <div class="team-button2"><span>+</span></div>
-                        <div class="social-icons2">
+                        <img src="<?php echo $settings['member_image']['url']; ?>" alt="team-member">
+                        <button class="social-toggle"><i class="fa-solid fa-share-nodes"></i></button>
+                        <ul class="social-icons">
                             <?php foreach (  $settings['list'] as $item ) { ?>
-
-                            <a href="<?php echo esc_url($item['social_link']['url']); ?>"><?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?></a>
+                            <li>
+                                <a href="<?php echo esc_url($item['social_link']['url']); ?>">
+                                    <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                </a>
+                            </li>
                             <?php } ?>
-                        </div>
-                        <div class="name-designation">
-                            <h3><?php echo $settings['member_name']; ?></h3>
-                            <h6><?php echo $settings['member_designation']; ?></h6>
-                        </div>
+                        </ul>
+                    </div>
+                    <div class="bio">
+                        <h3 class="name"><?php echo $settings['member_name']; ?></h3>
+                        <p class="designation"><?php echo $settings['member_designation']; ?></p>
                     </div>
                 </div>
 
@@ -298,17 +305,10 @@ Style Tab
                 <div class="single-team style3">
                     <div class="profile-picture">
                         <img src="<?php echo $settings['member_image']['url']; ?>" alt="">
-                        <div class="social-icons">
-                            <?php foreach (  $settings['list'] as $item ) { ?>
-
-                            <a href="<?php echo esc_url($item['social_link']['url']); ?>"><?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?></a>
-                            <?php } ?>
-                        </div>
-                        <div class="team-button"></div>
                     </div>
-                    <div class="name-designation">
-                        <h3><?php echo $settings['member_name']; ?></h3>
-                        <h6><?php echo $settings['member_designation']; ?></h6>
+                    <div class="bio">
+                        <h3 class="name"><?php echo $settings['member_name']; ?></h3>
+                        <p class="designation"><?php echo $settings['member_designation']; ?></p>
                     </div>
                 </div>
 

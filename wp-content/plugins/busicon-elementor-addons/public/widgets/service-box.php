@@ -24,22 +24,22 @@ class ServiceBox extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'icon_section',
 			[
-				'label' => __( 'Icon', 'busicon-elementor-extension' ),
+				'label' => __( 'Icon', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 			$this->add_control(
 				'icons_type',
 				[
-				    'label' => esc_html__('Icon Type','busicon-elementor-extension'),
+				    'label' => esc_html__('Icon Type','busicon-elementor-addons'),
 				    'type' => \Elementor\Controls_Manager::CHOOSE,
 				    'options' =>[
 					  'img' =>[
-						'title' =>esc_html__('Image','busicon-elementor-extension'),
+						'title' =>esc_html__('Image','busicon-elementor-addons'),
 						'icon' =>'far fa-image',
 					  ],
 					  'icon' =>[
-						'title' =>esc_html__('Icon','busicon-elementor-extension'),
+						'title' =>esc_html__('Icon','busicon-elementor-addons'),
 						'icon' =>'fa fa-info',
 					  ]
 				    ],
@@ -49,7 +49,7 @@ class ServiceBox extends \Elementor\Widget_Base{
 			 $this->add_control(
 				'select_icon',
 				[
-					'label' => esc_html__( 'Icon', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
 					'condition'=>[
 						'icons_type'=> 'icon',
@@ -60,7 +60,7 @@ class ServiceBox extends \Elementor\Widget_Base{
 			$this->add_control(
 				'select_img',
 				[
-				    'label' => esc_html__('Image','busicon-elementor-extension'),
+				    'label' => esc_html__('Image','busicon-elementor-addons'),
 				    'type'=> \Elementor\Controls_Manager::MEDIA,
 				    'default' => [
 					  'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -75,14 +75,14 @@ class ServiceBox extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'image_section',
 			[
-				'label' => __( 'Image', 'busicon-elementor-extension' ),
+				'label' => __( 'Image', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 			$this->add_control(
 				'single_img',
 				[
-				    'label' => esc_html__('Image','busicon-elementor-extension'),
+				    'label' => esc_html__('Image','busicon-elementor-addons'),
 				    'type'=> \Elementor\Controls_Manager::MEDIA,
 				    'default' => [
 					  'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -94,43 +94,43 @@ class ServiceBox extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'service_section',
 			[
-				'label' => __( 'Title & Description', 'busicon-elementor-extension' ),
+				'label' => __( 'Title & Description', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 			$this->add_control(
 				'title_number',
 				[
-					'label' => __( 'Number', 'busicon-elementor-extension' ),
+					'label' => __( 'Number', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'dynamic' => [
 						'active' => true,
 					],
-					'placeholder' => __( 'Enter Number', 'busicon-elementor-extension' ),
+					'placeholder' => __( 'Enter Number', 'busicon-elementor-addons' ),
 					'label_block' => true,
-					'default' => __( '01', 'busicon-elementor-extension' ),
+					'default' => __( '01', 'busicon-elementor-addons' ),
 				]
 			);
 			$this->add_control(
 				'title_text',
 				[
-					'label' => __( 'Title', 'busicon-elementor-extension' ),
+					'label' => __( 'Title', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'dynamic' => [
 						'active' => true,
 					],
-					'placeholder' => __( 'Enter your title', 'busicon-elementor-extension' ),
+					'placeholder' => __( 'Enter your title', 'busicon-elementor-addons' ),
 					'label_block' => true,
-					'default' => __( 'This is the title', 'busicon-elementor-extension' ),
+					'default' => __( 'This is the title', 'busicon-elementor-addons' ),
 				]
 			);
 			$this->add_control(
 				'description_text',
 				[
-					'label' => esc_html__( 'Description', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Description', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::WYSIWYG,
-					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'busicon-elementor-extension' ),
-					'placeholder' => esc_html__( 'Type your description here', 'busicon-elementor-extension' ),
+					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'busicon-elementor-addons' ),
+					'placeholder' => esc_html__( 'Type your description here', 'busicon-elementor-addons' ),
 				]
 			);
 		$this->end_controls_section();
@@ -138,41 +138,41 @@ class ServiceBox extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'button_section',
 			[
-				'label' => __( 'Button', 'busicon-elementor-extension' ),
+				'label' => __( 'Button', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 			$this->add_control(
 				'button_text',
 				[
-					'label' => __( 'Button Text', 'busicon-elementor-extension' ),
+					'label' => __( 'Button Text', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'dynamic' => [
 						'active' => true,
 					],
-					'placeholder' => __( 'Enter your button text', 'busicon-elementor-extension' ),
+					'placeholder' => __( 'Enter your button text', 'busicon-elementor-addons' ),
 					'label_block' => true,
-					'default' => __( 'Button', 'busicon-elementor-extension' ),
+					'default' => __( 'Button', 'busicon-elementor-addons' ),
 				]
 			);
 			$this->add_control(
 				'link',
 				[
-					'label' => __( 'Link', 'busicon-elementor-extension' ),
+					'label' => __( 'Link', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::URL,
 					'dynamic' => [
 						'active' => true,
 					],
-					'placeholder' => __( 'https://your-link.com', 'busicon-elementor-extension' ),
+					'placeholder' => __( 'https://your-link.com', 'busicon-elementor-addons' ),
 				]
 			);
 			$this->add_control(
 				'show_button',
 				[
-					'label' => __( 'Show Button', 'busicon-elementor-extension' ),
+					'label' => __( 'Show Button', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SWITCHER,
-					'label_on' => __( 'Show', 'busicon-elementor-extension' ),
-					'label_off' => __( 'Hide', 'busicon-elementor-extension' ),
+					'label_on' => __( 'Show', 'busicon-elementor-addons' ),
+					'label_off' => __( 'Hide', 'busicon-elementor-addons' ),
 					'return_value' => 'yes',
 					'default' => 'yes',
 				]
@@ -180,7 +180,7 @@ class ServiceBox extends \Elementor\Widget_Base{
 			$this->add_control(
 				'button_icon',
 				[
-					'label' => __( 'Button Icon', 'busicon-elementor-extension' ),
+					'label' => __( 'Button Icon', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
 					'default' => [
 						'value' => 'fa fa-angle-right',
@@ -199,7 +199,7 @@ Style Tab
 		$this->start_controls_section(
 			'general_section',
 			[
-				'label' => __( 'General', 'busicon-elementor-extension' ),
+				'label' => __( 'General', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -207,16 +207,16 @@ Style Tab
 			$this->add_control(
 				'select_style',
 				[
-					'label' => __( 'Select Style', 'busicon-elementor-extension' ),
+					'label' => __( 'Select Style', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SELECT,
 					'options' => [
-						'one' => __( 'One', 'busicon-elementor-extension' ),
-						'two' => __( 'Two', 'busicon-elementor-extension' ),
-						'three' => __( 'Three', 'busicon-elementor-extension' ),
-						'four' => __( 'Four', 'busicon-elementor-extension' ),
-						'five' => __( 'Five', 'busicon-elementor-extension' ),
-						'six' => __( 'Six', 'busicon-elementor-extension' ),
-						'seven' => __( 'Seven', 'busicon-elementor-extension' ),
+						'one' => __( 'One', 'busicon-elementor-addons' ),
+						'two' => __( 'Two', 'busicon-elementor-addons' ),
+						'three' => __( 'Three', 'busicon-elementor-addons' ),
+						'four' => __( 'Four', 'busicon-elementor-addons' ),
+						'five' => __( 'Five', 'busicon-elementor-addons' ),
+						'six' => __( 'Six', 'busicon-elementor-addons' ),
+						'seven' => __( 'Seven', 'busicon-elementor-addons' ),
 					],
 					'default' => 'one',
 					
@@ -225,23 +225,23 @@ Style Tab
 			$this->add_responsive_control(
 				'text_align',
 				[
-					'label' => __( 'Alignment', 'busicon-elementor-extension' ),
+					'label' => __( 'Alignment', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::CHOOSE,
 					'options' => [
 						'left' => [
-							'title' => __( 'Left', 'busicon-elementor-extension' ),
+							'title' => __( 'Left', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-left',
 						],
 						'center' => [
-							'title' => __( 'Center', 'busicon-elementor-extension' ),
+							'title' => __( 'Center', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-center',
 						],
 						'right' => [
-							'title' => __( 'Right', 'busicon-elementor-extension' ),
+							'title' => __( 'Right', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-right',
 						],
 						'justify' => [
-							'title' => __( 'Justified', 'busicon-elementor-extension' ),
+							'title' => __( 'Justified', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-justify',
 						],
 					],
@@ -255,7 +255,7 @@ Style Tab
 		$this->start_controls_section(
 			'icon_section_style',
 			[
-				'label' => __( 'Icon', 'busicon-elementor-extension' ),
+				'label' => __( 'Icon', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -266,28 +266,28 @@ Style Tab
 		$this->start_controls_tab(
 			'style_normal_tab',
 			[
-				'label' => __( 'Normal', 'busicon-elementor-extension' ),
+				'label' => __( 'Normal', 'busicon-elementor-addons' ),
 			]
 		);
 			$this->add_control(
 				'icon_color',
 				[
-					'label' => __( 'Icon Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Icon Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .service-box .service-icon i' => 'color: {{VALUE}}',
 					],
 				]
 			);
 			$this->add_control(
 				'icon_background_color',
 				[
-					'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Background Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'background-color: {{VALUE}};',
+						'{{WRAPPER}} .service-box .service-icon i' => 'background-color: {{VALUE}};',
 					],
 				]
 			);
@@ -295,18 +295,18 @@ Style Tab
 				\Elementor\Group_Control_Border::get_type(),
 				[
 					'name' => 'icon_border',
-					'label' => __( 'Border', 'busicon-elementor-extension' ),
-					'selector' => '{{WRAPPER}} .service-box .icon i',
+					'label' => __( 'Border', 'busicon-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .service-box .service-icon i',
 				]
 			);
 			$this->add_responsive_control(
 				'icon_border_radius',
 				[
-					'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+					'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .service-box .service-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -314,26 +314,26 @@ Style Tab
 		$this->start_controls_tab(
 			'style_hover_tab',
 			[
-				'label' => __( 'Hover', 'busicon-elementor-extension' ),
+				'label' => __( 'Hover', 'busicon-elementor-addons' ),
 			]
 		);
 			$this->add_control(
 				'hover_icon_color',
 				[
-					'label' => __( 'Icon Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Icon Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .service-box:hover .icon i' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .service-box:hover .service-icon i' => 'color: {{VALUE}}',
 					],
 				]
 			);
 			$this->add_control(
 				'hover_background_color',
 				[
-					'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Background Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .service-box:hover .icon i' => 'background-color: {{VALUE}};',
+						'{{WRAPPER}} .service-box:hover .service-icon i' => 'background-color: {{VALUE}};',
 					],
 				]
 			);
@@ -341,18 +341,18 @@ Style Tab
 				\Elementor\Group_Control_Border::get_type(),
 				[
 					'name' => 'hover_icon_border',
-					'label' => __( 'Border', 'busicon-elementor-extension' ),
-					'selector' => '{{WRAPPER}} .service-box:hover .icon i',
+					'label' => __( 'Border', 'busicon-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .service-box:hover .service-icon i',
 				]
 			);
 			$this->add_responsive_control(
 				'hover_icon_border_radius',
 				[
-					'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+					'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .service-box:hover .icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .service-box:hover .service-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -362,39 +362,39 @@ Style Tab
 			$this->add_responsive_control(
 				'icon_align',
 				[
-					'label' => __( 'Alignment', 'busicon-elementor-extension' ),
+					'label' => __( 'Alignment', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::CHOOSE,
 					'options' => [
 						'left' => [
-							'title' => __( 'Left', 'busicon-elementor-extension' ),
+							'title' => __( 'Left', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-left',
 						],
 						'center' => [
-							'title' => __( 'Center', 'busicon-elementor-extension' ),
+							'title' => __( 'Center', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-center',
 						],
 						'right' => [
-							'title' => __( 'Right', 'busicon-elementor-extension' ),
+							'title' => __( 'Right', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-right',
 						],
 						'justify' => [
-							'title' => __( 'Justified', 'busicon-elementor-extension' ),
+							'title' => __( 'Justified', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-justify',
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .service-box .service-icon i' => 'text-align: {{VALUE}};',
 					],
 				]
 			);
 			$this->add_responsive_control(
 				'icon_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .service-box .service-icon i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before',
 				]
@@ -402,7 +402,7 @@ Style Tab
 			$this->add_control(
 				'height',
 				[
-					'label' => __( 'Height', 'busicon-elementor-extension' ),
+					'label' => __( 'Height', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -417,14 +417,14 @@ Style Tab
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'height: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .service-box .service-icon i' => 'height: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
 			$this->add_control(
 				'width',
 				[
-					'label' => __( 'Width', 'busicon-elementor-extension' ),
+					'label' => __( 'Width', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -439,7 +439,7 @@ Style Tab
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .icon i' => 'width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .service-box .service-icon i' => 'width: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -448,7 +448,7 @@ Style Tab
 				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'icon_typography',
-					'selector' => '{{WRAPPER}} .service-box .icon i',
+					'selector' => '{{WRAPPER}} .service-box .service-icon i',
 				]
 			);
 
@@ -457,14 +457,14 @@ Style Tab
 		$this->start_controls_section(
 			'number_section_style',
 			[
-				'label' => __( 'Number', 'busicon-elementor-extension' ),
+				'label' => __( 'Number', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'number_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .service-box .service-number span' => 'color: {{VALUE}};',
@@ -481,7 +481,7 @@ Style Tab
 			$this->add_responsive_control(
 				'number_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
@@ -494,7 +494,7 @@ Style Tab
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'busicon-elementor-extension' ),
+				'label' => __( 'Title', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -502,11 +502,11 @@ Style Tab
 			$this->add_control(
 				'title_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .service-box .title h3' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .service-box .title' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -514,17 +514,17 @@ Style Tab
 				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'title_typography',
-					'selector' => '{{WRAPPER}} .service-box .title h3',
+					'selector' => '{{WRAPPER}} .service-box .title',
 				]
 			);
 			$this->add_responsive_control(
 				'title_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .title h3' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .service-box .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -533,7 +533,7 @@ Style Tab
 		$this->start_controls_section(
 			'description_section_style',
 			[
-				'label' => __( 'Description', 'busicon-elementor-extension' ),
+				'label' => __( 'Description', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -541,11 +541,11 @@ Style Tab
 			$this->add_control(
 				'description_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .service-box .description p' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .service-box .description' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -554,17 +554,17 @@ Style Tab
 				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'description_typography',
-					'selector' => '{{WRAPPER}} .service-box .description p',
+					'selector' => '{{WRAPPER}} .service-box .description',
 				]
 			);
 			$this->add_responsive_control(
 				'description_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .service-box .description p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .service-box .description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -573,7 +573,7 @@ Style Tab
 		$this->start_controls_section(
 			'button_section_style',
 			[
-				'label' => __( 'Button', 'busicon-elementor-extension' ),
+				'label' => __( 'Button', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -583,14 +583,14 @@ Style Tab
 				$this->start_controls_tab(
 					'button_style_normal_tab',
 					[
-						'label' => __( 'Normal', 'busicon-elementor-extension' ),
+						'label' => __( 'Normal', 'busicon-elementor-addons' ),
 					]
 				);
 				
 					$this->add_control(
 						'button_text_color',
 						[
-							'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+							'label' => __( 'Text Color', 'busicon-elementor-addons' ),
 							'type' => \Elementor\Controls_Manager::COLOR,
 							'default' => '',
 							'selectors' => [
@@ -601,7 +601,7 @@ Style Tab
 					$this->add_control(
 						'button_background_color',
 						[
-							'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+							'label' => __( 'Background Color', 'busicon-elementor-addons' ),
 							'type' => \Elementor\Controls_Manager::COLOR,
 							'default' => '',
 							'selectors' => [
@@ -613,14 +613,14 @@ Style Tab
 						\Elementor\Group_Control_Border::get_type(),
 						[
 							'name' => 'button_border',
-							'label' => __( 'Border', 'busicon-elementor-extension' ),
+							'label' => __( 'Border', 'busicon-elementor-addons' ),
 							'selector' => '{{WRAPPER}} .service-box .service-btn a',
 						]
 					);
 					$this->add_responsive_control(
 						'button_border_radius',
 						[
-							'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+							'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
 							'type' => \Elementor\Controls_Manager::DIMENSIONS,
 							'size_units' => [ 'px', 'em', '%' ],
 							'selectors' => [
@@ -633,14 +633,14 @@ Style Tab
 				$this->start_controls_tab(
 					'button_style_hover_tab',
 					[
-						'label' => __( 'Hover', 'busicon-elementor-extension' ),
+						'label' => __( 'Hover', 'busicon-elementor-addons' ),
 					]
 				);
 
 					$this->add_control(
 						'hover_button_text_color',
 						[
-							'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+							'label' => __( 'Text Color', 'busicon-elementor-addons' ),
 							'type' => \Elementor\Controls_Manager::COLOR,
 							'default' => '',
 							'selectors' => [
@@ -651,7 +651,7 @@ Style Tab
 					$this->add_control(
 						'hover_button_background_color',
 						[
-							'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+							'label' => __( 'Background Color', 'busicon-elementor-addons' ),
 							'type' => \Elementor\Controls_Manager::COLOR,
 							'default' => '',
 							'selectors' => [
@@ -663,14 +663,14 @@ Style Tab
 						\Elementor\Group_Control_Border::get_type(),
 						[
 							'name' => 'hover_button_border',
-							'label' => __( 'Border', 'busicon-elementor-extension' ),
+							'label' => __( 'Border', 'busicon-elementor-addons' ),
 							'selector' => '{{WRAPPER}} .service-box .service-btn a:hover',
 						]
 					);
 					$this->add_responsive_control(
 						'hover_button_border_radius',
 						[
-							'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+							'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
 							'type' => \Elementor\Controls_Manager::DIMENSIONS,
 							'size_units' => [ 'px', 'em', '%' ],
 							'selectors' => [
@@ -685,7 +685,7 @@ Style Tab
 			$this->add_responsive_control(
 				'button_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
@@ -697,7 +697,7 @@ Style Tab
 			$this->add_responsive_control(
 				'button_padding',
 				[
-					'label' => __( 'Padding', 'busicon-elementor-extension' ),
+					'label' => __( 'Padding', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
@@ -709,7 +709,7 @@ Style Tab
 			$this->add_control(
 				'button_height',
 				[
-					'label' => __( 'Height', 'busicon-elementor-extension' ),
+					'label' => __( 'Height', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -731,7 +731,7 @@ Style Tab
 			$this->add_control(
 				'button_width',
 				[
-					'label' => __( 'Width', 'busicon-elementor-extension' ),
+					'label' => __( 'Width', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -772,50 +772,38 @@ Style Tab
 		<?php if($settings['select_style']=='one'){ ?>
 
 			<div class="service-box style1">
-				<div class="image">
-					<img src="<?php echo $settings['single_img']['url']; ?>" alt="">
-				</div>
 				<div class="content">
-					<div class="icon">
-						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-						<img src="<?php echo $settings['select_img']['url']; ?>">
-					</div>
-					<div class="text">
-						<div class="title">
-							<h4><?php echo $settings['title_text']; ?></h4>
-						</div>
-						<div class="description">
-							<p><?php echo $settings['description_text']; ?></p>
-						</div>
-					</div>
-					<div class="button">
+					<h4 class="title"><?php echo $settings['title_text']; ?></h4>
+					<p class="description"><?php echo $settings['description_text']; ?></p>
+					<div class="service-btn">
 						<a href="<?php echo esc_url($settings['link']['url']); ?>">
 							<?php echo $settings['button_text']; ?>
 							<?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 						</a>
 					</div>
 				</div>
+				<div class="service-icon">
+					<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+					<?php if( !empty($settings['select_img']['url']) ){ ?>
+						<img src="<?php echo $settings['select_img']['url']; ?>">
+					<?php } ?>
+				</div>
 			</div>
 
 		<?php }elseif($settings['select_style']=='two'){ ?>
 
 			<div class="service-box style2">
-				<span class="number"><?php echo $settings['title_number']; ?></span>
-				<div class="icon">
+				<div class="service-icon">
 					<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 					<?php if(!empty($settings['select_img'])){ ?>
 						<img src="<?php echo $settings['select_img']['url']; ?>">
 					<?php } ?>
 				</div>
 				<div class="content">
-					<div class="title">
-						<h3><?php echo $settings['title_text']; ?></h3>
-					</div>
-					<div class="description">
-						<p><?php echo $settings['description_text']; ?></p>
-					</div>
+					<h3 class="title"><?php echo $settings['title_text']; ?></h3>
+					<p class="description"><?php echo $settings['description_text']; ?></p>
 					<div class="service-btn">
-						<a class="service-btn" href="<?php echo esc_url($settings['link']['url']); ?>">
+						<a href="<?php echo esc_url($settings['link']['url']); ?>">
 							<?php echo $settings['button_text']; ?>
 							<?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 						</a>

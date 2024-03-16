@@ -1,4 +1,4 @@
-(function( $ ) {
+jQuery(document).ready(function($) {
 	'use strict';
 
 	/**
@@ -29,4 +29,12 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-})( jQuery );
+	/* Team
+	---------------*/
+
+	$(".social-icons").hide();
+	$('.social-toggle').click(function(){
+		$(this).siblings(".social-icons").slideToggle("slow");
+	});
+
+});

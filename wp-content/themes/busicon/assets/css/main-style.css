@@ -1,7 +1,10 @@
 :root {
 	--main-color: #008bf9;
+	--main-color2: #01937b;
 	--title-color: #0f3567;
+	--title-color2: #213438;
 	--paragraph-color: #333f4d;
+	--paragraph-color2: #757575;
 }
 body{
 	margin: 0;
@@ -17,6 +20,7 @@ h1, h2, h3, h4, h5, h6{
 	font-weight: bold;
 	font-family: 'DM Sans', sans-serif;
 	line-height: 1.2;
+	margin: 0;
 }
 h1{
 	font-size: 48px;

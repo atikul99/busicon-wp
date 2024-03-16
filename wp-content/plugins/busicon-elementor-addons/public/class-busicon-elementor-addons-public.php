@@ -62,6 +62,8 @@ class Busicon_Elementor_Addons_Public {
 
 	public function enqueue_styles() {
 
+		wp_enqueue_style( 'custom-icon', plugins_url('includes/fonts/icon-fonts/icon-fonts.css', dirname(__FILE__)), array(), $this->version, 'all' );
+
 		wp_enqueue_style( 'owl-style', plugin_dir_url( __FILE__ ) . 'css/owl.carousel.min.css', array(), $this->version, 'all' );
 
 		wp_enqueue_style( 'owl-theme', plugin_dir_url( __FILE__ ) . 'css/owl.theme.default.min.css', array(), $this->version, 'all' );
@@ -87,7 +89,7 @@ class Busicon_Elementor_Addons_Public {
 
 		wp_enqueue_script( 'isotope', plugin_dir_url( __FILE__ ) . 'js/isotope.pkgd.min.js', array( 'jquery' ), '3.0.0', true );
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/busicon-elementor-addons-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'widgets-script', plugin_dir_url( __FILE__ ) . 'js/widgets-script.js', array( 'jquery' ), $this->version, false );
 	}
 
 	public function init_widgets() {

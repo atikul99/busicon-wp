@@ -1,8 +1,5 @@
 <?php
 
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-
 if(!defined('ABSPATH')) exit;
 
 class PricingTable extends \Elementor\Widget_Base{
@@ -29,7 +26,7 @@ class PricingTable extends \Elementor\Widget_Base{
 			'content_section',
 			[
 				'label' => __( 'Content', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 			
@@ -37,7 +34,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'icons_type',
 				[
 					'label' => esc_html__('Icon Type','busicon-elementor-addons'),
-					'type' => Controls_Manager::CHOOSE,
+					'type' => \Elementor\Controls_Manager::CHOOSE,
 					'options' =>[
 						'img' =>[
 							'title' =>esc_html__('Image','busicon-elementor-addons'),
@@ -56,7 +53,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'select_icon',
 				[
 					'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::ICONS,
+					'type' => \Elementor\Controls_Manager::ICONS,
 					'condition'=>[
 						'icons_type'=> 'icon',
 					],
@@ -68,7 +65,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'select_img',
 				[
 					'label' => esc_html__('Image','busicon-elementor-addons'),
-					'type'=>Controls_Manager::MEDIA,
+					'type'=> \Elementor\Controls_Manager::MEDIA,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],
@@ -82,7 +79,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'title',
 				[
 					'label' => __( 'Title', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::TEXT,
+					'type' => \Elementor\Controls_Manager::TEXT,
 					'default' => __( 'Basic', 'busicon-elementor-addons' ),
 					'placeholder' => __( 'Enter Title', 'busicon-elementor-addons' ),
 					'label_block' => true,
@@ -92,7 +89,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'currency',
 				[
 					'label' => __( 'Currency', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::TEXT,
+					'type' => \Elementor\Controls_Manager::TEXT,
 					'default' => __( '$', 'busicon-elementor-addons' ),
 					'placeholder' => __( '$', 'busicon-elementor-addons' ),
 				]
@@ -101,7 +98,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'price',
 				[
 					'label' => __( 'Price', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::TEXT,
+					'type' => \Elementor\Controls_Manager::TEXT,
 					'default' => __( '99', 'busicon-elementor-addons' ),
 					'placeholder' => __( '99', 'busicon-elementor-addons' ),
 				]
@@ -110,8 +107,8 @@ class PricingTable extends \Elementor\Widget_Base{
 				'month',
 				[
 					'label' => __( 'Month', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::TEXT,
-					'default' => __( 'Month', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => __( 'Per Month', 'busicon-elementor-addons' ),
 					'placeholder' => __( 'Month', 'busicon-elementor-addons' ),
 				]
 			);
@@ -158,7 +155,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'button_text',
 				[
 					'label' => __( 'Button Text', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::TEXT,
+					'type' => \Elementor\Controls_Manager::TEXT,
 					'default' => __( 'Choose Plan', 'busicon-elementor-addons' ),
 					'placeholder' => __( 'Click Here', 'busicon-elementor-addons' ),
 				]
@@ -167,7 +164,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'button_link',
 				[
 					'label' => __( 'Link', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::URL,
+					'type' => \Elementor\Controls_Manager::URL,
 					'placeholder' => __( 'https://your-link.com', 'busicon-elementor-addons' ),
 				]
 			);
@@ -175,7 +172,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'show_active',
 				[
 					'label' => __( 'Active Table', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::SWITCHER,
+					'type' => \Elementor\Controls_Manager::SWITCHER,
 					'label_on' => __( 'Yes', 'busicon-elementor-addons' ),
 					'label_off' => __( 'No', 'busicon-elementor-addons' ),
 					'return_value' => 'yes',
@@ -185,7 +182,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'change_curve',
 				[
 					'label' => __( 'Change Curve', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::SWITCHER,
+					'type' => \Elementor\Controls_Manager::SWITCHER,
 					'label_on' => __( 'Yes', 'busicon-elementor-addons' ),
 					'label_off' => __( 'No', 'busicon-elementor-addons' ),
 					'return_value' => 'yes',
@@ -216,22 +213,24 @@ class PricingTable extends \Elementor\Widget_Base{
 			);
 		$this->end_controls_section();
 
-/**
- * Style Tab
- */
+/*
+==========
+Style Tab
+==========
+*/
 
 		$this->start_controls_section(
 			'general_section',
 			[
 				'label' => __( 'General', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'select_style',
 				[
 					'label' => __( 'Select Style', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::SELECT,
+					'type' => \Elementor\Controls_Manager::SELECT,
 					'options' => [
 						'one' => __( 'One', 'busicon-elementor-addons' ),
 						'two' => __( 'Two', 'busicon-elementor-addons' ),
@@ -250,7 +249,7 @@ class PricingTable extends \Elementor\Widget_Base{
 			'icon_section',
 			[
 				'label' => __( 'Icon', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -258,9 +257,9 @@ class PricingTable extends \Elementor\Widget_Base{
 				'icon_color',
 				[
 					'label' => __( 'Color', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
+					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .pricing-table .table-head .icon' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .pricing .table-head .icon' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -271,7 +270,7 @@ class PricingTable extends \Elementor\Widget_Base{
 					'name' => 'icon_background',
 					'label' => __( 'Background', 'busicon-elementor-addons' ),
 					'types' => [ 'classic', 'gradient' ],
-					'selector' => '{{WRAPPER}} .pricing-table .table-head .icon',
+					'selector' => '{{WRAPPER}} .pricing .table-head .icon',
 				]
 			);
 
@@ -281,7 +280,7 @@ class PricingTable extends \Elementor\Widget_Base{
 			'header_section',
 			[
 				'label' => __( 'Table Header', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -289,38 +288,30 @@ class PricingTable extends \Elementor\Widget_Base{
 				'title_color',
 				[
 					'label' => __( 'Title Color', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
+					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .pricing .table-head .pricing-title' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .pricing .table-head .pack-name' => 'color: {{VALUE}}',
 					],
 				]
 			);
 			$this->add_group_control(
-				Group_Control_Typography::get_type(),
+				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'title_typography',
 					'label' => __( 'Title Typography', 'busicon-elementor-addons' ),
-					'selector' => '{{WRAPPER}} .pricing .table-head .pricing-title',
+					'selector' => '{{WRAPPER}} .pricing .table-head .pack-name',
 				]
 			);
 			$this->add_control(
 				'price_color',
 				[
 					'label' => __( 'Price Color', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
+					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .pricing .price .net-price' => 'color: {{VALUE}}',
-						'{{WRAPPER}} .pricing-table .table-body .price h1' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .pricing .table-head .currency' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .pricing .table-head .currency span' => 'color: {{VALUE}}',
 					],
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Typography::get_type(),
-				[
-					'name' => 'price_typography',
-					'label' => __( 'Price Typography', 'busicon-elementor-addons' ),
-					'selector' => '{{WRAPPER}} .pricing .price .net-price, .pricing-table .table-body .price h1',
 				]
 			);
 		$this->end_controls_section();
@@ -329,27 +320,27 @@ class PricingTable extends \Elementor\Widget_Base{
 			'feature_section',
 			[
 				'label' => __( 'Features', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 			$this->add_control(
 				'feature_color',
 				[
 					'label' => __( 'Color', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::COLOR,
+					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .pricing .feature-item .feature-text' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .pricing .feature-item' => 'color: {{VALUE}}',
 						'{{WRAPPER}} .pricing-table .table-body ul li' => 'color: {{VALUE}}',
 					],
 				]
 			);
 			$this->add_group_control(
-				Group_Control_Typography::get_type(),
+				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'feature_typography',
 					'label' => __( 'Typography', 'busicon-elementor-addons' ),
-					'selector' => '{{WRAPPER}} .pricing .feature-item .feature-text, .pricing-table .table-body ul li',
+					'selector' => '{{WRAPPER}} .pricing .feature-item',
 				]
 			);
 
@@ -359,7 +350,7 @@ class PricingTable extends \Elementor\Widget_Base{
 			'button_section',
 			[
 				'label' => __( 'Button', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_STYLE,
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -377,8 +368,7 @@ class PricingTable extends \Elementor\Widget_Base{
 						'button_background_color',
 						[
 							'label' => __( 'Background Color', 'busicon-elementor-addons' ),
-							'type' => Controls_Manager::COLOR,
-							'default' => '',
+							'type' => \Elementor\Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .pricing .pricing-btn' => 'background-color: {{VALUE}}',
 								'{{WRAPPER}} .pricing-table .table-body a' => 'background-color: {{VALUE}}',
@@ -389,8 +379,7 @@ class PricingTable extends \Elementor\Widget_Base{
 						'button_text_color',
 						[
 							'label' => __( 'Text Color', 'busicon-elementor-addons' ),
-							'type' => Controls_Manager::COLOR,
-							'default' => '',
+							'type' => \Elementor\Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .pricing .pricing-btn' => 'color: {{VALUE}}',
 								'{{WRAPPER}} .pricing-table .table-body a' => 'color: {{VALUE}}',
@@ -411,8 +400,7 @@ class PricingTable extends \Elementor\Widget_Base{
 						'button_hover_background_color',
 						[
 							'label' => __( 'Background Hover Color', 'busicon-elementor-addons' ),
-							'type' => Controls_Manager::COLOR,
-							'default' => '',
+							'type' => \Elementor\Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .pricing .pricing-btn:hover' => 'background-color: {{VALUE}}',
 								'{{WRAPPER}} .pricing-table .button::after' => 'background-color: {{VALUE}}',
@@ -423,8 +411,7 @@ class PricingTable extends \Elementor\Widget_Base{
 						'button_hover_text_color',
 						[
 							'label' => __( 'Text Hover Color', 'busicon-elementor-addons' ),
-							'type' => Controls_Manager::COLOR,
-							'default' => '',
+							'type' => \Elementor\Controls_Manager::COLOR,
 							'selectors' => [
 								'{{WRAPPER}} .pricing .pricing-btn:hover' => 'color: {{VALUE}}',
 								'{{WRAPPER}} .pricing-table .table-body a:hover' => 'color: {{VALUE}}',
@@ -437,7 +424,7 @@ class PricingTable extends \Elementor\Widget_Base{
 			$this->end_controls_tabs();
 
 			$this->add_group_control(
-				Group_Control_Typography::get_type(),
+				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'button_typography',
 					'label' => __( 'Typography', 'busicon-elementor-addons' ),
@@ -448,7 +435,7 @@ class PricingTable extends \Elementor\Widget_Base{
 				'padding',
 				[
 					'label' => __( 'Padding', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::DIMENSIONS,
+					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
 						'{{WRAPPER}} .pricing .pricing-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -470,6 +457,56 @@ class PricingTable extends \Elementor\Widget_Base{
 		<?php if($settings['select_style']=='one'){ ?>
 
 			<div class="pricing style1 <?php if('yes' === $settings['show_active']){echo esc_attr('active');}?>">
+				<div class="table-head">
+					<div class="price">
+						<h2 class="currency"><?php echo $settings['price']; ?><?php echo $settings['currency']; ?><span>/<?php echo $settings['month']; ?></span></h2>
+						<p class="pack-name"><?php echo $settings['title']; ?></p>
+					</div>
+					<div class="package-icon">
+						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+						<?php if(!empty($settings['select_img']['url'])){ ?>
+							<img src="<?php echo $settings['select_img']['url']; ?>" alt="">
+						<?php } ?>
+					</div>
+				</div>
+				<div class="table-body">
+    				<div class="pricing-feature">
+    					<?php foreach (  $settings['slides'] as $item ) { ?>
+    					<div class="feature-item">
+    						<?php echo $item['item_field']; ?>
+    						<i class="fa-solid fa-check"></i>	
+    					</div>
+    					<?php } ?>
+    				</div>
+				    <a class="pricing-btn" href="<?php echo esc_url($settings['button_link']['url']); ?>"><?php echo $settings['button_text']; ?></a>
+				</div>
+			</div>
+
+		<?php }elseif($settings['select_style']=='two'){ ?>
+
+			<div class="pricing style2 <?php if('yes' === $settings['show_active']){echo esc_attr('active');}?>">
+				<div class="table-head">
+					<div class="price">
+						<h2 class="currency"><?php echo $settings['currency']; ?><?php echo $settings['price']; ?><span>/<?php echo $settings['month']; ?></span></h2>
+					</div>
+					<h3 class="pack-name"><?php echo $settings['title']; ?></h3>
+				</div>
+				<div class="table-body">
+    				<div class="pricing-feature">
+    					<?php foreach (  $settings['slides'] as $item ) { ?>
+    					<div class="feature-item">
+    						<?php echo $item['item_field']; ?>
+    						<i class="fa-solid fa-check"></i>
+    					</div>
+    					<?php } ?>
+    				</div>
+				    <a class="pricing-btn" href="<?php echo esc_url($settings['button_link']['url']); ?>"><?php echo $settings['button_text']; ?></a>
+				</div>
+			</div>
+
+		<?php }elseif($settings['select_style']=='three'){ ?>
+
+			<div class="pricing style3 <?php if('yes' === $settings['show_active']){echo esc_attr('active');}?>">
 				<div class="table-head">
 					<h3 class="pricing-title"><?php echo $settings['title']; ?></h3>
 					<h2 class="price">
@@ -494,53 +531,6 @@ class PricingTable extends \Elementor\Widget_Base{
     					<?php } ?>
     				</div>
 				    <a class="pricing-btn" href="<?php echo esc_url($settings['button_link']['url']); ?>"><?php echo $settings['button_text']; ?></a>
-				</div>
-			</div>
-
-		<?php }elseif($settings['select_style']=='two'){ ?>
-
-			<div class="pricing style2">
-				<div class="pricing-table <?php if('yes' === $settings['show_active']){echo esc_attr('active');}?>">
-					<div class="table-head">
-						<h6 class="pricing-title"><?php echo $settings['title']; ?></h6>
-					</div>
-					<div class="table-body">
-						<div class="price">
-							<h1><?php echo $settings['currency']; ?><?php echo $settings['price']; ?><span> / <?php echo $settings['month']; ?></span></h1>
-						</div>
-						<p><?php echo $settings['item_description']; ?></p>
-						<ul>
-							<?php foreach (  $settings['slides'] as $item ) { ?>
-							<li><?php echo $item['item_field']; ?></li>
-							<?php } ?>
-						</ul>
-						<a class="button" href="<?php echo esc_url($settings['button_link']['url']); ?>"><?php echo $settings['button_text']; ?></a>
-					</div>
-				</div>
-			</div>
-
-		<?php }elseif($settings['select_style']=='three'){ ?>
-
-			<div class="pricing style3">
-				<div class="pricing-table <?php if('yes' === $settings['show_active']){echo esc_attr('active');}?>">
-					<div class="table-head">
-						<div class="icon">
-							<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-						</div>
-						<h6 class="pricing-title"><?php echo $settings['title']; ?></h6>
-					</div>
-					<div class="table-body">
-						<div class="price">
-							<h1><?php echo $settings['currency']; ?><?php echo $settings['price']; ?><span> / <?php echo $settings['month']; ?></span></h1>
-						</div>
-						<p><?php echo $settings['item_description']; ?></p>
-						<ul>
-							<?php foreach (  $settings['slides'] as $item ) { ?>
-							<li><?php echo $item['item_field']; ?></li>
-							<?php } ?>
-						</ul>
-						<a class="button" href="<?php echo esc_url($settings['button_link']['url']); ?>"><?php echo $settings['button_text']; ?></a>
-					</div>
 				</div>
 			</div>
 			

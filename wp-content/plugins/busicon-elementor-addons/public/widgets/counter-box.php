@@ -25,31 +25,31 @@ class CounterBox extends \Elementor\Widget_Base{
 		$this->start_controls_section(
 			'section_counter',
 			[
-				'label' => __( 'Counter', 'busicon-elementor-extension' ),
+				'label' => __( 'Counter', 'busicon-elementor-addons' ),
 			]
 		);
 
 			$this->add_control(
 				'serial_number',
 				[
-					'label' => esc_html__( 'Serial Number', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Serial Number', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
-					'default' => esc_html__( '01', 'busicon-elementor-extension' ),
-					'placeholder' => esc_html__( 'Type your number here', 'busicon-elementor-extension' ),
+					'default' => esc_html__( '01', 'busicon-elementor-addons' ),
+					'placeholder' => esc_html__( 'Type your number here', 'busicon-elementor-addons' ),
 				]
 			);
 			$this->add_control(
 				'icons_type',
 				[
-				    'label' => esc_html__('Icon Type','busicon-elementor-extension'),
+				    'label' => esc_html__('Icon Type','busicon-elementor-addons'),
 				    'type' => \Elementor\Controls_Manager::CHOOSE,
 				    'options' =>[
 					  'img' =>[
-						'title' =>esc_html__('Image','busicon-elementor-extension'),
+						'title' =>esc_html__('Image','busicon-elementor-addons'),
 						'icon' =>'eicon-image',
 					  ],
 					  'icon' =>[
-						'title' =>esc_html__('Icon','busicon-elementor-extension'),
+						'title' =>esc_html__('Icon','busicon-elementor-addons'),
 						'icon' =>'fa fa-info',
 					  ]
 				    ],
@@ -59,7 +59,7 @@ class CounterBox extends \Elementor\Widget_Base{
 			 $this->add_control(
 				'select_icon',
 				[
-					'label' => esc_html__( 'Icon', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
 					'condition'=>[
 						'icons_type'=> 'icon',
@@ -70,7 +70,7 @@ class CounterBox extends \Elementor\Widget_Base{
 			$this->add_control(
 				'select_img',
 				[
-				    'label' => esc_html__('Image','busicon-elementor-extension'),
+				    'label' => esc_html__('Image','busicon-elementor-addons'),
 				    'type'=> \Elementor\Controls_Manager::MEDIA,
 				    'default' => [
 					  'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -84,7 +84,7 @@ class CounterBox extends \Elementor\Widget_Base{
 			$this->add_control(
 				'number',
 				[
-					'label' => __( 'Number', 'busicon-elementor-extension' ),
+					'label' => __( 'Number', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::NUMBER,
 					'default' => 100,
 				]
@@ -93,27 +93,27 @@ class CounterBox extends \Elementor\Widget_Base{
 			$this->add_control(
 				'suffix',
 				[
-					'label' => __( 'Number Suffix', 'busicon-elementor-extension' ),
+					'label' => __( 'Number Suffix', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'dynamic' => [
 						'active' => true,
 					],
 					'default' => '+',
-					'placeholder' => __( 'Plus', 'busicon-elementor-extension' ),
+					'placeholder' => __( 'Plus', 'busicon-elementor-addons' ),
 				]
 			);
 
 			$this->add_control(
 				'title',
 				[
-					'label' => __( 'Title', 'busicon-elementor-extension' ),
+					'label' => __( 'Title', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
 					'label_block' => true,
 					'dynamic' => [
 						'active' => true,
 					],
-					'default' => __( 'Cool Number', 'busicon-elementor-extension' ),
-					'placeholder' => __( 'Cool Number', 'busicon-elementor-extension' ),
+					'default' => __( 'Cool Number', 'busicon-elementor-addons' ),
+					'placeholder' => __( 'Cool Number', 'busicon-elementor-addons' ),
 				]
 			);
 
@@ -127,7 +127,7 @@ Style Tab
 		$this->start_controls_section(
 			'general_section',
 			[
-				'label' => __( 'General', 'busicon-elementor-extension' ),
+				'label' => __( 'General', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -135,13 +135,13 @@ Style Tab
 			$this->add_control(
 				'select_style',
 				[
-					'label' => __( 'Select Style', 'busicon-elementor-extension' ),
+					'label' => __( 'Select Style', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SELECT,
 					'options' => [
-						'one' => __( 'One', 'busicon-elementor-extension' ),
-						'two' => __( 'Two', 'busicon-elementor-extension' ),
-						'three' => __( 'Three', 'busicon-elementor-extension' ),
-						'four' => __( 'Four', 'busicon-elementor-extension' ),
+						'one' => __( 'One', 'busicon-elementor-addons' ),
+						'two' => __( 'Two', 'busicon-elementor-addons' ),
+						'three' => __( 'Three', 'busicon-elementor-addons' ),
+						'four' => __( 'Four', 'busicon-elementor-addons' ),
 					],
 					'default' => 'one',
 					
@@ -150,23 +150,23 @@ Style Tab
 			$this->add_responsive_control(
 				'text_align',
 				[
-					'label' => __( 'Alignment', 'busicon-elementor-extension' ),
+					'label' => __( 'Alignment', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::CHOOSE,
 					'options' => [
 						'left' => [
-							'title' => __( 'Left', 'busicon-elementor-extension' ),
+							'title' => __( 'Left', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-left',
 						],
 						'center' => [
-							'title' => __( 'Center', 'busicon-elementor-extension' ),
+							'title' => __( 'Center', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-center',
 						],
 						'right' => [
-							'title' => __( 'Right', 'busicon-elementor-extension' ),
+							'title' => __( 'Right', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-right',
 						],
 						'justify' => [
-							'title' => __( 'Justified', 'busicon-elementor-extension' ),
+							'title' => __( 'Justified', 'busicon-elementor-addons' ),
 							'icon' => 'eicon-text-align-justify',
 						],
 					],
@@ -180,7 +180,7 @@ Style Tab
 		$this->start_controls_section(
 			'icon_style',
 			[
-				'label' => __( 'Icon', 'busicon-elementor-extension' ),
+				'label' => __( 'Icon', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -190,17 +190,17 @@ Style Tab
 		$this->start_controls_tab(
 			'style_normal_tab',
 			[
-				'label' => __( 'Normal', 'busicon-elementor-extension' ),
+				'label' => __( 'Normal', 'busicon-elementor-addons' ),
 			]
 		);
 
 			$this->add_control(
 				'icon_color',
 				[
-					'label' => __( 'Icon Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Icon Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
-						'{{WRAPPER}} .single-counter .icon i' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .single-counter .counter-icon i' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -208,27 +208,27 @@ Style Tab
 				\Elementor\Group_Control_Background::get_type(),
 				[
 					'name' => 'icon_background_color',
-					'label' => esc_html__( 'Background', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Background', 'busicon-elementor-addons' ),
 					'types' => [ 'classic', 'gradient' ],
-					'selector' => '{{WRAPPER}} .single-counter .icon i',
+					'selector' => '{{WRAPPER}} .single-counter .counter-icon i',
 				]
 			);
 			$this->add_group_control(
 				\Elementor\Group_Control_Border::get_type(),
 				[
 					'name' => 'icon_border',
-					'label' => __( 'Border', 'busicon-elementor-extension' ),
-					'selector' => '{{WRAPPER}} .single-counter .icon i',
+					'label' => __( 'Border', 'busicon-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .single-counter .counter-icon i',
 				]
 			);
 			$this->add_responsive_control(
 				'icon_border_radius',
 				[
-					'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+					'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .single-counter .icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .single-counter .counter-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -237,18 +237,18 @@ Style Tab
 		$this->start_controls_tab(
 			'style_hover_tab',
 			[
-				'label' => __( 'Hover', 'busicon-elementor-extension' ),
+				'label' => __( 'Hover', 'busicon-elementor-addons' ),
 			]
 		);
 
 			$this->add_control(
 				'hover_icon_color',
 				[
-					'label' => __( 'Icon Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Icon Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '',
 					'selectors' => [
-						'{{WRAPPER}} .single-counter:hover .icon i' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .single-counter:hover .counter-icon i' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -256,27 +256,27 @@ Style Tab
 				\Elementor\Group_Control_Background::get_type(),
 				[
 					'name' => 'hover_icon_background_color',
-					'label' => esc_html__( 'Background', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Background', 'busicon-elementor-addons' ),
 					'types' => [ 'classic', 'gradient' ],
-					'selector' => '{{WRAPPER}} .single-counter:hover .icon i',
+					'selector' => '{{WRAPPER}} .single-counter:hover .counter-icon i',
 				]
 			);
 			$this->add_group_control(
 				\Elementor\Group_Control_Border::get_type(),
 				[
 					'name' => 'hover_border',
-					'label' => __( 'Hover Border', 'busicon-elementor-extension' ),
-					'selector' => '{{WRAPPER}} .single-counter:hover .icon i',
+					'label' => __( 'Hover Border', 'busicon-elementor-addons' ),
+					'selector' => '{{WRAPPER}} .single-counter:hover .counter-icon i',
 				]
 			);
 			$this->add_responsive_control(
 				'hover_icon_border_radius',
 				[
-					'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+					'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .single-counter:hover .icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .single-counter:hover .counter-icon i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 				]
 			);
@@ -287,11 +287,11 @@ Style Tab
 			$this->add_responsive_control(
 				'icon_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
-						'{{WRAPPER}} .single-counter .icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .single-counter .counter-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
 					'separator' => 'before',
 				]
@@ -299,7 +299,7 @@ Style Tab
 			$this->add_control(
 				'height',
 				[
-					'label' => __( 'Height', 'busicon-elementor-extension' ),
+					'label' => __( 'Height', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -314,14 +314,14 @@ Style Tab
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .single-counter .icon i' => 'height: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .single-counter .counter-icon i' => 'height: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
 			$this->add_control(
 				'width',
 				[
-					'label' => __( 'Width', 'busicon-elementor-extension' ),
+					'label' => __( 'Width', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::SLIDER,
 					'size_units' => [ 'px', '%' ],
 					'range' => [
@@ -336,7 +336,7 @@ Style Tab
 						],
 					],
 					'selectors' => [
-						'{{WRAPPER}} .single-counter .icon i' => 'width: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .single-counter .counter-icon i' => 'width: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -344,7 +344,7 @@ Style Tab
 				\Elementor\Group_Control_Typography::get_type(),
 				[
 					'name' => 'icon_typography',
-					'selector' => '{{WRAPPER}} .single-counter .icon i',
+					'selector' => '{{WRAPPER}} .single-counter .counter-icon i',
 				]
 			);
 			
@@ -353,7 +353,7 @@ Style Tab
 		$this->start_controls_section(
 			'number_style',
 			[
-				'label' => __( 'Number', 'busicon-elementor-extension' ),
+				'label' => __( 'Number', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -361,7 +361,7 @@ Style Tab
 			$this->add_control(
 				'number_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .single-counter #counter .count' => 'color: {{VALUE}};',
@@ -383,7 +383,7 @@ Style Tab
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'busicon-elementor-extension' ),
+				'label' => __( 'Title', 'busicon-elementor-addons' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -391,7 +391,7 @@ Style Tab
 			$this->add_control(
 				'title_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .single-counter #counter .title' => 'color: {{VALUE}};',
@@ -410,7 +410,7 @@ Style Tab
 				'title_margin',
 				[
 					'type' => \Elementor\Controls_Manager::DIMENSIONS,
-					'label' => esc_html__( 'Margin', 'busicon-elementor-extension' ),
+					'label' => esc_html__( 'Margin', 'busicon-elementor-addons' ),
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
 						'{{WRAPPER}} .single-counter #counter .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -429,6 +429,9 @@ Style Tab
 		<?php if($settings['select_style']=='one'){ ?>
 
 			<div class="single-counter style1">
+				<div class="counter-icon">
+					<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+				</div>
 				<div id="counter">
 					<div class="number">
 						<h2 class="count percent" data-count="<?php echo $settings['number']; ?>">0</h2>
@@ -481,7 +484,7 @@ Style Tab
 			<?php }elseif($settings['select_style']=='two'){ ?>
 
 			<div class="single-counter style2">
-				<div class="icon">			
+				<div class="counter-icon">
 					<?php if($settings['icons_type'] == 'icon' ){ ?>
 						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 					<?php }elseif($settings['icons_type'] == 'img'){ ?>
@@ -494,7 +497,7 @@ Style Tab
 						<h2 class="count percent" data-count="<?php echo $settings['number']; ?>">0</h2>
 						<h2 class="suffix"><?php echo $settings['suffix']; ?></h2>
 					</div>
-					<h6 class="title"><?php echo $settings['title']; ?></h6>
+					<p class="title"><?php echo $settings['title']; ?></p>
 				</div>
 			</div>
 

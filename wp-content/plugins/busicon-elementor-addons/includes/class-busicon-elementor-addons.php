@@ -79,6 +79,8 @@ class Busicon_Elementor_Addons {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
+		add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'custom_icon_tab' ] );
+
 	}
 
 	/**
@@ -173,6 +175,42 @@ class Busicon_Elementor_Addons {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+	}
+
+	/**
+	 * Custom Icon Fonts
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	public function custom_icon_tab( $tabs = array() ) {
+
+		$all_icons = array(
+			'robot-man',
+			'laptop',
+			'road-map',
+			'growth',
+			'growth-2',
+			'dollar-coin',
+			'hand',
+			'growth-hand',
+			'building-2',
+			'tag',
+			'document',
+		);
+		
+		$tabs['custom-icons'] = array(
+			'name'          => 'custom-icon-set',
+			'label'         => esc_html__( 'Custom Icon', 'busicon-elementor-addons' ),
+			'labelIcon'     => 'icon-laptop',
+			'prefix'        => 'icon-',
+			'displayPrefix' => 'icon',
+			'url'           => plugins_url( 'includes/fonts/icon-fonts/icon-fonts.css', dirname(__FILE__) ),
+			'icons'         => $all_icons,
+			'ver'           => '1.0.0',
+		);
+
+		return $tabs;
 	}
 
 	/**
