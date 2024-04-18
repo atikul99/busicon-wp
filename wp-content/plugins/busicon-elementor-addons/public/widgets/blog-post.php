@@ -228,7 +228,7 @@ Style Tab
 			<div class="blog-post style1">
 				<div class="blog-lists">
 					
-					<?php $the_query = new \WP_Query( array( 'post_type' => 'post' ) ); ?>
+					<?php $the_query = new \WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3 ) ); ?>
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 						
 					<?php $url = get_the_post_thumbnail_url(); ?>
@@ -257,7 +257,7 @@ Style Tab
 		
         	<div class="blog-post style2">
         		<div class="blog-lists">
-        			<?php $the_query = new \WP_Query( array( 'post_type' => 'post' ) ); ?>
+        			<?php $the_query = new \WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3 ) ); ?>
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
 					<div class="blog-box">
