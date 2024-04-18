@@ -380,8 +380,14 @@ function ocdi_import_files() {
 			'import_file_url'            => get_template_directory_uri() . '/inc/demo-data/busicon.WordPress.xml',
 			'import_widget_file_url'     => get_template_directory_uri() . '/inc/demo-data/busicon-widgets.wie',
 			'import_customizer_file_url' => get_template_directory_uri() . '/inc/demo-data/busicon-export.dat',
+			'import_redux'               => [
+				[
+					'file_url'    => get_template_directory_uri() . '/inc/demo-data/busicon_opt.json',
+					'option_name' => 'busicon_opt',
+				],
+			],
 			'import_preview_image_url'   => get_template_directory_uri() . '/inc/demo-data/demo-thumb.jpg',
-			'preview_url'                => 'https://urnothemes.com/busicon/',
+			'preview_url'                => 'https://wp.urnoit.net/busicon/',
 		],
 	];
 }
