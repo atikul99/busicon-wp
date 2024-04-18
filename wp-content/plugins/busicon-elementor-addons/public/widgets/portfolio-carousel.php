@@ -22,80 +22,28 @@ class PortfolioCarousel extends \Elementor\Widget_Base{
 		return ['busicon-category'];
 	}
 
-	protected function _register_controls(){
+	protected function register_controls(){
 
 		$this->start_controls_section(
 			'portfolio_section',
 			[
-				'label' => __( 'Portfolio', 'busicon-elementor-extension' ),
+				'label' => __( 'Portfolio', 'busicon-elementor-addons' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-			$repeater = new \Elementor\Repeater();
-
-			$repeater->add_control(
-				'list_subtitle', [
-					'label' => __( 'Subtitle', 'busicon-elementor-extension' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'default' => __( 'List Subtitle' , 'busicon-elementor-extension' ),
-					'label_block' => true,
-				]
-			);
-
-			$repeater->add_control(
-				'list_title', [
-					'label' => __( 'Title', 'busicon-elementor-extension' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'default' => __( 'List Title' , 'busicon-elementor-extension' ),
-					'label_block' => true,
-				]
-			);
-
-			$repeater->add_control(
-				'website_link',
-				[
-					'label' => __( 'Link', 'busicon-elementor-extension' ),
-					'type' => \Elementor\Controls_Manager::URL,
-					'placeholder' => __( 'https://your-link.com', 'busicon-elementor-extension' ),
-					'show_external' => true,
-					'default' => [
-						'url' => '',
-						'is_external' => true,
-						'nofollow' => true,
-					],
-				]
-			);
-
-			$repeater->add_control(
-				'image',
-				[
-					'label' => __( 'Choose Image', 'busicon-elementor-extension' ),
-					'type' => \Elementor\Controls_Manager::MEDIA,
-					'default' => [
-						'url' => \Elementor\Utils::get_placeholder_image_src(),
-					],
-				]
-			);
-
+			
 			$this->add_control(
-				'list',
+				'show_category',
 				[
-					'label' => __( 'Portfolio List', 'busicon-elementor-extension' ),
-					'type' => \Elementor\Controls_Manager::REPEATER,
-					'fields' => $repeater->get_controls(),
-					'default' => [
-						[
-							'list_subtitle' => __( 'Tech Services', 'busicon-elementor-extension' ),
-							'list_title' => __( 'IT Management', 'busicon-elementor-extension' ),
-						],
-						[
-							'list_subtitle' => __( 'Tech Services', 'busicon-elementor-extension' ),
-							'list_title' => __( 'IT Management', 'busicon-elementor-extension' ),
-						],
-					],
-					'title_field' => '{{{ list_title }}}',
+					'label' => esc_html__( 'Show Category', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::SWITCHER,
+					'label_on' => esc_html__( 'Show', 'busicon-elementor-addons' ),
+					'label_off' => esc_html__( 'Hide', 'busicon-elementor-addons' ),
+					'return_value' => 'yes',
+					'default' => 'yes',
 				]
 			);
+
 		$this->end_controls_section();
 
 /*
@@ -107,20 +55,19 @@ Style Tab
 		$this->start_controls_section(
 			'general_section',
 			[
-				'label' => __( 'General', 'busicon-elementor-extension' ),
+				'label' => __( 'General', 'busicon-elementor-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 		$this->add_control(
 			'select_style',
 			[
-				'label' => __( 'Select Style', 'busicon-elementor-extension' ),
+				'label' => __( 'Select Style', 'busicon-elementor-addons' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'one' => __( 'One', 'busicon-elementor-extension' ),
-					'two' => __( 'Two', 'busicon-elementor-extension' ),
-					'three' => __( 'Three', 'busicon-elementor-extension' ),
-					'four' => __( 'Four', 'busicon-elementor-extension' ),
+					'one' => __( 'One', 'busicon-elementor-addons' ),
+					'two' => __( 'Two', 'busicon-elementor-addons' ),
+					'three' => __( 'Three', 'busicon-elementor-addons' ),
 				],
 				'default' => 'one',
 
@@ -132,7 +79,7 @@ Style Tab
 		$this->start_controls_section(
 			'subtitle_style',
 			[
-				'label' => __( 'Subtitle', 'busicon-elementor-extension' ),
+				'label' => __( 'Subtitle', 'busicon-elementor-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -140,12 +87,11 @@ Style Tab
 			$this->add_control(
 				'subtitle_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .portfolio .portfolio-item .portfolio-content ul li a' => 'color: {{VALUE}}',
-						'{{WRAPPER}} .portfolio .portfolio-item .portfolio-content .subtitle' => 'color: {{VALUE}}',
-						'{{WRAPPER}} .portfolio.style3 .swiper-slide.swiper-slide-active .content p' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .portfolio .portfolio-item .portfolio-content .category span' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -153,20 +99,19 @@ Style Tab
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'subtitle_typography',
-                    'label' => __( 'Typography', 'busicon-elementor-extension' ),
-                    'selector' => '{{WRAPPER}} .portfolio .portfolio-item .portfolio-content ul li a, .portfolio .portfolio-item .portfolio-content .subtitle, .portfolio.style3 .swiper-slide.swiper-slide-active .content p',
+                    'label' => __( 'Typography', 'busicon-elementor-addons' ),
+                    'selector' => '{{WRAPPER}} .portfolio .portfolio-item .portfolio-content ul li a, .portfolio .portfolio-item .portfolio-content .category span',
                 ]
             );
             $this->add_responsive_control(
                 'subtitle_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
                         '{{WRAPPER}} .portfolio .portfolio-item .portfolio-content ul li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                        '{{WRAPPER}} .portfolio .portfolio-item .portfolio-content .subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                        '{{WRAPPER}} .portfolio.style3 .swiper-slide.swiper-slide-active .content p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .portfolio .portfolio-item .portfolio-content .category span' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                 ]
             );
@@ -176,7 +121,7 @@ Style Tab
 		$this->start_controls_section(
 			'title_style',
 			[
-				'label' => __( 'Title', 'busicon-elementor-extension' ),
+				'label' => __( 'Title', 'busicon-elementor-addons' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -184,7 +129,7 @@ Style Tab
 			$this->add_control(
 				'title_color',
 				[
-					'label' => __( 'Color', 'busicon-elementor-extension' ),
+					'label' => __( 'Color', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .portfolio .portfolio-item .portfolio-content .title' => 'color: {{VALUE}}',
@@ -196,14 +141,14 @@ Style Tab
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'title_typography',
-                    'label' => __( 'Typography', 'busicon-elementor-extension' ),
+                    'label' => __( 'Typography', 'busicon-elementor-addons' ),
                     'selector' => '{{WRAPPER}} .portfolio .portfolio-item .portfolio-content .title, .portfolio.style3 .swiper-slide.swiper-slide-active .content h3 a',
                 ]
             );
 			$this->add_responsive_control(
 				'title_margin',
 				[
-					'label' => __( 'Margin', 'busicon-elementor-extension' ),
+					'label' => __( 'Margin', 'busicon-elementor-addons' ),
 					'type' => Controls_Manager::DIMENSIONS,
 					'size_units' => [ 'px', 'em', '%' ],
 					'selectors' => [
@@ -227,7 +172,7 @@ Style Tab
 			<div class="portfolio style1">
 				<div class="portfolio-carousel owl-carousel">
 				<?php
-					$the_query = new \WP_Query( array( 'post_type' => 'busicon_portfolio' ) );
+					$the_query = new \WP_Query( array( 'post_type' => 'portfolio' ) );
 					while ($the_query->have_posts()) : $the_query->the_post();
 				?>
 
@@ -236,17 +181,170 @@ Style Tab
 						<?php the_post_thumbnail(); ?>
 					</div>
 					<div class="portfolio-content">
-						<div class="category">
-							<?php
-								$terms = get_the_terms( get_the_ID(), 'busicon_portfolio_cat' );
-								foreach ($terms as $term) {
-									echo '<span>' . $term->name . '</span>';
-								}
-							?>
+						<div class="text">
+							<?php if ( 'yes' === $settings['show_category'] ) { ?>
+
+								<?php
+									$terms = get_the_terms( get_the_ID(), 'portfolio_cat' );
+									if( !empty($terms) ):
+								?>
+									<div class="category">
+										<?php
+											foreach ($terms as $term) {
+												echo '<span>' . $term->name . '</span>';
+											}
+										?>
+									</div>
+								<?php endif; ?>
+
+							<?php } ?>
+							<h3 class="title"><?php the_title(); ?></h3>
 						</div>
+						<a class="button" href="<?php the_permalink(); ?>">
+							<i class="fa-solid fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+
+				<?php endwhile; ?>
+				</div>
+			</div>
+
+			<script>
+				jQuery(document).ready(function($) {
+					"use strict";
+
+					$('.portfolio-carousel').owlCarousel({
+						loop: true,
+						dots: true,
+						nav: false,
+						margin: 30,
+						autoplayTimeout: 1000,
+						navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right''></i>"],
+						responsive: {
+							0: {
+								items: 1
+							},
+							768: {
+								items: 1
+							},
+							992: {
+								items: 1
+							},
+							1024: {
+								items: 1,
+								stagePadding: 200,
+							},
+							1366: {
+								items: 1,
+								stagePadding: 300,
+							},
+							1920: {
+								items: 1,
+								stagePadding: 535,
+							}
+						}
+					})
+				});
+			</script>
+
+		<?php }elseif( $settings['select_style']=='two' ){ ?>
+
+			<div class="portfolio style2">
+				<div class="portfolio-carousel owl-carousel">
+				<?php
+					$the_query = new \WP_Query( array( 'post_type' => 'portfolio' ) );
+					while ($the_query->have_posts()) : $the_query->the_post();
+				?>
+
+				<div class="portfolio-item">
+					<div class="portfolio-thumb">
+						<?php the_post_thumbnail(); ?>
+					</div>
+					<div class="portfolio-content">
+						<div class="text">
+							<?php if ( 'yes' === $settings['show_category'] ) { ?>
+								<div class="category">
+									<?php
+										$terms = get_the_terms( get_the_ID(), 'portfolio_cat' );
+										foreach ($terms as $term) {
+											echo '<span>' . $term->name . '</span>';
+										}
+									?>
+								</div>
+							<?php } ?>
+							<h3 class="title"><?php the_title(); ?></h3>
+						</div>
+						<a class="button" href="<?php the_permalink(); ?>">
+							<i class="fa-solid fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+
+				<?php endwhile; ?>
+				</div>
+			</div>
+
+			<script>
+				jQuery(document).ready(function($) {
+					"use strict";
+
+					$('.portfolio-carousel').owlCarousel({
+						loop: true,
+						dots: false,
+						nav: false,
+						margin: 30,
+						autoplayTimeout: 1000,
+						navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right''></i>"],
+						responsive: {
+							0: {
+								items: 1
+							},
+							768: {
+								items: 2
+							},
+							992: {
+								items: 2
+							},
+							1200: {
+								items: 3
+							},
+							1920: {
+								items: 3,
+								stagePadding: 315,
+							}
+						}
+					})
+				});
+			</script>
+
+		<?php }elseif( $settings['select_style']=='three' ){ ?>
+
+			<div class="portfolio style3">
+				<div class="portfolio-carousel owl-carousel">
+				<?php
+					$the_query = new \WP_Query( array( 'post_type' => 'portfolio' ) );
+					while ($the_query->have_posts()) : $the_query->the_post();
+				?>
+
+				<div class="portfolio-item">
+					<div class="portfolio-thumb">
+						<?php the_post_thumbnail(); ?>
+					</div>
+					<div class="portfolio-content">
+						<?php if ( 'yes' === $settings['show_category'] ) { ?>
+							<div class="category">
+								<?php
+									$terms = get_the_terms( get_the_ID(), 'portfolio_cat' );
+									foreach ($terms as $term) {
+										echo '<span>' . $term->name . '</span>';
+									}
+								?>
+							</div>
+						<?php } ?>
 						<h3 class="title"><?php the_title(); ?></h3>
 						<a class="button" href="<?php the_permalink(); ?>">
-							See Details
+							<?php echo esc_html('See Details'); ?>
 							<i class="bi bi-arrow-right-short"></i>
 						</a>
 					</div>
@@ -256,122 +354,37 @@ Style Tab
 				</div>
 			</div>
 
-        	<script>
-        		jQuery(document).ready(function($) {
-        			"use strict";
-
-                	$('.portfolio-carousel').owlCarousel({
-                		loop: true,
-                		dots: true,
-                		nav: false,
-                		margin: 30,
-                		autoplayTimeout: 1000,
-                		navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right''></i>"],
-                		responsive: {
-                			0: {
-                				items: 1
-                			},
-                			768: {
-                				items: 1
-                			},
-                			992: {
-                				items: 1
-                			},
-                			1024: {
-                				items: 2
-                			},
-                			1920: {
-                				items: 4
-                			}
-                		}
-                	})
-        		});
-        	</script>
-
-		<?php }elseif( $settings['select_style']=='two' ){ ?>
-
-			<div class="portfolio style2">
-				<?php foreach (  $settings['list'] as $item ) { ?>
-				<div class="portfolio-item">
-					<div class="portfolio-thumb" style="background-image: url(<?php echo $item['image']['url']; ?>);"></div>
-					<div class="portfolio-content">
-						<div class="content-wrapper">
-							<h6 class="subtitle"><?php echo $item['list_subtitle']; ?></h6>
-							<h3><a class="title"> href="<?php echo esc_url($item['website_link']['url']); ?>"><?php echo $item['list_title']; ?></a></h3>
-						</div>
-					</div>
-				</div>
-				<?php } ?>
-			</div>
-
-		<?php }elseif( $settings['select_style']=='three' ){ ?>
-
-			<div class="portfolio style3">
-				<div class="swiper-container">
-					<div class="swiper-wrapper">
-						<?php foreach (  $settings['list'] as $item ) { ?>
-						<div class="swiper-slide" style="background-image: url(<?php echo $item['image']['url']; ?>);">
-							<div class="content">
-								<h3><a href="<?php echo esc_url($item['website_link']['url']); ?>"><?php echo $item['list_title']; ?></a></h3>
-								<p><?php echo $item['list_subtitle']; ?></p>
-							</div>
-						</div>
-						<?php } ?>
-					</div>
-					<div class="swiper-nav">
-						<div class="swiper-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-						<div class="swiper-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-					</div>
-				</div>
-			</div>
-
 			<script>
 				jQuery(document).ready(function($) {
 					"use strict";
 
-					var $swiper = $(".swiper-container");
-					var $bottomSlide = null;
-					var $bottomSlideContent = null;
-
-
-					var mySwiper = new Swiper(".swiper-container", {
-						spaceBetween: 1,
-						slidesPerView: 3,
-						centeredSlides: true,
-						roundLengths: true,
+					$('.portfolio-carousel').owlCarousel({
 						loop: true,
-						loopAdditionalSlides: 30,
-						navigation: {
-							nextEl: ".swiper-next",
-							prevEl: ".swiper-prev"
-						},
-						breakpoints: {
-							767: {
-								slidesPerView: 1,
+						dots: true,
+						nav: false,
+						margin: 30,
+						autoplayTimeout: 1000,
+						navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right''></i>"],
+						responsive: {
+							0: {
+								items: 1
 							},
-							991: {
-								slidesPerView: 2,
+							768: {
+								items: 1
+							},
+							992: {
+								items: 1
+							},
+							1024: {
+								items: 2
+							},
+							1920: {
+								items: 4
 							}
 						}
-					});
-
+					})
 				});
 			</script>
-
-		<?php }elseif( $settings['select_style']=='four' ){ ?>
-
-			<div class="portfolio style4">
-				<?php foreach (  $settings['list'] as $item ) { ?>
-				<div class="portfolio-item">
-					<div class="portfolio-thumb" style="background-image: url(<?php echo $item['image']['url']; ?>);"></div>
-					<div class="portfolio-content">
-						<div class="content-wrapper">
-							<a class="title"> href="<?php echo esc_url($item['website_link']['url']); ?>">+</a>
-						</div>
-					</div>
-				</div>
-				<?php } ?>
-			</div>
 
 		<?php } ?>
 

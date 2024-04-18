@@ -62,6 +62,25 @@ class WorkingProcess extends \Elementor\Widget_Base{
 			);
         $this->end_controls_section();
 
+		$this->start_controls_section(
+			'image_section',
+			[
+				'label' => __( 'Image', 'busicon-elementor-addons' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+			$this->add_control(
+				'single_img',
+				[
+				    'label' => esc_html__('Image','busicon-elementor-addons'),
+				    'type'=> \Elementor\Controls_Manager::MEDIA,
+				    'default' => [
+					  'url' => \Elementor\Utils::get_placeholder_image_src(),
+				    ],
+				]
+			);
+		$this->end_controls_section();
+
         $this->start_controls_section(
             'title_description', [
                 'label' => __( 'Title & Description', 'busicon-elementor-addons' ),
@@ -249,13 +268,13 @@ Style Tab
 		<?php }elseif($settings['select_style']=='two'){ ?>
 
 			<div class="process-box style2 <?php echo $settings['icon_after']; ?>">
-				<div class="icon">
-					<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+				<div class="image">
+					<img src="<?php echo $settings['single_img']['url']; ?>">
 					<span><?php echo $settings['number']; ?></span>
 				</div>
 				<div class="content">
-					<h3><?php echo $settings['title']; ?></h3>
-					<p><?php echo $settings['description']; ?></p>
+					<h3 class="title"><?php echo $settings['title']; ?></h3>
+					<p class="description"><?php echo $settings['description']; ?></p>
 				</div>
 			</div>
 

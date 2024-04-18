@@ -49,87 +49,106 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 
-					?>
-					<div class="portfolio-thumb">
-						<?php the_post_thumbnail(); ?>
-					</div>
+                    $image1 = get_post_meta( get_the_ID(), 'project_image1', 1 );
+                    $image2 = get_post_meta( get_the_ID(), 'project_image2', 1 );
+                    $image3 = get_post_meta( get_the_ID(), 'project_image3', 1 );
+                ?>
+                    <?php if( !empty($image1) || !empty($image2) || !empty($image3) ): ?>
+                    <div class="project-images">
+                        <?php if(!empty($image1)){ ?>
+                            <div class="item">
+                                <img src="<?php echo esc_url($image1); ?>">
+                            </div>
+                        <?php } ?>
+
+                        <?php if(!empty($image2)){ ?>
+                            <div class="item">
+                                <img src="<?php echo esc_url($image2); ?>">
+                            </div>
+                        <?php } ?>
+
+                        <?php if(!empty($image3)){ ?>
+                            <div class="item">
+                                <img src="<?php echo esc_url($image3); ?>">
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <?php endif; ?>
 					
 					<div class="row">
-                        <div class="col-md-6 col-lg-8 order-2 order-md-1">
-                            <?php the_content(); ?>
-                            <div class="row mt-5">
-                                <?php
-                                    $image = get_post_meta( get_the_ID(), 'project_image', 1 );
-                                    $description = get_post_meta( get_the_ID(), 'project_description', true );
+                        <div class="col-md-6 col-lg-4">
+                            <div class="project-info">
+                                <?php 
+                                    $client = get_post_meta( get_the_ID(), 'client_name', true );
+                                    $duration = get_post_meta( get_the_ID(), 'project_duration', true );
+                                    $task = get_post_meta( get_the_ID(), 'project_task', true );
                                 ?>
-                                <div class="col-lg-6">
-                                    <img src="<?php echo esc_url($image); ?>">
+
+                                <div class="single-item">
+                                    <h3 class="title"><?php echo esc_html__( 'Project Name', 'busicon' ); ?></h3>
+                                    <p class="description"><?php the_title(); ?></p>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="project-content">
-                                        <?php
-                                            $allowed_html = array(
-                                                'a' => array(
-                                                    'href' => array(),
-                                                    'title' => array(),
-                                                ),
-                                                'h1' => array(),
-                                                'h2' => array(),
-                                                'h3' => array(),
-                                                'h4' => array(),
-                                                'h5' => array(),
-                                                'h6' => array(),
-                                                'p' => array(),
-                                                'ul'    => array(),
-                                                'li'    => array(),
-                                            );
-                                        ?>
-                                        <?php echo wp_kses($description, $allowed_html); ?>
+
+                                <?php if(!empty($client)){ ?>
+                                    <div class="single-item">
+                                        <h3 class="title"><?php echo esc_html__( 'Client', 'busicon' ); ?></h3>
+                                        <p class="description"><?php echo esc_html($client); ?></p>
+                                    </div>
+                                <?php } ?>
+                                    
+                                <?php if(!empty($duration)){ ?>
+                                    <div class="single-item">
+                                        <h3 class="title"><?php echo esc_html__( 'Duration', 'busicon' ); ?></h3>
+                                        <p class="description"><?php echo esc_html($duration); ?></p>
+                                    </div>
+                                <?php } ?>
+                                    
+                                <?php if(!empty($task)){ ?>
+                                    <div class="single-item">
+                                        <h3 class="title"><?php echo esc_html__( 'Task', 'busicon' ); ?></h3>
+                                        <p class="description"><?php echo esc_html($task); ?></p>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-8">
+                            <div class="details">
+                                <div class="busicon-block block-1">
+                                    <div class="text">
+                                        <?php echo wpautop( get_post_meta( get_the_ID(), 'block_1_description', true ) ); ?>
                                     </div>
                                 </div>
-                            </div>
-                            <?php
-                                
-                                the_post_navigation(
-                                    array(
-                                        'prev_text' => '<i class="bi bi-chevron-double-left"></i><span class="nav-subtitle">' . esc_html__( 'Previous Portfolio', 'busicon' ) . '</span>',
-                                        'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next Portfolio', 'busicon' ) . '</span><i class="bi bi-chevron-double-right"></i>',
-                                    )
-                                );
-                                
-                            ?>
-    					</div>
-    					<div class="col-md-6 col-lg-4 order-1 order-md-2">
-                            <div class="project-info">
-                                <h3 class="title"><?php echo esc_html__('Project Information', 'busicon'); ?></h3>
-                                <ul>
-                                    <?php 
-                                        $client = get_post_meta( get_the_ID(), 'client_name', true );
-                                        $category = get_post_meta( get_the_ID(), 'project_cat', true );
-                                        $cost = get_post_meta( get_the_ID(), 'project_cost', true );
-                                        $start_date = get_post_meta( get_the_ID(), 'project_start_date', true );
-                                        $end_date = get_post_meta( get_the_ID(), 'project_end_date', true );
+                                <div class="busicon-block block-2">
+                                    <div class="text">
+                                        <?php echo wpautop( get_post_meta( get_the_ID(), 'block_2_description', true ) ); ?>
+                                    </div>
+                                    <?php
+                                        $block_2_img = get_post_meta( get_the_ID(), 'block_2_img', 1 );
+                                        if(!empty($block_2_img)):
                                     ?>
-                                    <?php if(!empty($client)){ ?>
-                                    <li><span><?php echo esc_html__( 'Clients:', 'busicon' ); ?></span><?php echo esc_html($client); ?></li>
-                                    <?php } ?>
-                                    
-                                    <?php if(!empty($category)){ ?>
-                                    <li><span><?php echo esc_html__( 'Category:', 'busicon' ); ?></span><?php echo esc_html($category); ?></li>
-                                    <?php } ?>
-                                    
-                                    <?php if(!empty($cost)){ ?>
-                                    <li><span><?php echo esc_html__( 'Cost:', 'busicon' ); ?></span><?php echo esc_html('$'); echo esc_html($cost); ?></li>
-                                    <?php } ?>
-                                    
-                                    <?php if(!empty($start_date)){ ?>
-                                    <li><span><?php echo esc_html__( 'Start Date:', 'busicon' ); ?></span><?php echo esc_html($start_date); ?></li>
-                                    <?php } ?>
-                                    
-                                    <?php if(!empty($end_date)){ ?>
-                                    <li><span><?php echo esc_html__( 'End Date:', 'busicon' ); ?></span><?php echo esc_html($end_date); ?></li>
-                                    <?php } ?>
-                                </ul>
+                                        <div class="image">
+                                            <img src="<?php echo esc_url($block_2_img); ?>">
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="busicon-block block-3">
+                                    <?php
+                                        $block_3_img = get_post_meta( get_the_ID(), 'block_3_img', 1 );
+                                        if(!empty($block_3_img)):
+                                    ?>
+                                        <div class="image">
+                                            <img src="<?php echo esc_url($block_3_img); ?>">
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="text">
+                                        <?php echo wpautop( get_post_meta( get_the_ID(), 'block_3_description', true ) ); ?>
+                                    </div>
+                                </div>
+                                <div class="busicon-block block-4">
+                                    <div class="text">
+                                        <?php echo wpautop( get_post_meta( get_the_ID(), 'block_4_description', true ) ); ?>
+                                    </div>
+                                </div>
                             </div>
     					</div>
 					</div>

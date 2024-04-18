@@ -25,70 +25,108 @@ class HeroText extends \Elementor\Widget_Base{
         $this->start_controls_section(
             'text_section',
             [
-                'label' => __( 'Text', 'busicon-elementor-extension' ),
+                'label' => __( 'Text', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
 
             $this->add_control(
                 'subtitle', [
-                    'label' => __( 'Subtitle', 'busicon-elementor-extension' ),
+                    'label' => __( 'Subtitle', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'with Business Ideas' , 'busicon-elementor-extension' ),
+                    'default' => __( 'Business Solution' , 'busicon-elementor-addons' ),
                     'label_block' => true,
                 ]
             );
             $this->add_control(
                 'title', [
-                    'label' => __( 'Title', 'busicon-elementor-extension' ),
+                    'label' => __( 'Title', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'We Provide Our Best Business Services' , 'busicon-elementor-extension' ),
+                    'default' => __( 'Simplifying your life one step' , 'busicon-elementor-addons' ),
                     'label_block' => true,
                 ]
             );
             $this->add_control(
                 'description',
                 [
-                    'label' => __( 'Description', 'busicon-elementor-extension' ),
+                    'label' => __( 'Description', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXTAREA,
                     'rows' => 10,
-                    'default' => __( 'Worem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut', 'busicon-elementor-extension' ),
-                    'placeholder' => __( 'Type your description here', 'busicon-elementor-extension' ),
+                    'default' => __( 'The construction industry plays a crucial role in the development of cities and communities It involves the planning.', 'busicon-elementor-addons' ),
+                    'placeholder' => __( 'Type your description here', 'busicon-elementor-addons' ),
                 ]
             );
 
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'button_section',
+            'button1_section',
             [
-                'label' => __( 'Button', 'busicon-elementor-extension' ),
+                'label' => __( 'Button 1', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
-            $this->add_control(
-                'button_text',
-                [
-                    'label' => __( 'Button Text', 'busicon-elementor-extension' ),
-                    'type' => \Elementor\Controls_Manager::TEXT,
-                    'placeholder' => __( 'Enter your button text', 'busicon-elementor-extension' ),
-                    'label_block' => true,
-                    'default' => __( 'Button', 'busicon-elementor-extension' ),
-                ]
-            );
-            $this->add_control(
-                'button_link',
-                [
-                    'label' => __( 'Button URL', 'busicon-elementor-extension' ),
-                    'type' => \Elementor\Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'busicon-elementor-extension' ),
-                ]
-            );
 
             $this->add_control(
-                'video_icon',
+                'button1_icon',
                 [
-                    'label' => __( 'Video Icon', 'busicon-elementor-extension' ),
+                    'label' => __( 'Icon', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::ICONS,
+                    'default' => [
+                        'value' => 'fa-solid fa-arrow-right',
+                        'library' => 'fa-solid',
+                    ],
+                ]
+            );
+            $this->add_control(
+                'button1_text',
+                [
+                    'label' => __( 'Button Text', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::TEXT,
+                    'placeholder' => __( 'Enter your button text', 'busicon-elementor-addons' ),
+                    'label_block' => true,
+                    'default' => __( 'Button', 'busicon-elementor-addons' ),
+                ]
+            );
+            $this->add_control(
+                'button1_link',
+                [
+                    'label' => __( 'Button URL', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::URL,
+                    'default' => [
+                        'url' => '#',
+                        'is_external' => false,
+                        'nofollow' => false,
+                        // 'custom_attributes' => '',
+                    ],
+                    'placeholder' => __( 'https://your-link.com', 'busicon-elementor-addons' ),
+                ]
+            );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'button2_section',
+            [
+                'label' => __( 'Button 2', 'busicon-elementor-addons' ),
+                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+            $this->add_control(
+                'show_button2',
+                [
+                    'label' => esc_html__( 'Show Button', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::SWITCHER,
+                    'label_on' => esc_html__( 'Show', 'busicon-elementor-addons' ),
+                    'label_off' => esc_html__( 'Hide', 'busicon-elementor-addons' ),
+                    'return_value' => 'yes',
+                    'default' => 'yes',
+                ]
+            );
+            $this->add_control(
+                'button2_icon',
+                [
+                    'label' => __( 'Icon', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'bi bi-play',
@@ -96,21 +134,37 @@ class HeroText extends \Elementor\Widget_Base{
                 ]
             );
             $this->add_control(
-                'video_button_url',
+                'button2_subtitle',
                 [
-                    'label' => __( 'Video URL', 'busicon-elementor-extension' ),
-                    'type' => \Elementor\Controls_Manager::URL,
-                    'placeholder' => __( 'https://your-link.com', 'busicon-elementor-extension' ),
+                    'label' => __( 'Subtitle', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::TEXT,
+                    'placeholder' => __( 'Enter your subtitle', 'busicon-elementor-addons' ),
+                    'label_block' => true,
+                    'default' => __( 'Need help?', 'busicon-elementor-addons' ),
                 ]
             );
             $this->add_control(
-                'video_title',
+                'button2_title',
                 [
-                    'label' => __( 'Video Title', 'busicon-elementor-extension' ),
+                    'label' => __( 'Title', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'placeholder' => __( 'Enter your title', 'busicon-elementor-extension' ),
+                    'placeholder' => __( 'Enter your title', 'busicon-elementor-addons' ),
                     'label_block' => true,
-                    'default' => __( 'Watch Video', 'busicon-elementor-extension' ),
+                    'default' => __( '(808)-555-0111', 'busicon-elementor-addons' ),
+                ]
+            );
+            $this->add_control(
+                'button2_link',
+                [
+                    'label' => __( 'Button URL', 'busicon-elementor-addons' ),
+                    'type' => \Elementor\Controls_Manager::URL,
+                    'default' => [
+                        'url' => '#',
+                        'is_external' => false,
+                        'nofollow' => false,
+                        // 'custom_attributes' => '',
+                    ],
+                    'placeholder' => __( 'https://your-link.com', 'busicon-elementor-addons' ),
                 ]
             );
         $this->end_controls_section();
@@ -121,7 +175,7 @@ class HeroText extends \Elementor\Widget_Base{
 
         $this->start_controls_section(
             'general_section', [
-                'label' => __( 'General', 'busicon-elementor-extension' ),
+                'label' => __( 'General', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -129,11 +183,11 @@ class HeroText extends \Elementor\Widget_Base{
             $this->add_control(
                 'select_style',
                 [
-                    'label' => __( 'Select Style', 'busicon-elementor-extension' ),
+                    'label' => __( 'Select Style', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => [
-                        'one' => __( 'One', 'busicon-elementor-extension' ),
-                        'two' => __( 'Two', 'busicon-elementor-extension' ),
+                        'one' => __( 'One', 'busicon-elementor-addons' ),
+                        'two' => __( 'Two', 'busicon-elementor-addons' ),
                     ],
                     'default' => 'one',
                 ]
@@ -144,14 +198,14 @@ class HeroText extends \Elementor\Widget_Base{
         //------------------------------ Style subtitle ------------------------------
         $this->start_controls_section(
             'style_subtitle', [
-                'label' => __( 'Subtitle', 'busicon-elementor-extension' ),
+                'label' => __( 'Subtitle', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
             $this->add_control(
                 'color_subtitle', [
-                    'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .hero-text .subtitle' => 'color: {{VALUE}};',
@@ -167,7 +221,7 @@ class HeroText extends \Elementor\Widget_Base{
             $this->add_responsive_control(
                 'subtitle_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -181,14 +235,14 @@ class HeroText extends \Elementor\Widget_Base{
         //------------------------------ Style Title ------------------------------
         $this->start_controls_section(
             'style_title', [
-                'label' => __( 'Title', 'busicon-elementor-extension' ),
+                'label' => __( 'Title', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
             $this->add_control(
                 'color_title', [
-                    'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .hero-text .title' => 'color: {{VALUE}};',
@@ -204,7 +258,7 @@ class HeroText extends \Elementor\Widget_Base{
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -217,14 +271,14 @@ class HeroText extends \Elementor\Widget_Base{
         //------------------------------ Description ------------------------------
         $this->start_controls_section(
             'style_description', [
-                'label' => __( 'Description', 'busicon-elementor-extension' ),
+                'label' => __( 'Description', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
 
             $this->add_control(
                 'color_description', [
-                    'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .hero-text .description' => 'color: {{VALUE}};',
@@ -240,7 +294,7 @@ class HeroText extends \Elementor\Widget_Base{
             $this->add_responsive_control(
                 'description_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -251,13 +305,9 @@ class HeroText extends \Elementor\Widget_Base{
 
         $this->end_controls_section();
 
-
-
-
-        //------------------------------ Style Button ------------------------------
         $this->start_controls_section(
-            'style_button', [
-                'label' => __( 'Button 1', 'busicon-elementor-extension' ),
+            'button1_style', [
+                'label' => __( 'Button 1', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -268,29 +318,28 @@ class HeroText extends \Elementor\Widget_Base{
                 $this->start_controls_tab(
                     'button_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'busicon-elementor-extension' ),
+                        'label' => __( 'Normal', 'busicon-elementor-addons' ),
                     ]
                 );
                 
                     $this->add_control(
                         'button_text_color',
                         [
-                            'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
-                                '{{WRAPPER}} .hero-text .butto' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .hero-text .button' => 'color: {{VALUE}};',
                             ],
                         ]
                     );
                     $this->add_control(
                         'button_background_color',
                         [
-                            'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Background Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
-                            'default' => '',
                             'selectors' => [
-                                '{{WRAPPER}} .hero-text .butto::before' => 'background-color: {{VALUE}};',
+                                '{{WRAPPER}} .hero-text .button' => 'background-color: {{VALUE}};',
                             ],
                         ]
                     );
@@ -298,18 +347,18 @@ class HeroText extends \Elementor\Widget_Base{
                         \Elementor\Group_Control_Border::get_type(),
                         [
                             'name' => 'button_border',
-                            'label' => __( 'Border', 'busicon-elementor-extension' ),
-                            'selector' => '{{WRAPPER}} .hero-text .butto',
+                            'label' => __( 'Border', 'busicon-elementor-addons' ),
+                            'selector' => '{{WRAPPER}} .hero-text .button',
                         ]
                     );
                     $this->add_responsive_control(
                         'button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+                            'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
-                                '{{WRAPPER}} .hero-text .butto' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                                '{{WRAPPER}} .hero-text .button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                             ],
                         ]
                     );
@@ -318,29 +367,29 @@ class HeroText extends \Elementor\Widget_Base{
                 $this->start_controls_tab(
                     'button_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'busicon-elementor-extension' ),
+                        'label' => __( 'Hover', 'busicon-elementor-addons' ),
                     ]
                 );
 
                     $this->add_control(
                         'hover_button_text_color',
                         [
-                            'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
-                                '{{WRAPPER}} .hero-text .butto:hover' => 'color: {{VALUE}};',
+                                '{{WRAPPER}} .hero-text .button:hover' => 'color: {{VALUE}};',
                             ],
                         ]
                     );
                     $this->add_control(
                         'hover_button_background_color',
                         [
-                            'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Background Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
-                                '{{WRAPPER}} .hero-text .butto:hover::before' => 'background-color: {{VALUE}};',
+                                '{{WRAPPER}} .hero-text .button:hover::after' => 'background-color: {{VALUE}};',
                             ],
                         ]
                     );
@@ -348,18 +397,18 @@ class HeroText extends \Elementor\Widget_Base{
                         \Elementor\Group_Control_Border::get_type(),
                         [
                             'name' => 'hover_button_border',
-                            'label' => __( 'Border', 'busicon-elementor-extension' ),
-                            'selector' => '{{WRAPPER}} .hero-text .butto:hover',
+                            'label' => __( 'Border', 'busicon-elementor-addons' ),
+                            'selector' => '{{WRAPPER}} .hero-text .button:hover',
                         ]
                     );
                     $this->add_responsive_control(
                         'hover_button_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+                            'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
-                                '{{WRAPPER}} .hero-text .butto:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                                '{{WRAPPER}} .hero-text .button:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                             ],
                         ]
                     );
@@ -370,11 +419,11 @@ class HeroText extends \Elementor\Widget_Base{
             $this->add_responsive_control(
                 'button_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
-                        '{{WRAPPER}} .hero-text .butto' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                        '{{WRAPPER}} .hero-text .button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     ],
                     'separator' => 'before',
                 ]
@@ -384,7 +433,7 @@ class HeroText extends \Elementor\Widget_Base{
                 \Elementor\Group_Control_Typography::get_type(),
                 [
                     'name' => 'button_typography',
-                    'selector' => '{{WRAPPER}} .hero-text .butto',
+                    'selector' => '{{WRAPPER}} .hero-text .button',
                 ]
             );
 
@@ -392,11 +441,8 @@ class HeroText extends \Elementor\Widget_Base{
 
         $this->start_controls_section(
             'style_button_two', [
-                'label' => __( 'Button 2', 'busicon-elementor-extension' ),
+                'label' => __( 'Button 2', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'select_style' => 'one'
-                ],
             ]
         );
 
@@ -406,14 +452,14 @@ class HeroText extends \Elementor\Widget_Base{
                 $this->start_controls_tab(
                     'button_two_style_normal_tab',
                     [
-                        'label' => __( 'Normal', 'busicon-elementor-extension' ),
+                        'label' => __( 'Normal', 'busicon-elementor-addons' ),
                     ]
                 );
                 
                     $this->add_control(
                         'button_two_text_color',
                         [
-                            'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -424,7 +470,7 @@ class HeroText extends \Elementor\Widget_Base{
                     $this->add_control(
                         'button_two_background_color',
                         [
-                            'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Background Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -436,14 +482,14 @@ class HeroText extends \Elementor\Widget_Base{
                         \Elementor\Group_Control_Border::get_type(),
                         [
                             'name' => 'button_two_border',
-                            'label' => __( 'Border', 'busicon-elementor-extension' ),
+                            'label' => __( 'Border', 'busicon-elementor-addons' ),
                             'selector' => '{{WRAPPER}} .slider-section .hero-slider .slider-item .button-set a.button2',
                         ]
                     );
                     $this->add_responsive_control(
                         'button_two_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+                            'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -456,14 +502,14 @@ class HeroText extends \Elementor\Widget_Base{
                 $this->start_controls_tab(
                     'button_two_style_hover_tab',
                     [
-                        'label' => __( 'Hover', 'busicon-elementor-extension' ),
+                        'label' => __( 'Hover', 'busicon-elementor-addons' ),
                     ]
                 );
 
                     $this->add_control(
                         'hover_button_two_text_color',
                         [
-                            'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -474,7 +520,7 @@ class HeroText extends \Elementor\Widget_Base{
                     $this->add_control(
                         'hover_button_two_background_color',
                         [
-                            'label' => __( 'Background Color', 'busicon-elementor-extension' ),
+                            'label' => __( 'Background Color', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::COLOR,
                             'default' => '',
                             'selectors' => [
@@ -486,14 +532,14 @@ class HeroText extends \Elementor\Widget_Base{
                         \Elementor\Group_Control_Border::get_type(),
                         [
                             'name' => 'hover_button_two_border',
-                            'label' => __( 'Border', 'busicon-elementor-extension' ),
+                            'label' => __( 'Border', 'busicon-elementor-addons' ),
                             'selector' => '{{WRAPPER}} .slider-section .hero-slider .slider-item .button-set a.button2:hover',
                         ]
                     );
                     $this->add_responsive_control(
                         'hover_button_two_border_radius',
                         [
-                            'label' => __( 'Border Radius', 'busicon-elementor-extension' ),
+                            'label' => __( 'Border Radius', 'busicon-elementor-addons' ),
                             'type' => \Elementor\Controls_Manager::DIMENSIONS,
                             'size_units' => [ 'px', 'em', '%' ],
                             'selectors' => [
@@ -508,7 +554,7 @@ class HeroText extends \Elementor\Widget_Base{
             $this->add_responsive_control(
                 'button_two_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -535,12 +581,17 @@ class HeroText extends \Elementor\Widget_Base{
 
         $settings = $this->get_settings_for_display();
 
+        if ( ! empty( $settings['button1_link']['url'] ) ) {
+            $this->add_link_attributes( 'button1_link', $settings['button1_link'] );
+        }
+        if ( ! empty( $settings['button2_link']['url'] ) ) {
+            $this->add_link_attributes( 'button2_link', $settings['button2_link'] );
+        }
     ?>
 
     <?php if($settings['select_style']=='one'){ ?>
 
         <div class="hero-text style1">
-
             <?php if( !empty($settings['subtitle']) ){?>
                 <h3 class="subtitle"><?php echo $settings['subtitle']; ?></h3>
             <?php } ?>
@@ -551,66 +602,57 @@ class HeroText extends \Elementor\Widget_Base{
                 <p class="description"><?php echo $settings['description']; ?></p>
             <?php } ?>
             <div class="btn-set">
-                <a class="button" href="<?php echo esc_url($settings['button_link']['url']); ?>"><?php echo $settings['button_text']; ?></a>
-                <a class="video-btn venobox" data-vbtype="video" data-autoplay="true" href="<?php echo esc_url($settings['video_button_url']['url']); ?>">
-                    <?php \Elementor\Icons_Manager::render_icon( $settings['video_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                <a class="button" <?php echo $this->get_render_attribute_string( 'button1_link' ); ?>>
+                    <?php echo $settings['button1_text']; ?>
+                    <?php \Elementor\Icons_Manager::render_icon( $settings['button1_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                 </a>
-                <?php if(!empty($settings['video_title'])){ ?>
-                    <span class="video-title"><?php echo $settings['video_title']; ?></span>
+                <?php if ( 'yes' === $settings['show_button2'] ) { ?>
+                <div class="btn2">
+                    <div class="btn-icon">
+                        <?php \Elementor\Icons_Manager::render_icon( $settings['button2_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                    </div>
+                    <div class="text">
+                        <?php if(!empty($settings['button2_subtitle'])){ ?>
+                            <h5><?php echo $settings['button2_subtitle']; ?></h5>
+                        <?php } ?>
+                        <a <?php echo $this->get_render_attribute_string( 'button2_link' ); ?>><?php echo $settings['button2_title']; ?></a>
+                    </div>
+                </div>
                 <?php } ?>
             </div>
         </div>
 
-        <script>
-            jQuery(document).ready(function($) {
-                "use strict";
-                $('.venobox').venobox();
-            });
-        </script>
-
     <?php }elseif($settings['select_style']=='two'){ ?>
 
-    <div class="slider-section2">
-        <div class="hero-slider owl-carousel">
-            <?php foreach (  $settings['list'] as $item ) { ?>
-            <div class="slider-item" style="background-image: url('<?php echo esc_url($item['bg_image']['url']); ?>'); background-size: cover; background-repeat: no-repeat;">
-                <div class="container">
-                    <div class="text-area">
-                        <div class="title">
-                            <h1><?php echo $item['list_title']; ?></h1>
-                        </div>
-                        <div class="description">
-                            <p><?php echo $item['item_description']; ?></p>
-                        </div>
-                        <div class="button-set">
-                            <a href="<?php echo esc_url($item['button1_link']['url']); ?>"><?php echo $item['button1_text']; ?></a>
+        <div class="hero-text style2">
+            <?php if( !empty($settings['subtitle']) ){?>
+                <h3 class="subtitle"><?php echo $settings['subtitle']; ?></h3>
+            <?php } ?>
 
-                            <?php if( !empty($item['video_link']['url']) ){ ?>
-                                <a class="button2" href="<?php echo esc_url($item['video_link']['url']); ?>"><i class="fa fa-play"></i></a>
-                            <?php } ?>
-                        </div>
+            <h1 class="title"><?php echo $settings['title']; ?></h1>
+
+            <?php if( !empty($settings['description']) ){?>
+                <p class="description"><?php echo $settings['description']; ?></p>
+            <?php } ?>
+            <div class="btn-set">
+                <a class="button" <?php echo $this->get_render_attribute_string( 'button1_link' ); ?>>
+                    <?php echo $settings['button1_text']; ?><?php \Elementor\Icons_Manager::render_icon( $settings['button1_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                </a>
+                <?php if ( 'yes' === $settings['show_button2'] ) { ?>
+                <div class="btn2">
+                    <div class="btn-icon">
+                        <?php \Elementor\Icons_Manager::render_icon( $settings['button2_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                    </div>
+                    <div class="text">
+                        <?php if(!empty($settings['button2_subtitle'])){ ?>
+                            <h5><?php echo $settings['button2_subtitle']; ?></h5>
+                        <?php } ?>
+                        <a <?php echo $this->get_render_attribute_string( 'button2_link' ); ?>><?php echo $settings['button2_title']; ?></a>
                     </div>
                 </div>
+                <?php } ?>
             </div>
-            <?php } ?>
         </div>
-    </div>
-
-    <script>
-        jQuery(document).ready(function($) {
-            "use strict";
-            $(".hero-slider").owlCarousel({
-                items:1,
-                nav:true,
-                navText:["<i class='bi bi-arrow-left'></i>","<i class='bi bi-arrow-right'></i>"],
-                dots:false,
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:5000,
-                animateOut: 'fadeOut',
-            });
-        });
-    </script>
 
     <?php } ?>
 

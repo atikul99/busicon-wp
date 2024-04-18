@@ -367,6 +367,135 @@ $section = array(
 
 Redux::set_section( $opt_name, $section );
 
+/* -> START Header 2 Settings. */
+
+Redux::set_section(
+	$opt_name, 
+	array(
+		'title'  => esc_html__( 'Header 2', 'busicon' ),
+		'id'     => 'header_2',
+		'subsection' => true,
+		'icon'   => 'el el-share-alt',
+		'heading' => '',
+		'fields' => array(
+			array(
+				'id'       => 'topbar2_start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Topbar', 'busicon' ),
+				'indent' => true 
+			),
+			array(
+				'id'       => 'topbar2_facebook',
+				'type'     => 'text',
+				'title'    => __('Facebook URL', 'busicon'),
+				'default'  => esc_html__('#', 'busicon'),
+			),
+			array(
+				'id'       => 'topbar2_instagram',
+				'type'     => 'text',
+				'title'    => __('Instagram URL', 'busicon'),
+				'default'  => esc_html__('#', 'busicon'),
+			),
+			array(
+				'id'       => 'topbar2_twitter',
+				'type'     => 'text',
+				'title'    => __('Twitter URL', 'busicon'),
+				'default'  => esc_html__('#', 'busicon'),
+			),
+			array(
+				'id'       => 'topbar2_linkedin',
+				'type'     => 'text',
+				'title'    => __('Linkedin URL', 'busicon'),
+				'default'  => esc_html__('#', 'busicon'),
+			),
+			array(
+				'id'       => 'topbar2_email',
+				'type'     => 'text',
+				'title'    => __('Email', 'busicon'),
+				'default'  => esc_html__('info@example.com', 'busicon'),
+			),
+			array(
+				'id'       => 'topbar2_address',
+				'type'     => 'text',
+				'title'    => __('Address', 'busicon'),
+				'default'  => esc_html__('6391 Elgin St. Celina, 10299', 'busicon'),
+			),
+			array(
+				'id'       => 'topbar2_btn_switch',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Button Switch', 'busicon' ),
+				'default'  => true,
+			),
+			array(
+				'id'       => 'topbar2_button_text',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Button Text', 'busicon' ),
+				'default'  => 'Get A Quote',
+			),
+			array(
+				'id'       => 'topbar2_button_link',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Button Link', 'busicon' ),
+				'default'  => '#',
+			),
+			array(
+				'id'       => 'topbar2_button_bg',
+				'type'     => 'background',
+				'title'    => esc_html__( 'Button Background', 'busicon' ),
+				'validate' => 'color',
+				'output'    => array('.site-header2 .top-bar .contact .menu-btn a'),
+			),
+			array(
+				'id'       => 'topbar2_end',
+				'type'     => 'section',
+				'indent' => false, 
+			),
+			array(
+				'id'       => 'menu2_start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Menubar', 'busicon' ),
+				'indent' => true 
+			),
+			array(
+				'id'       => 'menu2_logo',
+				'type'     => 'media',
+				'title'    => esc_html__( 'Logo', 'busicon' ),
+				'desc'     => esc_html__( 'This logo only work in header 2.', 'busicon' ),
+			),
+			array(
+				'id'       => 'menu2_phone_switch',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Phone Switch', 'busicon' ),
+				'default'  => true,
+			),
+			array(
+				'id'       => 'menu2_phone_icon_color',
+				'type'     => 'color',
+				'title'    => esc_html__( 'Phone Icon Color', 'busicon' ),
+				'validate' => 'color',
+				'output'    => array('.site-header2 .menu-bar .menu-phone .phone-icon'),
+			),
+			array(
+				'id'       => 'menu2_phone_text',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Phone Text', 'busicon' ),
+				'default'  => 'Requesting A Call:',
+			),
+			array(
+				'id'       => 'menu2_phone',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Phone Number', 'busicon' ),
+				'default'  => '(629)-555-0129',
+			),
+			array(
+				'id'       => 'menu2_end',
+				'type'     => 'section',
+				'indent' => false, 
+			),
+		)
+	)
+);
+
 /* -> START Mobile Menu Settings. */
 
 Redux::set_section(
@@ -376,6 +505,12 @@ Redux::set_section(
 		'id'     => 'mobile_menu',
 		'icon'   => 'el el-braille',
 		'fields' => array(
+			array(
+				'id'       => 'mobile_logo',
+				'type'     => 'media',
+				'title'    => esc_html__( 'Mobile Menu Logo', 'busicon' ),
+				'desc'     => esc_html__( 'Upload logo here.ex: - it is work in mobile menu.', 'busicon' ),
+			),
 			array(
 				'id'       => 'mobile_menu_contact_switch',
 				'type'     => 'switch',
@@ -646,12 +781,6 @@ $section = array(
 			'default'	=> esc_html__('Standard Blog', 'busicon'),
 		),
 		array(
-			'id'       => 'blog_page_category_switch',
-			'type'     => 'switch',
-			'title'    => __('Post Category Switch', 'busicon'),
-			'default'	=> true,
-		),
-		array(
 			'id'       => 'blog_page_meta_switch',
 			'type'     => 'switch',
 			'title'    => __('Post Meta Switch', 'busicon'),
@@ -661,7 +790,7 @@ $section = array(
 			'id'       => 'blog_page_btn_text',
 			'type'     => 'text',
 			'title'    => __('Button Text', 'busicon'),
-			'default'	=> esc_html__('Continue Reading', 'busicon'),
+			'default'	=> esc_html__('Read More', 'busicon'),
 		),
 	),
 );

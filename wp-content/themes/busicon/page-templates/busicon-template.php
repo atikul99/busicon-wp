@@ -15,14 +15,27 @@
 get_header();
 ?>
 
-	<?php $show_breadcumb  = get_post_meta( get_the_ID(),'show_breadcrumbs', true ); ?>
-	
-	<?php if( $show_breadcumb == 0 ){ ?>
+	<?php
+		$show_breadcrumb = 1;
+
+		if( class_exists( 'Redux_Framework_Plugin' ) && $busicon_opt['breadcrumb_switch'] == 1 ){
+			$show_breadcrumb = 1;
+			if( get_post_meta( get_the_ID(),'show_breadcrumbs', true ) == 1 ){
+				$show_breadcrumb = 1;
+			}elseif( get_post_meta( get_the_ID(),'show_breadcrumbs', true ) == 0 ){
+				$show_breadcrumb = 0;
+			}
+		}elseif( class_exists( 'Redux_Framework_Plugin' ) && $busicon_opt['breadcrumb_switch'] == 0 ){
+			$show_breadcrumb = 0;
+		}
+	?>
+
+	<?php if( $show_breadcrumb == 1 ){ ?>
 	<div class="breadcrumb-area">
 		<div class="container">
 			<div class="text-wrapper">
 				<div class="title">
-					<h1><?php wp_title(''); ?></h1>
+					<h1><?php echo get_the_title(); ?></h1>
 				</div>
 				<div class="breadcrumb-items">
 					<?php busicon_breadcrumbs(); ?>

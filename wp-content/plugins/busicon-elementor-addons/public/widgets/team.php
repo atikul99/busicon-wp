@@ -60,22 +60,15 @@ class Team extends \Elementor\Widget_Base{
             $repeater = new \Elementor\Repeater();
 
             $repeater->add_control(
-                'icon',
+                'social_icon',
                 [
                     'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::ICONS,
+                    'fa4compatibility' => 'social',
                     'default' => [
-                        'value' => 'fab fa-facebook-f',
-                        'library' => 'brand',
+                        'value' => 'fab fa-wordpress',
+                        'library' => 'fa-brands',
                     ],
-                ]
-            );
-            $repeater->add_control(
-                'social_name', [
-                    'label' => __( 'Social Media Name', 'busicon-elementor-addons' ),
-                    'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Facebook' , 'busicon-elementor-addons' ),
-                    'label_block' => true,
                 ]
             );
             $repeater->add_control(
@@ -100,13 +93,19 @@ class Team extends \Elementor\Widget_Base{
                     'fields' => $repeater->get_controls(),
                     'default' => [
                         [
-                            'social_name' => __( 'Facebook', 'busicon-elementor-addons' ),
+                            'social_icon' => [
+                                'value' => 'fab fa-facebook',
+                                'library' => 'fa-brands',
+                            ],
                         ],
                         [
-                            'social_name' => __( 'Twitter', 'busicon-elementor-addons' ),
+                            'social_icon' => [
+                                'value' => 'fab fa-twitter',
+                                'library' => 'fa-brands',
+                            ],
                         ],
                     ],
-                    'title_field' => '{{{ social_name }}}',
+                    'title_field' => '<# var migrated = "undefined" !== typeof __fa4_migrated, social = ( "undefined" === typeof social ) ? false : social; #>{{{ elementor.helpers.getSocialNetworkNameFromIcon( social_icon, social, true, migrated, true ) }}}',
                 ]
             );
 
@@ -270,7 +269,7 @@ Style Tab
                             <?php foreach (  $settings['list'] as $item ) { ?>
                             <li>
                                 <a href="<?php echo esc_url($item['social_link']['url']); ?>">
-                                    <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                    <?php \Elementor\Icons_Manager::render_icon( $item['social_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                                 </a>
                             </li>
                             <?php } ?>
@@ -288,7 +287,7 @@ Style Tab
                             <?php foreach (  $settings['list'] as $item ) { ?>
                             <li>
                                 <a href="<?php echo esc_url($item['social_link']['url']); ?>">
-                                    <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                    <?php \Elementor\Icons_Manager::render_icon( $item['social_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                                 </a>
                             </li>
                             <?php } ?>
@@ -321,7 +320,7 @@ Style Tab
                             <?php foreach (  $settings['list'] as $item ) { ?>
 
                                 <a href="<?php echo esc_url($item['social_link']['url']); ?>">
-                                    <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                    <?php \Elementor\Icons_Manager::render_icon( $item['social_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                                 </a>
                             <?php } ?>
                         </div>

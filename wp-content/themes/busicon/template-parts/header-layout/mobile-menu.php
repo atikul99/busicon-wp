@@ -19,10 +19,8 @@ global $busicon_opt;
 					the_custom_logo();
 				}else{ ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<?php if ( !empty($busicon_opt['transparent_logo']['url']) ){ ?>
-							<img src="<?php echo esc_url($busicon_opt['transparent_logo']['url']); ?>" alt="logo">
-						<?php }elseif( !empty($busicon_opt['default_logo']['url']) ){ ?>
-							<img src="<?php echo esc_url($busicon_opt['default_logo']['url']); ?>" alt="logo">
+						<?php if ( !empty($busicon_opt['mobile_logo']['url']) ){ ?>
+							<img src="<?php echo esc_url($busicon_opt['mobile_logo']['url']); ?>" alt="logo">
 						<?php }else{ ?>
 							<h2><?php bloginfo( 'name' ); ?></h2>
 						<?php } ?>

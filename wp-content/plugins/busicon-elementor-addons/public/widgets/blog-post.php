@@ -227,10 +227,10 @@ Style Tab
 
 			<div class="blog-post style1">
 				<div class="blog-lists">
-					<div class="row">
+					
 					<?php $the_query = new \WP_Query( array( 'post_type' => 'post' ) ); ?>
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-						<div class="col-lg-4">
+						
 					<?php $url = get_the_post_thumbnail_url(); ?>
 					<div class="blog-box">
 						<div class="post-thumb">
@@ -248,106 +248,37 @@ Style Tab
 						</div>
 					</div>
 
-						</div>
-
 					<?php endwhile; ?>
-					</div>
+					
 				</div>
 			</div>
-
-			<script>
-				// jQuery(document).ready(function($) {
-				// 	"use strict";
-				// 	$('.blog-lists').owlCarousel({
-				// 		autoplay: false,
-				// 		loop: true,
-				// 		dots: false,
-				// 		nav: false,
-				// 		margin: 20,
-				// 		autoplayTimeout: 5000,
-				// 		navText: ["<i class='bi bi-arrow-left'></i>", "<i class='bi bi-arrow-right'></i>"],
-				// 		responsive: {
-				// 			0: {
-				// 				items: 1,
-				// 				nav: false,
-				// 			},
-				// 			768: {
-				// 				items: 2,
-				// 				nav: false,
-				// 			},
-				// 			992: {
-				// 				items: 2,
-				// 				nav: false,
-				// 			},
-				// 			1024: {
-				// 				items: 3
-				// 			},
-				// 			1920: {
-				// 				items: 3
-				// 			}
-				// 		}
-				// 	})
-				// });
-			</script>
 
 		<?php }elseif($settings['select_style']=='two'){ ?>
 		
         	<div class="blog-post style2">
-        		<div class="blog-carousel owl-carousel">
+        		<div class="blog-lists">
         			<?php $the_query = new \WP_Query( array( 'post_type' => 'post' ) ); ?>
 					<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-					<?php $url = get_the_post_thumbnail_url(); ?>
 					<div class="blog-box">
-						<div class="blog-thumb" style="background-image: url('<?php echo $url;?>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+						<div class="blog-thumb">
+							<?php the_post_thumbnail(); ?>
 						</div>
 						<div class="blog-content">
+							<div class="date"><?php echo get_the_date( 'd M' ) ?></div>
 							<div class="blog-meta">
-								<div class="category">
-									<i class="bi bi-bookmark"></i>
-									<?php the_category();?>
-								</div>
+								<div class="author"><?php esc_html_e('By ', 'busicon-elementor-addons'); the_author();?></div>
 							</div>
 							<h4 class="blog-title"><a href="<?php the_permalink(); ?>"><?php echo wp_trim_words( get_the_title(), 6, '' ); ?></a></h4>
-							<p class="description"><?php echo wp_trim_words(get_the_content(), 10, ''); ?></p>
-						</div>
-						<div class="blog-footer">
-						    <p>Continue Reading</p>
-						    <a href="<?php the_permalink(); ?>"><i aria-hidden="true" class="flaticon flaticon-right-arrow"></i></a>
+							<div class="underline"></div>
+							<p class="description"><?php echo wp_trim_words(get_the_content(), 15, ''); ?></p>
+							<a class="read-more" href="<?php the_permalink(); ?>"><?php echo $settings['button_text']; ?><i aria-hidden="true" class="fa-solid fa-arrow-right"></i></a>
 						</div>
 					</div>
 
         			<?php endwhile; ?>
         		</div>
         	</div>
-
-    		<script>
-    			jQuery(document).ready(function($) {
-    				"use strict";
-                	
-                	$('.blog-carousel').owlCarousel({
-                		dots: false,
-                		nav: false,
-                		autoplayTimeout: 10000,
-                		margin: 25,
-                		navText: ["<i class='fa fa-long-arrow-left'></i>", "<i class='fa fa-long-arrow-right''></i>"],
-                		responsive: {
-                			0: {
-                				items: 1
-                			},
-                			768: {
-                				items: 2
-                			},
-                			992: {
-                				items: 2
-                			},
-                			1920: {
-                				items: 3
-                			}
-                		}
-                	})	
-            		});
-            	</script>
 
 		<?php }elseif($settings['select_style']=='three'){ ?>
 

@@ -68,7 +68,7 @@ class Busicon_Elementor_Addons_Public {
 
 		wp_enqueue_style( 'owl-theme', plugin_dir_url( __FILE__ ) . 'css/owl.theme.default.min.css', array(), $this->version, 'all' );
 
-		wp_enqueue_style( 'venobox', plugin_dir_url( __FILE__ ) . 'css/venobox.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'venobox', plugin_dir_url( __FILE__ ) . 'css/venobox.css', array(), $this->version, 'all' );
 
 		wp_enqueue_style( 'widget-style', plugin_dir_url( __FILE__ ) . 'css/widget-style.css', array(), $this->version, 'all' );
 
@@ -85,11 +85,11 @@ class Busicon_Elementor_Addons_Public {
 
 		wp_enqueue_script( 'owl-script', plugin_dir_url( __FILE__ ) . 'js/owl.carousel.min.js', array( 'jquery' ), $this->version, false );
 
-		wp_enqueue_script( 'venobox', plugin_dir_url( __FILE__ ) . 'js/venobox.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'venobox', plugin_dir_url( __FILE__ ) . 'js/venobox.min.js', array( 'jquery' ), $this->version, true );
 
 		wp_enqueue_script( 'isotope', plugin_dir_url( __FILE__ ) . 'js/isotope.pkgd.min.js', array( 'jquery' ), '3.0.0', true );
 
-		wp_enqueue_script( 'widgets-script', plugin_dir_url( __FILE__ ) . 'js/widgets-script.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'widgets-script', plugin_dir_url( __FILE__ ) . 'js/widgets-script.js', array( 'jquery' ), $this->version, true );
 	}
 
 	public function init_widgets() {
@@ -101,8 +101,8 @@ class Busicon_Elementor_Addons_Public {
 		require_once( __DIR__ . '/widgets/item-list.php');
 		require_once( __DIR__ . '/widgets/section-title.php');
 		require_once( __DIR__ . '/widgets/service-carousel.php');
-		require_once( __DIR__ . '/widgets/work-process.php');
 		require_once( __DIR__ . '/widgets/team.php');
+		require_once( __DIR__ . '/widgets/team-carousel.php');
 		require_once( __DIR__ . '/widgets/button.php');
 		require_once( __DIR__ . '/widgets/circular-progress.php');
 		require_once( __DIR__ . '/widgets/progress-bar.php');
@@ -118,7 +118,7 @@ class Busicon_Elementor_Addons_Public {
 		require_once( __DIR__ . '/widgets/portfolio-carousel.php');
 		require_once( __DIR__ . '/widgets/case-study.php');
 		require_once( __DIR__ . '/widgets/portfolio-tab.php');
-		require_once( __DIR__ . '/widgets/portfolio-list.php');
+		require_once( __DIR__ . '/widgets/portfolio-grid.php');
 		require_once( __DIR__ . '/widgets/copyright-menu.php');
 		require_once( __DIR__ . '/widgets/working-process.php');
 		require_once( __DIR__ . '/widgets/icon-box.php');
@@ -127,9 +127,10 @@ class Busicon_Elementor_Addons_Public {
 		require_once( __DIR__ . '/widgets/accordion.php');
 		require_once( __DIR__ . '/widgets/heading.php');
 		require_once( __DIR__ . '/widgets/nav-menu.php');
-		require_once( __DIR__ . '/widgets/gallery.php');
+		require_once( __DIR__ . '/widgets/image-gallery.php');
 		require_once( __DIR__ . '/widgets/counter-box.php');
 		require_once( __DIR__ . '/widgets/signature-box.php');
+		require_once( __DIR__ . '/widgets/author-card.php');
 
 		// Register widget
 		
@@ -140,8 +141,8 @@ class Busicon_Elementor_Addons_Public {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ItemList());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new SectionTitle());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ServiceCarousel());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new WorkProcess());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Team());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new TeamCarousel());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new busiconButton());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new CircleProgress());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new ProgressBar());
@@ -157,7 +158,7 @@ class Busicon_Elementor_Addons_Public {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PortfolioCarousel());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new CaseStudy());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PortfolioTab());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PortfolioList());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new PortfolioGrid());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new CopyrightMenu());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new WorkingProcess());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new IconBox());
@@ -166,9 +167,10 @@ class Busicon_Elementor_Addons_Public {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new busiconAccordion());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new busiconHeading());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new busiconNavMenu());
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new busiconGallery());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new imageGallery());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new CounterBox());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new SignatureBox());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new AuthorCard());
 		
 		add_action( 'elementor/elements/categories_registered', [$this, 'add_category'] );
 	}

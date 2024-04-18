@@ -50,17 +50,113 @@ class SingleImage extends \Elementor\Widget_Base{
 					],
 				]
 			);
+			$this->add_control(
+				'shape',
+				[
+					'label' => esc_html__( 'Shape', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::MEDIA,
+					'default' => [
+						'url' => esc_url( plugins_url( 'images/dots.png', dirname(__FILE__) ) ),
+					],
+				]
+			);
+			$this->add_control(
+				'website_link',
+				[
+					'label' => esc_html__( 'Link', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::URL,
+					'options' => [ 'url', 'is_external', 'nofollow' ],
+					'default' => [
+						'url' => '#',
+						'is_external' => false,
+						'nofollow' => false,
+						// 'custom_attributes' => '',
+					],
+					'label_block' => true,
+				]
+			);
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'text_section',
+			[
+				'label' => __( 'Text', 'busicon-elementor-addons' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+			$this->add_control(
+				'icons_type',
+				[
+					'label' => esc_html__('Icon Type','busicon-elementor-addons'),
+					'type' => \Elementor\Controls_Manager::CHOOSE,
+					'options' =>[
+						'img' =>[
+							'title' =>esc_html__('Image','busicon-elementor-addons'),
+							'icon' =>'far fa-image',
+						],
+						'icon' =>[
+							'title' =>esc_html__('Icon','busicon-elementor-addons'),
+							'icon' =>'fa fa-info',
+						]
+					],
+					'default' => 'icon',
+				]
+			);
+			$this->add_control(
+				'select_icon',
+				[
+					'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::ICONS,
+					'condition'=>[
+						'icons_type'=> 'icon',
+					],
+					'label_block' => true,
+				]
+			);
+			$this->add_control(
+				'select_img',
+				[
+					'label' => esc_html__('Image','busicon-elementor-addons'),
+					'type'=> \Elementor\Controls_Manager::MEDIA,
+					'default' => [
+						'url' => \Elementor\Utils::get_placeholder_image_src(),
+					],
+					'condition' => [
+						'icons_type' => 'img',
+					]
+				]
+			);
+			$this->add_control(
+				'widget_title',
+				[
+					'label' => esc_html__( 'Title', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => esc_html__( 'Default title', 'busicon-elementor-addons' ),
+					'placeholder' => esc_html__( 'Type your title here', 'busicon-elementor-addons' ),
+					'label_block'  => true,
+				]
+			);
+			$this->add_control(
+				'widget_subtitle',
+				[
+					'label' => esc_html__( 'Subtitle', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'default' => esc_html__( 'Default subtitle', 'busicon-elementor-addons' ),
+					'placeholder' => esc_html__( 'Type your subtitle here', 'busicon-elementor-addons' ),
+					'label_block'  => true,
+				]
+			);
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'counter_box',
 			[
-				'label' => __( 'Box', 'busicon-elementor-addons' ),
+				'label' => __( 'Counter Box', 'busicon-elementor-addons' ),
 			]
 		);
 
 			$this->add_control(
-				'icons_type',
+				'counter_icons_type',
 				[
 				    'label' => esc_html__('Icon Type','busicon-elementor-addons'),
 				    'type' => \Elementor\Controls_Manager::CHOOSE,
@@ -78,7 +174,7 @@ class SingleImage extends \Elementor\Widget_Base{
 				]
 			 );
 			 $this->add_control(
-				'select_icon',
+				'select_counter_icon',
 				[
 					'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
@@ -89,7 +185,7 @@ class SingleImage extends \Elementor\Widget_Base{
 				]
 			);
 			$this->add_control(
-				'select_img',
+				'select_counter_img',
 				[
 				    'label' => esc_html__('Image','busicon-elementor-addons'),
 				    'type'=> \Elementor\Controls_Manager::MEDIA,
@@ -147,21 +243,6 @@ class SingleImage extends \Elementor\Widget_Base{
 					'placeholder' => esc_html__( 'Type your description here', 'busicon-elementor-addons' ),
 				]
 			);
-            $this->add_control(
-                'link',
-                [
-				    'label' => esc_html__( 'Link', 'busicon-elementor-addons' ),
-				    'type' => \Elementor\Controls_Manager::URL,
-				    'options' => [ 'url', 'is_external', 'nofollow' ],
-				    'default' => [
-					    'url' => '',
-					    'is_external' => true,
-					    'nofollow' => true,
-					    // 'custom_attributes' => '',
-				    ],
-				    'label_block' => true,
-                ]
-            );
             
 		$this->end_controls_section();
 
@@ -190,6 +271,7 @@ Style Tab
 						'two' => __( 'Two', 'busicon-elementor-addons' ),
 						'three' => __( 'Three', 'busicon-elementor-addons' ),
 						'four' => __( 'Four', 'busicon-elementor-addons' ),
+						'five' => __( 'Five', 'busicon-elementor-addons' ),
 
 					],
 					'default' => 'one',
@@ -234,72 +316,17 @@ Style Tab
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
-
 			$this->add_control(
-				'height',
+				'show_image2',
 				[
-					'label' => esc_html__( 'Height', 'busicon-elementor-addons' ),
-					'type' => \Elementor\Controls_Manager::SLIDER,
-					'size_units' => [ 'px', '%' ],
-					'range' => [
-						'px' => [
-							'min' => 0,
-							'max' => 1000,
-							'step' => 5,
-						],
-						'%' => [
-							'min' => 0,
-							'max' => 100,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .single-image img' => 'height: {{SIZE}}{{UNIT}};',
-					],
+					'label' => esc_html__( 'Show Image 2', 'busicon-elementor-addons' ),
+					'type' => \Elementor\Controls_Manager::SWITCHER,
+					'label_on' => esc_html__( 'Show', 'busicon-elementor-addons' ),
+					'label_off' => esc_html__( 'Hide', 'busicon-elementor-addons' ),
+					'return_value' => 'yes',
+					'default' => 'yes',
 				]
 			);
-			$this->add_control(
-				'width',
-				[
-					'label' => esc_html__( 'Width', 'busicon-elementor-addons' ),
-					'type' => \Elementor\Controls_Manager::SLIDER,
-					'size_units' => [ 'px', '%' ],
-					'range' => [
-						'px' => [
-							'min' => 0,
-							'max' => 1000,
-							'step' => 5,
-						],
-						'%' => [
-							'min' => 0,
-							'max' => 100,
-						],
-					],
-					'selectors' => [
-						'{{WRAPPER}} .single-image img' => 'width: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'border_style',
-			[
-				'label' => __( 'Border', 'busicon-elementor-addons' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'border_color',
-			[
-				'label' => esc_html__( 'Color', 'busicon-elementor-addons' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .single-image.style1::before' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
 
 		$this->end_controls_section();
 
@@ -309,23 +336,62 @@ Style Tab
 
 		$settings = $this->get_settings_for_display();
 
+		if ( ! empty( $settings['website_link']['url'] ) ) {
+			$this->add_link_attributes( 'website_link', $settings['website_link'] );
+		}
 	?>
 
 		<?php if($settings['select_style']=='one'){ ?>
 
 			<div class="single-image style1">
-				<div class="bar"></div>
 				<div class="image1">
-					<img src="<?php echo $settings['image']['url']; ?>" alt="">
+					<img src="<?php echo $settings['image']['url']; ?>" alt="image1">
+				</div>
+				<?php if ( 'yes' === $settings['show_image2'] ) { ?>
+					<div class="image2">
+						<img src="<?php echo $settings['image2']['url']; ?>" alt="image2">
+						<?php if ( ! empty( $settings['website_link']['url'] ) ) { ?>
+							<div class="video-icon">
+								<a class="venobox vbox-item" data-vbtype="youtube" data-autoplay="true" <?php echo $this->get_render_attribute_string( 'website_link' ); ?>><i class="fa fa-play"></i></a>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+				<div class="text-box">
+					<div class="box-icon">
+						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+						<?php if(!empty($settings['select_img']['url'])){ ?>
+							<img src="<?php echo $settings['select_img']['url']; ?>" alt="icon">
+						<?php } ?>
+					</div>
+					<div class="content">
+						<h4 class="title"><?php echo $settings['widget_title']; ?></h4>
+						<p class="subtitle"><?php echo $settings['widget_subtitle']; ?></p>
+					</div>
+				</div>
+				<?php if(!empty($settings['shape']['url'])){ ?>
+					<div class="shape">
+						<img src="<?php echo $settings['shape']['url']; ?>" alt="shape">
+					</div>
+				<?php } ?>
+			</div>
+
+		<?php }elseif($settings['select_style']=='two'){ ?>
+
+			<div class="single-image style2">
+				<div class="image1">
+					<img src="<?php echo $settings['image']['url']; ?>" alt="image1">
 				</div>
 				<div class="image2">
-					<img src="<?php echo $settings['image2']['url']; ?>" alt="">
+					<img src="<?php echo $settings['image2']['url']; ?>" alt="image2">
 				</div>
-
-				<div class="counter-box">
-					<div class="icon">
-						<img src="<?php echo $settings['select_img']['url']; ?>" alt="">
+				<div class="text-box">
+					<div class="content">
+						<h4 class="title"><?php echo $settings['widget_title']; ?></h4>
+						<p class="subtitle"><?php echo $settings['widget_subtitle']; ?></p>
 					</div>
+				</div>
+				<div class="counter-box">
 					<div class="counter">
 						<div class="number">
 							<h2 class="count percent" data-count="<?php echo $settings['number']; ?>">0</h2>
@@ -334,10 +400,14 @@ Style Tab
 						<p class="title"><?php echo $settings['title']; ?></p>
 					</div>
 				</div>
+				<?php if(!empty($settings['shape']['url'])){ ?>
+					<div class="shape">
+						<img src="<?php echo $settings['shape']['url']; ?>" alt="shape">
+					</div>
+				<?php } ?>
 			</div>
 
 			<script>
-
 				jQuery(document).ready(function($) {
 					"use strict";
 
@@ -373,70 +443,57 @@ Style Tab
 
 					});
 				});
-
 			</script>
-
-		<?php }elseif($settings['select_style']=='two'){ ?>
-
-			<div class="single-image style2">
-				<div class="image">
-					<img src="<?php echo $settings['image']['url']; ?>" alt="">
-					<div class="box">
-						<div class="icon">
-							<?php if(!empty($settings['select_img'])){ ?>
-								<img src="<?php echo $settings['select_img']['url']; ?>" alt="">
-							<?php } ?>
-						</div>
-						<h6 class="title"><?php echo $settings['title']; ?></h6>
-					</div>
-				</div>
-			</div>
 
 		<?php }elseif($settings['select_style']=='three'){ ?>
 
 			<div class="single-image style3">
-				<div class="image">
-					<img src="<?php echo $settings['image']['url']; ?>" alt="">
-					<div class="shape">
-						<img src="<?php echo $settings['image2']['url']; ?>" alt="">
+				<div class="image1">
+					<img src="<?php echo $settings['image']['url']; ?>" alt="image1">
+				</div>
+				<div class="text-box">
+					<div class="box-icon">
+						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+						<?php if(!empty($settings['select_img'])){ ?>
+							<img src="<?php echo $settings['select_img']['url']; ?>" alt="icon">
+						<?php } ?>
 					</div>
-					<div class="box">
-						<a class="icon venobox vbox-item" data-vbtype="video" data-autoplay="true" href="<?php echo esc_url($settings['link']['url']); ?>">
-							<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-							<?php if(!empty($settings['select_img'])){ ?>
-								<img src="<?php echo $settings['select_img']['url']; ?>" alt="">
-							<?php } ?>
-							<span></span>
-						</a>
-						<h6 class="title"><?php echo $settings['title']; ?></h6>
+					<div class="content">
+						<h3 class="title"><?php echo $settings['widget_title']; ?></h3>
+						<p class="subtitle"><?php echo $settings['widget_subtitle']; ?></p>
 					</div>
 				</div>
 			</div>
-			
-            <script>
-                jQuery(document).ready(function($) {
-                    "use strict";
-                    $('.venobox').venobox();
-                });
-            </script>
 
 		<?php }elseif($settings['select_style']=='four'){ ?>
 
 			<div class="single-image style4">
-				<div class="image">
-					<img src="<?php echo $settings['image']['url']; ?>" alt="">
-					<div class="box">
-						<div class="icon">
-							<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+				<div class="image1">
+					<img src="<?php echo $settings['image']['url']; ?>" alt="image1">
+				</div>
+			</div>
+
+		<?php }elseif($settings['select_style']=='five'){ ?>
+
+			<div class="single-image style5">
+				
+				<div class="image1">
+					<img src="<?php echo $settings['image']['url']; ?>" alt="image1">
+				</div>
+				<div class="counter-box">
+					<div class="counter-icon">
+							<?php \Elementor\Icons_Manager::render_icon( $settings['select_counter_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 							<?php if(!empty($settings['select_img'])){ ?>
-								<img src="<?php echo $settings['select_img']['url']; ?>" alt="">
+								<img src="<?php echo $settings['select_counter_img']['url']; ?>" alt="icon">
 							<?php } ?>
 							<span></span>
+					</div>
+					<div class="content">
+						<div class="number">
+							<h2 class="count percent" data-count="<?php echo $settings['number']; ?>">0</h2>
+							<h2 class="suffix"><?php echo $settings['suffix']; ?></h2>
 						</div>
-						<div class="content">
-							<h6 class="title"><?php echo $settings['title']; ?></h6>
-							<p class="description"><?php echo $settings['description']; ?></p>
-						</div>
+						<p class="title"><?php echo $settings['title']; ?></p>
 					</div>
 				</div>
 			</div>

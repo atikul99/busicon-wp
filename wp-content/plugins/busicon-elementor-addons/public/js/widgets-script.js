@@ -29,10 +29,17 @@ jQuery(document).ready(function($) {
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-	/* Team
-	---------------*/
+	/**
+	 * Initialize venobox
+	*/
 
-	$(".social-icons").hide();
+	$('.venobox').venobox();
+
+	/**
+	 * Team Member
+	*/
+
+	$(".single-team.style2 .social-icons").hide();
 	$('.social-toggle').click(function(){
 		$(this).siblings(".social-icons").slideToggle("slow");
 	});

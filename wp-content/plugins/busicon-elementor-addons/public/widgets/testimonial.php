@@ -368,10 +368,10 @@ Style Tab
                 				items: 1
                 			},
                 			768: {
-                				items: 1
+                				items: 2
                 			},
                 			992: {
-                				items: 1
+                				items: 2
                 			},
                 			1000: {
                 				items: 2
@@ -390,48 +390,52 @@ Style Tab
 				<div class="testimonial-area owl-carousel">
 					<?php foreach (  $settings['slides'] as $item ) { ?>
 					<div class="single-testimonial">
-						
+						<div class="quote-icon">
+							<i class="fa-solid fa-quote-right"></i>
+						</div>
 						<?php if( $item['rating'] == 5 ){ ?>
 						<div class="rating-stars">
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
 						</div>
 						<?php }elseif( $item['rating'] ==4){?>
 						<div class="rating-stars">
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-regular fa-star"></i>
 						</div>
 						<?php }elseif( $item['rating'] == 3 ){?>
 						<div class="rating-stars">
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-regular fa-star"></i>
+							<i class="fa-regular fa-star"></i>
 						</div>
 						<?php }elseif( $item['rating'] ==2){?>
 						<div class="rating-stars">
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-regular fa-star"></i>
+							<i class="fa-regular fa-star"></i>
+							<i class="fa-regular fa-star"></i>
 						</div>
 						<?php }elseif( $item['rating'] ==1){?>
 						<div class="rating-stars">
-							<i class="fa fa-star active"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-regular fa-star"></i>
+							<i class="fa-regular fa-star"></i>
+							<i class="fa-regular fa-star"></i>
+							<i class="fa-regular fa-star"></i>
 						</div>
 						<?php } ?>
+
+						<h3 class="title"><?php echo $item['title'] ?></h3>
 						
 						<p class="quote-text"><?php echo $item['quote_text']; ?></p>
 						
@@ -457,7 +461,7 @@ Style Tab
                 		loop: true,
                 		autoplay: false,
                 		autoplayTimeout: 10000,
-                		margin: 20,
+                		margin: 30,
                 		dots: true,
                 		nav: false,
                 		navText: ["<i class='flaticon-back-1'></i>", "<i class='fa fa-angle-right'></i>"],
@@ -466,13 +470,13 @@ Style Tab
                 				items: 1
                 			},
                 			768: {
-                				items: 1
+                				items: 2
                 			},
                 			992: {
-                				items: 1
+                				items: 2
                 			},
-                			1000: {
-                				items: 1
+                			1024: {
+                				items: 3
                 			},
                 			1920: {
                 				items: 3,

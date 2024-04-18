@@ -1,8 +1,5 @@
 <?php
 
-use Elementor\Controls_Manager;
-use Elementor\Group_Control_Typography;
-
 if(!defined('ABSPATH')) exit;
 
 class busiconButton extends \Elementor\Widget_Base{
@@ -23,20 +20,20 @@ class busiconButton extends \Elementor\Widget_Base{
 		return ['busicon-category'];
 	}
 
-	protected function _register_controls(){
+	protected function register_controls(){
 
 		$this->start_controls_section(
 			'button_section',
 			[
 				'label' => __( 'Button', 'busicon-elementor-addons' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 			$this->add_control(
 				'button_text',
 				[
 					'label' => __( 'Button Text', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::TEXT,
+					'type' => \Elementor\Controls_Manager::TEXT,
 					'dynamic' => [
 						'active' => true,
 					],
@@ -58,7 +55,7 @@ class busiconButton extends \Elementor\Widget_Base{
 				'button_icon',
 				[
 					'label' => __( 'Button Icon', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::ICONS,
+					'type' => \Elementor\Controls_Manager::ICONS,
 				]
 			);
 		$this->end_controls_section();
@@ -81,7 +78,7 @@ Style Tab
 				'select_style',
 				[
 					'label' => __( 'Select Style', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::SELECT,
+					'type' => \Elementor\Controls_Manager::SELECT,
 					'options' => [
 						'one' => __( 'One', 'busicon-elementor-addons' ),
 						'two' => __( 'Two', 'busicon-elementor-addons' ),
@@ -97,7 +94,7 @@ Style Tab
 				'text_align',
 				[
 					'label' => __( 'Alignment', 'busicon-elementor-addons' ),
-					'type' => Controls_Manager::CHOOSE,
+					'type' => \Elementor\Controls_Manager::CHOOSE,
 					'options' => [
 						'left' => [
 							'title' => __( 'Left', 'busicon-elementor-addons' ),
@@ -194,7 +191,7 @@ Style Tab
 					[
 						'name' => 'hover_button_background',
 						'types' => [ 'classic', 'gradient' ],
-						'selector' => '{{WRAPPER}} .single-button a:hover',
+						'selector' => '{{WRAPPER}} .single-button a::after',
 					]
 				);
 				$this->add_control(
@@ -222,7 +219,7 @@ Style Tab
 										[
 											'name' => 'select_style',
 											'operator' => '==',
-											'value' => 'two'
+											'value' => 'three'
 										],
 									]
 								]
@@ -245,7 +242,7 @@ Style Tab
                 'button_padding',
                 [
                     'label' => __( 'Padding', 'busicon-elementor-addons' ),
-                    'type' => Controls_Manager::DIMENSIONS,
+                    'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
                         '{{WRAPPER}} .single-button a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -269,7 +266,7 @@ Style Tab
 			<div class="single-button style1">
 				<a class="button" href="<?php echo esc_url($settings['button_url']['url']); ?>">
 					<?php echo $settings['button_text']; ?>
-					<i class="<?php echo esc_attr($settings['button_icon']['value']); ?>"></i>
+					<?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 				</a>
 			</div>
 
@@ -293,10 +290,10 @@ Style Tab
 
 		<?php }elseif($settings['select_style']=='four'){ ?>
 
-			<div class="app-store">
-				<a href="<?php echo esc_url($settings['button_url']['url']); ?>">
-					<?php echo '<img src="' . esc_url( plugins_url( 'assets/images/app-store.png', dirname(__FILE__) ) ) . '" > '; ?>
-					<p>AVAILABLE ON<br><span class="large-text">App Store</span></p>
+			<div class="single-button style4">
+				<a class="button" href="<?php echo esc_url($settings['button_url']['url']); ?>">
+					<?php echo $settings['button_text']; ?>
+					<i class="<?php echo esc_attr($settings['button_icon']['value']); ?>"></i>
 				</a>
 			</div>
 

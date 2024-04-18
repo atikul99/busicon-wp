@@ -70,7 +70,7 @@ class Busicon_Toolkit {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array('title','editor', 'thumbnail'),
+			'supports'           => array('title', 'thumbnail'),
 			'taxonomies'          => array( 'post_tag' ),
 		);
 		

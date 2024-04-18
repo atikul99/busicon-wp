@@ -128,7 +128,7 @@ class ServiceBox extends \Elementor\Widget_Base{
 				'description_text',
 				[
 					'label' => esc_html__( 'Description', 'busicon-elementor-addons' ),
-					'type' => \Elementor\Controls_Manager::WYSIWYG,
+					'type' => \Elementor\Controls_Manager::TEXTAREA,
 					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'busicon-elementor-addons' ),
 					'placeholder' => esc_html__( 'Type your description here', 'busicon-elementor-addons' ),
 				]
@@ -164,17 +164,6 @@ class ServiceBox extends \Elementor\Widget_Base{
 						'active' => true,
 					],
 					'placeholder' => __( 'https://your-link.com', 'busicon-elementor-addons' ),
-				]
-			);
-			$this->add_control(
-				'show_button',
-				[
-					'label' => __( 'Show Button', 'busicon-elementor-addons' ),
-					'type' => \Elementor\Controls_Manager::SWITCHER,
-					'label_on' => __( 'Show', 'busicon-elementor-addons' ),
-					'label_off' => __( 'Hide', 'busicon-elementor-addons' ),
-					'return_value' => 'yes',
-					'default' => 'yes',
 				]
 			);
 			$this->add_control(
@@ -814,20 +803,20 @@ Style Tab
 		<?php }elseif($settings['select_style']=='three'){ ?>
 
 			<div class="service-box style3">
-				<div class="image">
-					<img src="<?php echo $settings['single_img']['url']; ?>" alt="">
+				<div class="service-icon">
+					<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+					<?php if(!empty($settings['select_img'])){ ?>
+						<img src="<?php echo $settings['select_img']['url']; ?>">
+					<?php } ?>
 				</div>
 				<div class="content">
-					<div class="icon">
-						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-					</div>
-					<div class="text">
-						<div class="title">
-							<h3><?php echo $settings['title_text']; ?></h3>
-						</div>
-						<div class="description">
-							<p><?php echo $settings['description_text']; ?></p>
-						</div>
+					<h3 class="title"><?php echo $settings['title_text']; ?></h3>
+					<p class="description"><?php echo $settings['description_text']; ?></p>
+					<div class="service-btn">
+						<a href="<?php echo esc_url($settings['link']['url']); ?>">
+							<?php echo $settings['button_text']; ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -836,22 +825,20 @@ Style Tab
 
 			<div class="service-box style4">
 				<div class="content">
-					<div class="icon">
-						<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+					<h4 class="title"><?php echo $settings['title_text']; ?></h4>
+					<p class="description"><?php echo $settings['description_text']; ?></p>
+					<div class="service-btn">
+						<a href="<?php echo esc_url($settings['link']['url']); ?>">
+							<?php echo $settings['button_text']; ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+						</a>
 					</div>
-					<div class="text">
-						<div class="title">
-							<h4><?php echo $settings['title_text']; ?></h4>
-						</div>
-						<div class="description">
-							<p><?php echo $settings['description_text']; ?></p>
-						</div>
-						<?php if( 'yes'===$settings['show_button'] ){ ?>
-						<div class="service-btn">
-							<a href="<?php echo esc_url($settings['link']['url']); ?>">Read More <?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?></a>
-						</div>
-						<?php } ?>
-					</div>
+				</div>
+				<div class="service-icon">
+					<?php \Elementor\Icons_Manager::render_icon( $settings['select_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+					<?php if( !empty($settings['select_img']['url']) ){ ?>
+						<img src="<?php echo $settings['select_img']['url']; ?>">
+					<?php } ?>
 				</div>
 			</div>
 
@@ -870,11 +857,11 @@ Style Tab
 							<p><?php echo $settings['description_text']; ?></p>
 						</div>
 					</div>
-					<?php if( 'yes'===$settings['show_button'] ){ ?>
-						<div class="service-btn">
-							<a href="<?php echo esc_url($settings['link']['url']); ?>"><?php echo $settings['button_text']; ?><?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?></a>
-						</div>
-					<?php } ?>
+					
+					<div class="service-btn">
+						<a href="<?php echo esc_url($settings['link']['url']); ?>"><?php echo $settings['button_text']; ?><?php \Elementor\Icons_Manager::render_icon( $settings['button_icon'], [ 'aria-hidden' => 'true' ] ); ?></a>
+					</div>
+					
 				</div>
 			</div>
 
@@ -918,15 +905,12 @@ Style Tab
 							<p><?php echo $settings['description_text']; ?></p>
 						</div>
 
-						<?php if( 'yes'===$settings['show_button'] ){ ?>
 						<div class="service-btn">
 							<a href="<?php echo esc_url($settings['link']['url']); ?>">
 								<?php echo $settings['button_text']; ?>
 								<i <?php echo $this->get_render_attribute_string( 'j' ); ?>></i>
 							</a>
 						</div>
-						<?php } ?>
-
 					</div>
 				</div>
 			</div>

@@ -20,12 +20,12 @@ class ItemList extends \Elementor\Widget_Base{
 		return ['busicon-category'];
 	}
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		
         $this->start_controls_section(
             'list_section',
             [
-                'label' => __( 'List', 'busicon-elementor-extension' ),
+                'label' => __( 'List', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -35,7 +35,7 @@ class ItemList extends \Elementor\Widget_Base{
             $repeater->add_control(
                 'list_icon',
                 [
-                    'label' => esc_html__( 'Icon', 'busicon-elementor-extension' ),
+                    'label' => esc_html__( 'Icon', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::ICONS,
                     'default' => [
                         'value' => 'fas fa-check',
@@ -45,18 +45,18 @@ class ItemList extends \Elementor\Widget_Base{
             );
             $repeater->add_control(
                 'list_title', [
-                    'label' => __( 'Title', 'busicon-elementor-extension' ),
+                    'label' => __( 'Title', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => __( 'Perfect IT Solutions For Your Business' , 'busicon-elementor-extension' ),
+                    'default' => __( 'Perfect IT Solutions For Your Business' , 'busicon-elementor-addons' ),
                     'label_block' => true,
                 ]
             );
             $repeater->add_control(
                 'list_link',
                 [
-                    'label' => esc_html__( 'Link', 'busicon-elementor-extension' ),
+                    'label' => esc_html__( 'Link', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::URL,
-                    'placeholder' => esc_html__( 'https://your-link.com', 'busicon-elementor-extension' ),
+                    'placeholder' => esc_html__( 'https://your-link.com', 'busicon-elementor-addons' ),
                     'options' => [ 'url', 'is_external', 'nofollow' ],
                     'default' => [
                         'url' => '',
@@ -69,15 +69,15 @@ class ItemList extends \Elementor\Widget_Base{
             $this->add_control(
                 'list',
                 [
-                    'label' => __( 'Repeater List', 'busicon-elementor-extension' ),
+                    'label' => __( 'Repeater List', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::REPEATER,
                     'fields' => $repeater->get_controls(),
                     'default' => [
                         [
-                            'list_title' => __( 'Eliminate Repeat Entry', 'busicon-elementor-extension' ),
+                            'list_title' => __( 'Eliminate Repeat Entry', 'busicon-elementor-addons' ),
                         ],
                         [
-                            'list_title' => __( 'Drive Business Process', 'busicon-elementor-extension' ),
+                            'list_title' => __( 'Drive Business Process', 'busicon-elementor-addons' ),
                         ],
                     ],
                     'title_field' => '{{{ list_title }}}',
@@ -94,7 +94,7 @@ class ItemList extends \Elementor\Widget_Base{
         $this->start_controls_section(
             'general_section',
             [
-                'label' => __( 'General', 'busicon-elementor-extension' ),
+                'label' => __( 'General', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -102,12 +102,13 @@ class ItemList extends \Elementor\Widget_Base{
             $this->add_control(
                 'select_style',
                 [
-                    'label' => __( 'Select Style', 'busicon-elementor-extension' ),
+                    'label' => __( 'Select Style', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::SELECT,
                     'options' => [
-                        'one' => __( 'One', 'busicon-elementor-extension' ),
-                        'two' => __( 'Two', 'busicon-elementor-extension' ),
-                        'three' => __( 'Three', 'busicon-elementor-extension' ),
+                        'one' => __( 'One', 'busicon-elementor-addons' ),
+                        'two' => __( 'Two', 'busicon-elementor-addons' ),
+                        'three' => __( 'Three', 'busicon-elementor-addons' ),
+                        'four' => __( 'Four', 'busicon-elementor-addons' ),
                     ],
                     'default' => 'one',
                     
@@ -117,7 +118,7 @@ class ItemList extends \Elementor\Widget_Base{
 
         $this->start_controls_section(
             'icon_style', [
-                'label' => __( 'Icon', 'busicon-elementor-extension' ),
+                'label' => __( 'Icon', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -125,7 +126,7 @@ class ItemList extends \Elementor\Widget_Base{
             $this->add_control(
                 'icon_color',
                 [
-                    'label' => esc_html__( 'Color', 'busicon-elementor-extension' ),
+                    'label' => esc_html__( 'Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .item-list ul li i' => 'color: {{VALUE}}',
@@ -143,7 +144,7 @@ class ItemList extends \Elementor\Widget_Base{
 
         $this->start_controls_section(
             'title_style', [
-                'label' => __( 'Title', 'busicon-elementor-extension' ),
+                'label' => __( 'Title', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -155,13 +156,13 @@ class ItemList extends \Elementor\Widget_Base{
             $this->start_controls_tab(
                 'style_normal_tab',
                 [
-                    'label' => esc_html__( 'Normal', 'busicon-elementor-extension' ),
+                    'label' => esc_html__( 'Normal', 'busicon-elementor-addons' ),
                 ]
             );
 
                 $this->add_control(
                     'title_color', [
-                        'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                        'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .item-list ul li' => 'color: {{VALUE}};',
@@ -175,13 +176,13 @@ class ItemList extends \Elementor\Widget_Base{
             $this->start_controls_tab(
                 'style_hover_tab',
                 [
-                    'label' => esc_html__( 'Hover', 'busicon-elementor-extension' ),
+                    'label' => esc_html__( 'Hover', 'busicon-elementor-addons' ),
                 ]
             );
 
                 $this->add_control(
                     'title_hover_color', [
-                        'label' => __( 'Text Color', 'busicon-elementor-extension' ),
+                        'label' => __( 'Text Color', 'busicon-elementor-addons' ),
                         'type' => \Elementor\Controls_Manager::COLOR,
                         'selectors' => [
                             '{{WRAPPER}} .item-list ul li:hover' => 'color: {{VALUE}};',
@@ -202,7 +203,7 @@ class ItemList extends \Elementor\Widget_Base{
             $this->add_responsive_control(
                 'title_margin',
                 [
-                    'label' => __( 'Margin', 'busicon-elementor-extension' ),
+                    'label' => __( 'Margin', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::DIMENSIONS,
                     'size_units' => [ 'px', 'em', '%' ],
                     'selectors' => [
@@ -214,13 +215,13 @@ class ItemList extends \Elementor\Widget_Base{
 
         $this->start_controls_section(
             'dot_style', [
-                'label' => __( 'Dot', 'busicon-elementor-extension' ),
+                'label' => __( 'Dot', 'busicon-elementor-addons' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
             $this->add_control(
                 'dot_color', [
-                    'label' => __( 'Color', 'busicon-elementor-extension' ),
+                    'label' => __( 'Color', 'busicon-elementor-addons' ),
                     'type' => \Elementor\Controls_Manager::COLOR,
                     'selectors' => [
                         '{{WRAPPER}} .item-list ul li::before' => 'background-color: {{VALUE}};',
@@ -245,8 +246,7 @@ class ItemList extends \Elementor\Widget_Base{
                     <li>
                         <?php if( !empty($item['list_link']['url']) ){ echo '<a href="'.esc_url($item['list_link']['url']).'">'; } ?>
 
-                            <?php \Elementor\Icons_Manager::render_icon( $item['list_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                            <?php echo $item['list_title']; ?>
+                            <?php \Elementor\Icons_Manager::render_icon( $item['list_icon'], [ 'aria-hidden' => 'true' ] ); ?><?php echo $item['list_title']; ?>
 
                         <?php if( !empty($item['list_link']['url']) ){ echo '</a>'; } ?>
                     </li>
@@ -258,8 +258,15 @@ class ItemList extends \Elementor\Widget_Base{
 
         <div class="item-list style2">
             <ul>
-                <?php foreach ( $settings['list'] as $item ) { ?>
-                    <li><i class="bi bi-check2"></i><?php echo $item['list_title']; ?></li>
+                <?php foreach (  $settings['list'] as $item ) { ?>
+                    <li>
+                        <?php if( !empty($item['list_link']['url']) ){ echo '<a href="'.esc_url($item['list_link']['url']).'">'; } ?>
+
+                            <?php \Elementor\Icons_Manager::render_icon( $item['list_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                            <?php echo $item['list_title']; ?>
+
+                        <?php if( !empty($item['list_link']['url']) ){ echo '</a>'; } ?>
+                    </li>
                 <?php } ?>
             </ul>
         </div>
@@ -267,6 +274,23 @@ class ItemList extends \Elementor\Widget_Base{
     <?php }elseif($settings['select_style']=='three'){ ?>
 
         <div class="item-list style3">
+            <ul>
+                <?php foreach (  $settings['list'] as $item ) { ?>
+                    <li>
+                        <?php if( !empty($item['list_link']['url']) ){ echo '<a href="'.esc_url($item['list_link']['url']).'">'; } ?>
+
+                            <?php \Elementor\Icons_Manager::render_icon( $item['list_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                            <?php echo $item['list_title']; ?>
+
+                        <?php if( !empty($item['list_link']['url']) ){ echo '</a>'; } ?>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+
+    <?php }elseif($settings['select_style']=='four'){ ?>
+
+        <div class="item-list style4">
             <ul>
                 <?php foreach (  $settings['list'] as $item ) { ?>
                     <li><?php echo $item['list_title']; ?></li>

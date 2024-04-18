@@ -10,7 +10,22 @@
 global $busicon_opt;
 
 ?>
-	<header class="site-header <?php if ( class_exists( 'Redux_Framework_Plugin' ) && $busicon_opt['transparent_switch'] == 1 ){ echo "transparent-menu"; } ?>">
+
+	<?php
+
+		$transparent_menu = 0;
+		if(class_exists( 'Redux_Framework_Plugin' )){
+			$transparent_menu = $busicon_opt['transparent_switch'];
+
+			if( get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 1 ){
+				$transparent_menu = 1;
+			}elseif( get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 0 ){
+				$transparent_menu = 0;
+			}
+		}
+	?>
+
+	<header class="site-header <?php if ( $transparent_menu == 1 ){ echo "transparent-menu"; } ?>">
 		<div class="menu-bar">
 			<div class="menu-container">
 				<div class="site-logo">

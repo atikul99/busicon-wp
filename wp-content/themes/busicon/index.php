@@ -84,8 +84,8 @@ get_header();
 
 							the_posts_pagination(
 								array(
-									'prev_text'          => '<i class="bi bi-chevron-double-left"></i>',
-									'next_text'          => '<i class="bi bi-chevron-double-right"></i>',
+									'prev_text'          => '<i class="fa-solid fa-chevron-left"></i>',
+									'next_text'          => '<i class="fa-solid fa-chevron-right"></i>',
 									'screen_reader_text' => '',
 									'type'               => 'list'
 								)

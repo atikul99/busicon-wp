@@ -255,30 +255,30 @@ if(!function_exists('busicon_breadcrumbs')){
 	function busicon_breadcrumbs() {
 		echo '<ul>';
 		if (!is_home()) {
-					echo '<li><a href="';
-					echo esc_url( home_url( '/' ) );
-					echo '">';
-					echo esc_html__('Home','busicon');
-					echo "</a></li>";
-					echo '<li>/</li>';		
+				echo '<li><a href="';
+				echo esc_url( home_url( '/' ) );
+				echo '">';
+				echo esc_html__('Home','busicon');
+				echo "</a></li>";
+				echo '<li><i class="fa-solid fa-angle-right"></i></li>';		
 
 			if (is_category()) {	
-					echo "<li>";
-					echo single_cat_title( '', false );
-					echo '</li>';
+				echo "<li>";
+				echo single_cat_title( '', false );
+				echo '</li>';
 			}
 			elseif( is_archive() ) {
 				the_archive_title( '<li>', '</li>' );
 			}			
 			elseif (is_page()) {			
-					echo '<li>';
-					echo get_the_title();
-					echo '</li>';
+				echo '<li>';
+				echo get_the_title();
+				echo '</li>';
 			}
 			elseif (is_single()) {	
-					echo "<li>";
-					the_title();
-					echo '</li>';
+				echo "<li>";
+				the_title();
+				echo '</li>';
 			}		
 			elseif (is_tag()) {
 				single_tag_title();
@@ -286,37 +286,37 @@ if(!function_exists('busicon_breadcrumbs')){
 
 			elseif (is_day()) {
 				echo"<li>";
-					echo esc_html__('Archive for','busicon');
+				echo esc_html__('Archive for','busicon');
 				echo'</li>';				
 			}
 			elseif (is_month()) {
 				echo"<li>";
-					echo esc_html__('Archive for','busicon');
+				echo esc_html__('Archive for','busicon');
 				echo'</li>';				
 			}
 			elseif (is_year()) {
 				echo"<li>";
-					echo esc_html__('Archive for','busicon');
+				echo esc_html__('Archive for','busicon');
 				echo'</li>';				
 			}
 			elseif (is_author()) {
 				echo"<li>";
-					echo esc_html__('Author','busicon');
+				echo esc_html__('Author','busicon');
 				echo'</li>';			
 			}
 			elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
 				echo"<li>";
-					echo esc_html__('Blog Archives','busicon');
+				echo esc_html__('Blog Archives','busicon');
 				echo'</li>';			
 			}
 			elseif (is_search()) {
 				echo"<li>";
-					echo esc_html__('Search Results','busicon');
+				echo esc_html__('Search Results','busicon');
 				echo'</li>';
 			}
 			elseif (is_404()) {
 				echo"<li>";
-					echo esc_html__('404','busicon');
+				echo esc_html__('404','busicon');
 				echo'</li>';
 			}
 		}

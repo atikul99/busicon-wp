@@ -34,17 +34,11 @@ global $busicon_opt;
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 
-	<!-- Topbar -->
-
-	<?php get_template_part('template-parts/header-layout/topbar'); ?>
-
 	<!-- Header -->
 
 	<?php
 		$busicon_header = get_post_meta( get_the_ID(), 'select_header', true );
-	?>
-
-	<?php
+		
 		if ( !empty($busicon_header) ) {
 			$header_style = $busicon_header;
 		}elseif( !empty($busicon_opt['redux_header_style']) && class_exists('Redux_Framework_Plugin') ){

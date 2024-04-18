@@ -225,7 +225,11 @@ Style Tab
         <ul class="accordion style2">
             <?php foreach (  $settings['list'] as $item ) { ?>
                 <li>
-                    <a><i class="fa fa-check" aria-hidden="true"></i><?php echo $item['list_title']; ?></a>
+                    <h3 class="title">
+                        <?php echo $item['list_title']; ?>
+                        <i class="fa-regular fa-plus"></i>
+                        <i class="fa-solid fa-minus"></i>
+                    </h3>
                     <p><?php echo $item['list_description']; ?></p>
                 </li>
             <?php } ?>
@@ -235,9 +239,9 @@ Style Tab
             jQuery(document).ready(function($) {
                 "use strict";
 
-                $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
+                $('.accordion > li:eq(0) .title').addClass('active').next().slideDown();
 
-                $('.accordion a').click(function(j) {
+                $('.accordion .title').click(function(j) {
                     var dropDown = $(this).closest('li').find('p');
 
                     $(this).closest('.accordion').find('p').not(dropDown).slideUp();
@@ -245,7 +249,7 @@ Style Tab
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
                     } else {
-                        $(this).closest('.accordion').find('a.active').removeClass('active');
+                        $(this).closest('.accordion').find('.title.active').removeClass('active');
                         $(this).addClass('active');
                     }
 
@@ -260,10 +264,9 @@ Style Tab
     <?php }elseif($settings['select_style']=='three'){ ?>
 
         <ul class="accordion style3">
-            <?php $i=0; ?>
             <?php foreach (  $settings['list'] as $item ) { ?>
                 <li>
-                    <a><span class="number"><?php $i++; echo sprintf("%02d", $i); ?></span><?php echo $item['list_title']; ?></a>
+                    <a><i class="fa fa-check" aria-hidden="true"></i><?php echo $item['list_title']; ?></a>
                     <p><?php echo $item['list_description']; ?></p>
                 </li>
             <?php } ?>

@@ -459,7 +459,7 @@ Style Tab
 			<div class="pricing style1 <?php if('yes' === $settings['show_active']){echo esc_attr('active');}?>">
 				<div class="table-head">
 					<div class="price">
-						<h2 class="currency"><?php echo $settings['price']; ?><?php echo $settings['currency']; ?><span>/<?php echo $settings['month']; ?></span></h2>
+						<h2 class="currency"><?php echo $settings['price']; ?><?php echo $settings['currency']; ?><span><?php echo $settings['month']; ?></span></h2>
 						<p class="pack-name"><?php echo $settings['title']; ?></p>
 					</div>
 					<div class="package-icon">

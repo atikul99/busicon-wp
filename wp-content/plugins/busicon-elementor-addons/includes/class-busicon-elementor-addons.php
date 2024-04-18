@@ -79,7 +79,7 @@ class Busicon_Elementor_Addons {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
-		add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'custom_icon_tab' ] );
+		add_filter( 'elementor/icons_manager/additional_tabs', [ $this, 'fontawesome_icon_tab' ] );
 
 	}
 
@@ -178,39 +178,97 @@ class Busicon_Elementor_Addons {
 	}
 
 	/**
-	 * Custom Icon Fonts
+	 * Additional Icons for Elementor
 	 *
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	public function custom_icon_tab( $tabs = array() ) {
+	public function fontawesome_icon_tab( $tabs = array() ) {
 
-		$all_icons = array(
+		$custom_icons = array(
 			'robot-man',
 			'laptop',
+			'laptop-2',
 			'road-map',
 			'growth',
 			'growth-2',
 			'dollar-coin',
 			'hand',
 			'growth-hand',
+			'building-1',
 			'building-2',
 			'tag',
 			'document',
+			'badge',
+			'target',
+			'people-network',
 		);
-		
-		$tabs['custom-icons'] = array(
-			'name'          => 'custom-icon-set',
-			'label'         => esc_html__( 'Custom Icon', 'busicon-elementor-addons' ),
-			'labelIcon'     => 'icon-laptop',
-			'prefix'        => 'icon-',
-			'displayPrefix' => 'icon',
-			'url'           => plugins_url( 'includes/fonts/icon-fonts/icon-fonts.css', dirname(__FILE__) ),
-			'icons'         => $all_icons,
-			'ver'           => '1.0.0',
+		$font_awesome_6_regular = array(
+			'envelope',
+			'paper-plane',
+		);
+		$font_awesome_6_solid = array(
+			'arrow-left',
+			'arrow-right',
+			'arrow-up',
+			'arrow-down',
+			'phone',
+			'location-dot',
+			'map-location-dot',
+			'envelope',
+			'calendar-days',
+			'check',
+		);
+		$font_awesome_6_brands = array(
+			'facebook-f',
+			'instagram',
 		);
 
-		return $tabs;
+		$additional_icon_tabs = [
+			'custom-icons' => [
+				'name'          => 'custom-icons',
+				'label'         => esc_html__( 'Custom Icons', 'busicon-elementor-addons' ),
+				'labelIcon'     => 'icon icon-hand',
+				'prefix'        => 'icon-',
+				'displayPrefix' => 'icon',
+				'url'           => plugins_url( 'includes/fonts/icon-fonts/icon-fonts.css', dirname(__FILE__) ),
+				'icons'         => $custom_icons,
+				'ver'           => '1.0.0',
+			],
+			'fa-regular-6' => [
+				'name'          => 'fa-regular-6',
+				'label'         => esc_html__( 'Font Awesome 6 - Regular', 'busicon-elementor-addons' ),
+				'labelIcon'     => 'fa-regular fa-font-awesome',
+				'prefix'        => 'fa-',
+				'displayPrefix' => 'fa-regular',
+				'url'           => plugins_url( 'includes/fonts/fontawesome/css/regular.css', dirname(__FILE__) ),
+				'icons'         => $font_awesome_6_regular,
+				'ver'           => '1.0.0',
+			],
+			'fa-solid-6' => [
+				'name'          => 'fa-solid-6',
+				'label'         => esc_html__( 'Font Awesome 6 - Solid', 'busicon-elementor-addons' ),
+				'labelIcon'     => 'fa-solid fa-font-awesome',
+				'prefix'        => 'fa-',
+				'displayPrefix' => 'fa-solid',
+				'url'           => plugins_url( 'includes/fonts/fontawesome/css/all.css', dirname(__FILE__) ),
+				'icons'         => $font_awesome_6_solid,
+				'ver'           => '1.0.0',
+			],
+			'fa-brands-6' => [
+				'name'          => 'fa-brands-6',
+				'label'         => esc_html__( 'Font Awesome 6 - Brands', 'busicon-elementor-addons' ),
+				'labelIcon'     => 'fa-brands fa-square-font-awesome-stroke',
+				'prefix'        => 'fa-',
+				'displayPrefix' => 'fa-brands',
+				'url'           => plugins_url( 'includes/fonts/fontawesome/css/brands.css', dirname(__FILE__) ),
+				'icons'         => $font_awesome_6_brands,
+				'ver'           => '1.0.0',
+			],
+		];
+
+		return $additional_icon_tabs;
+
 	}
 
 	/**
