@@ -22,9 +22,11 @@ class Busicon_Toolkit {
 	private function load_dependencies() {
 
 		/**
-		 * The class responsible for sidebar widgets
+		 * These files are responsible for sidebar widgets
 		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/sidebar-widgets/post-categories.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/sidebar-widgets/recent-post.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/sidebar-widgets/tag-cloud.php';
 
 		/**
 		 * The class responsible for loading cmb2 plugin

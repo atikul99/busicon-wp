@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The file that register and defines recent post widget class
+ * The file that register and defines tag cloud widget class
  *
  * @package           BusiconToolkit
  * @author            Urno IT
@@ -10,21 +10,21 @@
  *
  */
 
-function register_recent_post_widget() {
-	register_widget( 'Recent_Post_Widget' );
+function register_tag_cloud_widget() {
+	register_widget( 'Tag_Cloud_Widget' );
 }
-add_action( 'widgets_init', 'register_recent_post_widget' );
+add_action( 'widgets_init', 'register_tag_cloud_widget' );
 
-class Recent_Post_Widget extends WP_Widget {
+class Tag_Cloud_Widget extends WP_Widget {
 	
 	public function __construct() {
-		
+
 		parent::__construct(
-			'recent_post_widget',
-			esc_html__( 'Busicon Recent Posts','busicon-toolkit' ),
+			'tag_cloud_widget',
+			esc_html__( 'Busicon Tag Cloud', 'busicon-toolkit' ),
 			array(
-				'classname' => 'widget_recent_post',
-				'description' => esc_html__( 'The most recent posts on your site.', 'busicon-toolkit' ),
+				'classname' => 'widget_tag_cloud',
+				'description' => esc_html__( 'Display a tag cloud', 'busicon-toolkit' ),
 				'customize_selective_refresh' => true,
 			)
 		);
@@ -35,7 +35,7 @@ class Recent_Post_Widget extends WP_Widget {
 		if ( ! isset( $args['widget_id'] ) ) $args['widget_id'] = null;
 		extract( $args, EXTR_SKIP );
 
-		echo $before_widget;
+		echo $args['before_widget'];
 		
 		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base);
 		
@@ -43,40 +43,23 @@ class Recent_Post_Widget extends WP_Widget {
 		<div class="single-widget-item">
 			<?php if( $title ) echo $before_title . $title . $after_title;?>
 			<?php
-			$args = array(
-				'post_type' => 'post',
-				'posts_per_page' => $instance['count'] ? intval($instance['count']) : 0,
-				'no_found_rows' => true,
-				'post_status' => 'publish',
-				'ignore_sticky_posts' => true
+
+			$num_tag = ! empty( $instance['count'] ) ? $instance['count'] : 20;
+			$tag_cloud_args = array(
+				'smallest' => 14, 
+				'largest' => 14, 
+				'unit' => 'px',
+				'number' => $num_tag,
+				'orderby' => 'name',
+				'order' => 'ASC'
 			);
-			$post_query = new WP_Query( apply_filters( 'widget_posts_args', $args ) );
-			
-			if ($post_query->have_posts()){
-			while ( $post_query->have_posts() ){
-				$post_query->the_post();
+
+			echo wp_tag_cloud( $tag_cloud_args );
+
 			?>
-				<div class="recent-post-item">
-					<?php if( has_post_thumbnail() ){ ?>
-						<div class="recent-post-image">
-							<a href="<?php echo esc_url( get_permalink() ); ?>">
-								<?php echo get_the_post_thumbnail( get_the_ID(), 'busicon-recent-image' );?>
-							</a>
-						</div>
-					<?php } ?>
-					<div class="recent-post-text">
-						<span class="date"><?php the_time(get_option('date_format')) ?></span>
-						<h4 class="title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h4>
-					</div>
-				</div>
-			<?php }?>
-			<?php 
-			wp_reset_postdata();
-			
-			}?>
 		</div>
 		<?php 
-		echo $after_widget;
+		echo $args['after_widget'];
 	
 	}
 
@@ -100,7 +83,7 @@ class Recent_Post_Widget extends WP_Widget {
 	public function form( $instance ) {
 		
 		$title = isset( $instance['title']) ? esc_attr( $instance['title'] ) : '';
-		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 2;
+		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 20;
 
 		?>
 			<p>
@@ -109,7 +92,7 @@ class Recent_Post_Widget extends WP_Widget {
 			</p>			
 			
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Number of posts:', 'busicon-toolkit' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Number of tags:', 'busicon-toolkit' ); ?></label>
 				<input id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" size="4"/>
 			</p>
 			
