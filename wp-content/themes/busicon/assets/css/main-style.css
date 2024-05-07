@@ -222,6 +222,10 @@ a{
 .site-header1 .top-bar .contact ul li a{
 	color: #fff;
 	font-size: 15px;
+	transition: 0.5s;
+}
+.site-header1 .top-bar .contact ul li a:hover{
+	color: var(--title-color);
 }
 .site-header1 .top-bar .contact ul li a i{
 	margin-right: 8px;
@@ -431,6 +435,9 @@ a{
 .site-header1.transparent-menu .menu-bar .main-navigation li a {
 	color: #fff;
 }
+.site-header1.transparent-menu .menu-bar .main-navigation li a:hover {
+	color: var(--main-color);
+}
 .site-header1.transparent-menu .menu-bar .main-navigation .sub-menu li a {
 	color: var(--title-color);
 }
@@ -440,6 +447,13 @@ a{
 .site-header1.transparent-menu .menu-bar .search-icon i {
 	color: #fff;
 	background-color: rgba(255, 255, 255, 0.1);
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+.site-header1.transparent-menu .menu-bar .search-icon i:hover {
+	background-color: var(--main-color);
 }
 .site-header1.transparent-menu .menu-bar .menu-btn a:hover{
 	color: var(--title-color);

@@ -32,7 +32,7 @@ get_header();
             <div class="container">
                 <div class="text-wrapper">
                     <div class="title">
-                        <h1><?php wp_title(''); ?></h1>
+                        <h1><?php echo get_the_title(); ?></h1>
                     </div>
                     <div class="breadcrumb-items">
                         <?php busicon_breadcrumbs(); ?>
