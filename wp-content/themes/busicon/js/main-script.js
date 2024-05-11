@@ -5,11 +5,11 @@
 	 Mobile Menu
 	==================*/
 
-	$('.menu-toggle').click(function(){
+	$('.menu-toggle').on('click', function(){
 		$('.menu-content').slideToggle();
 	});
 
-	$('.menu-item-has-children a i').click(function(e){
+	$('.menu-item-has-children a i').on('click', function(e){
 		e.preventDefault();
 		$(this).parents('a').siblings('.sub-menu').slideToggle();
 	});
