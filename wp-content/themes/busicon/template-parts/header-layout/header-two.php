@@ -19,9 +19,9 @@ global $busicon_opt;
 		if(!empty($busicon_opt['header_top_switch']) && class_exists( 'Redux_Framework_Plugin' )){
 			$topbar = $busicon_opt['header_top_switch'];
 
-			if( get_post_meta( get_the_ID(),'show_topbar', true ) == 1 ){
+			if( !empty(get_post_meta( get_the_ID(),'show_topbar', true )) && get_post_meta( get_the_ID(),'show_topbar', true ) == 1 ){
 				$topbar = 1;
-			}elseif( get_post_meta( get_the_ID(),'show_topbar', true ) == 0 ){
+			}elseif( !empty(get_post_meta( get_the_ID(),'show_topbar', true )) && get_post_meta( get_the_ID(),'show_topbar', true ) == 0 ){
 				$topbar = 0;
 			}
 		}
@@ -32,9 +32,9 @@ global $busicon_opt;
 		if(!empty($busicon_opt['transparent_switch']) && class_exists( 'Redux_Framework_Plugin' )){
 			$transparent_menu = $busicon_opt['transparent_switch'];
 
-			if( get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 1 ){
+			if( !empty(get_post_meta( get_the_ID(),'active_transparent_menu', true )) && get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 1 ){
 				$transparent_menu = 1;
-			}elseif( get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 0 ){
+			}elseif( !empty(get_post_meta( get_the_ID(),'active_transparent_menu', true )) && get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 0 ){
 				$transparent_menu = 0;
 			}
 		}
