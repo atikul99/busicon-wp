@@ -16,31 +16,14 @@ global $busicon_opt;
 		// Topbar
 
 		$topbar = 0;
-		if(!empty($busicon_opt['header_top_switch']) && class_exists( 'Redux_Framework_Plugin' )){
-			$topbar = $busicon_opt['header_top_switch'];
-
-			if( !empty(get_post_meta( get_the_ID(),'show_topbar', true )) && get_post_meta( get_the_ID(),'show_topbar', true ) == 1 ){
-				$topbar = 1;
-			}elseif( !empty(get_post_meta( get_the_ID(),'show_topbar', true )) && get_post_meta( get_the_ID(),'show_topbar', true ) == 0 ){
-				$topbar = 0;
-			}
-		}
-		
-		// Transparent Menu
-
-		$transparent_menu = 0;
-		if(!empty($busicon_opt['transparent_switch']) && class_exists( 'Redux_Framework_Plugin' )){
-			$transparent_menu = $busicon_opt['transparent_switch'];
-
-			if( !empty(get_post_meta( get_the_ID(),'active_transparent_menu', true )) && get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 1 ){
-				$transparent_menu = 1;
-			}elseif( !empty(get_post_meta( get_the_ID(),'active_transparent_menu', true )) && get_post_meta( get_the_ID(),'active_transparent_menu', true ) == 0 ){
-				$transparent_menu = 0;
-			}
+		$transparent_menu = 1;
+		if(class_exists( 'Redux_Framework_Plugin' )){
+			$topbar = $busicon_opt['topbar1_switch'];
+			$transparent_menu = $busicon_opt['header1_transparent_menu'];
 		}
 	?>
 
-	<header class="site-header1 <?php if ( $transparent_menu == 1 ){ echo "transparent-menu"; } ?>">
+	<header class="site-header1 <?php if ( $transparent_menu == 1 ){ echo esc_html("transparent-menu"); } ?>">
 		<?php if ( $topbar == 1 ) : ?>
 		<div class="top-bar">
 			<div class="container">
@@ -48,8 +31,8 @@ global $busicon_opt;
 					<div class="location">
 						<p>
 							<i class="fa-solid fa-location-dot"></i>
-							<?php if(!empty($busicon_opt['top_location'])){
-								echo esc_html($busicon_opt['top_location']);
+							<?php if(!empty($busicon_opt['topbar1_address'])){
+								echo esc_html($busicon_opt['topbar1_address']);
 							}else{
 								esc_html_e('6391 Elgin St. Celina, Delaware 10299', 'busicon');
 							} ?>
@@ -60,25 +43,25 @@ global $busicon_opt;
 							<li>
 								<?php
 									if(class_exists( 'Redux_Framework_Plugin' )){
-										$phone_number = $busicon_opt['top_phone'];
+										$phone_number = $busicon_opt['topbar1_phone'];
 										$phone_number_without_space = str_replace(' ', '', $phone_number);
 										$phone_number_without_character = preg_replace('/[^\w\s]/', '', $phone_number_without_space);
 									}
 								?>
-								<a href="tel:<?php if(!empty($busicon_opt['top_phone'])){echo esc_html($phone_number_without_character);}else{echo esc_html('2095550104');} ?>">
+								<a href="tel:<?php if(!empty($busicon_opt['topbar1_phone'])){echo esc_html($phone_number_without_character);}else{echo esc_html('2095550104');} ?>">
 									<i class="fa-solid fa-phone"></i>
-									<?php if(!empty($busicon_opt['top_phone'])){
-										echo esc_html($busicon_opt['top_phone']);
+									<?php if(!empty($busicon_opt['topbar1_phone'])){
+										echo esc_html($busicon_opt['topbar1_phone']);
 									}else{
 										esc_html_e('(209) 555-0104', 'busicon');
 									} ?>
 								</a>
 							</li>
 							<li>
-								<a href="mailto:<?php if(!empty($busicon_opt['top_email'])){echo esc_html($busicon_opt['top_email']);}else{esc_html_e('debbie.baker@example.com', 'busicon');} ?>">
+								<a href="mailto:<?php if(!empty($busicon_opt['topbar1_email'])){echo esc_html($busicon_opt['topbar1_email']);}else{esc_html_e('debbie.baker@example.com', 'busicon');} ?>">
 									<i class="fa-solid fa-envelope"></i>
-									<?php if(!empty($busicon_opt['top_email'])){
-										echo esc_html($busicon_opt['top_email']);
+									<?php if(!empty($busicon_opt['topbar1_email'])){
+										echo esc_html($busicon_opt['topbar1_email']);
 									}else{
 										esc_html_e('debbie.baker@example.com', 'busicon');
 									} ?>
@@ -99,10 +82,8 @@ global $busicon_opt;
 						the_custom_logo();
 					}else{ ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<?php if ( !empty($busicon_opt['transparent_logo']['url']) ){ ?>
-								<img src="<?php echo esc_url($busicon_opt['transparent_logo']['url']); ?>" alt="logo">
-							<?php }elseif( !empty($busicon_opt['default_logo']['url']) ){ ?>
-								<img src="<?php echo esc_url($busicon_opt['default_logo']['url']); ?>" alt="logo">
+							<?php if ( !empty($busicon_opt['menubar1_logo']['url']) ){ ?>
+								<img src="<?php echo esc_url($busicon_opt['menubar1_logo']['url']); ?>" alt="logo">
 							<?php }else{ ?>
 								<h2><?php bloginfo( 'name' ); ?></h2>
 							<?php } ?>

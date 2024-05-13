@@ -65,8 +65,8 @@ global $busicon_opt;
 					} ?>
 					<div class="info-box">
 						<i class="fa-solid fa-location-dot"></i>
-						<?php if(!empty($busicon_opt['top_location'])){
-							echo esc_html($busicon_opt['top_location']);
+						<?php if(!empty($busicon_opt['mobile_menu_address'])){
+							echo esc_html($busicon_opt['mobile_menu_address']);
 						}else{
 							esc_html_e('6391 Elgin St. Celina, Delaware 10299', 'busicon');
 						} ?>
@@ -74,15 +74,15 @@ global $busicon_opt;
 					<div class="info-box">
 						<?php
 							if(class_exists( 'Redux_Framework_Plugin' )){
-								$phone_number = $busicon_opt['top_phone'];
+								$phone_number = $busicon_opt['mobile_menu_phone'];
 								$phone_number_without_space = str_replace(' ', '', $phone_number);
 								$phone_number_without_character = preg_replace('/[^\w\s]/', '', $phone_number_without_space);
 							}
 						?>
 						<i class="fa-solid fa-phone"></i>
-						<a href="tel:<?php if(!empty($busicon_opt['top_phone'])){echo esc_html($phone_number_without_character);}else{echo esc_html('2095550104');} ?>">
-							<?php if(!empty($busicon_opt['top_phone'])){
-								echo esc_html($busicon_opt['top_phone']);
+						<a href="tel:<?php if(!empty($busicon_opt['mobile_menu_phone'])){echo esc_html($phone_number_without_character);}else{echo esc_html('2095550104');} ?>">
+							<?php if(!empty($busicon_opt['mobile_menu_phone'])){
+								echo esc_html($busicon_opt['mobile_menu_phone']);
 							}else{
 								esc_html_e('(209) 555-0104', 'busicon');
 							} ?>
@@ -90,9 +90,9 @@ global $busicon_opt;
 					</div>
 					<div class="info-box">
 						<i class="fa-solid fa-envelope"></i>
-						<a href="mailto:<?php if(!empty($busicon_opt['top_email'])){echo esc_html($busicon_opt['top_email']);}else{esc_html_e('debbie.baker@example.com', 'busicon');} ?>">
-							<?php if(!empty($busicon_opt['top_email'])){
-								echo esc_html($busicon_opt['top_email']);
+						<a href="mailto:<?php if(!empty($busicon_opt['mobile_menu_email'])){echo esc_html($busicon_opt['mobile_menu_email']);}else{esc_html_e('debbie.baker@example.com', 'busicon');} ?>">
+							<?php if(!empty($busicon_opt['mobile_menu_email'])){
+								echo esc_html($busicon_opt['mobile_menu_email']);
 							}else{
 								esc_html_e('debbie.baker@example.com', 'busicon');
 							} ?>
@@ -105,8 +105,8 @@ global $busicon_opt;
 				$menu_search = 1;
 				$menu_button = 1;
 				if(class_exists( 'Redux_Framework_Plugin' )){
-					$menu_search = $busicon_opt['header_search_switch'];
-					$menu_button = $busicon_opt['header_btn_switch'];
+					$menu_search = $busicon_opt['mobile_menu_search_switch'];
+					$menu_button = $busicon_opt['mobile_menu_btn_switch'];
 				}
 			?>
 			<div class="component">
@@ -117,9 +117,9 @@ global $busicon_opt;
 				<?php } ?>
 				<?php if( $menu_button == 1 ){ ?>
 					<div class="menu-btn">
-						<a href="<?php if( !empty($busicon_opt['button_link']) ){ echo esc_url($busicon_opt['button_link']); }else{ echo esc_html('#'); } ?>">
-							<?php if(!empty($busicon_opt['button_text'])){
-								echo esc_html($busicon_opt['button_text']);
+						<a href="<?php if( !empty($busicon_opt['mobile_menu_button_link']) ){ echo esc_url($busicon_opt['mobile_menu_button_link']); }else{ echo esc_html('#'); } ?>">
+							<?php if(!empty($busicon_opt['mobile_menu_button_text'])){
+								echo esc_html($busicon_opt['mobile_menu_button_text']);
 							}else{
 								esc_html_e('Get A Quote', 'busicon');
 							} ?>

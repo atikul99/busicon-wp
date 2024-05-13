@@ -16,11 +16,11 @@ get_header();
 		$show_breadcrumb = 1;
 
 		if( class_exists( 'Redux_Framework_Plugin' ) && $busicon_opt['breadcrumb_switch'] == 1 ){
-			$show_breadcrumb = 1;
-			if( !empty(get_post_meta( get_the_ID(),'show_breadcrumbs', true )) && get_post_meta( get_the_ID(),'show_breadcrumbs', true ) == 1 ){
-				$show_breadcrumb = 1;
-			}elseif( !empty(get_post_meta( get_the_ID(),'show_breadcrumbs', true )) && get_post_meta( get_the_ID(),'show_breadcrumbs', true ) == 0 ){
+			
+			if( get_post_meta( get_the_ID(),'show_breadcrumbs', true ) == 0 ){
 				$show_breadcrumb = 0;
+			}else{
+				$show_breadcrumb = 1;
 			}
 		}elseif( class_exists( 'Redux_Framework_Plugin' ) && $busicon_opt['breadcrumb_switch'] == 0 ){
 			$show_breadcrumb = 0;

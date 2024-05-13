@@ -20,26 +20,6 @@ function busicon_register_metabox() {
 			'header-two'   => __( 'Header Two', 'busicon' ),
 		),
 	) );
-	
-	$header->add_field( array(
-		'name'    => 'Topbar',
-		'id'      => 'show_topbar',
-		'type'    => 'radio_inline',
-		'options' => array(
-			'1' => __( 'Show Topbar', 'busicon' ),
-			'0'   => __( 'Hide Topbar', 'busicon' ),
-		),
-	) );
-
-	$header->add_field( array(
-		'name'    => 'Transparent Menu',
-		'id'      => 'active_transparent_menu',
-		'type'    => 'radio_inline',
-		'options' => array(
-			'1' => __( 'Active Transparent Menu', 'busicon' ),
-			'0'   => __( 'Deactive Transparent Menu', 'busicon' ),
-		),
-	) );
 
 	/*
 	==================

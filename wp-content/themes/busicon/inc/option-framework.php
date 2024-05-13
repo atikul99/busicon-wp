@@ -212,106 +212,129 @@ $section = array(
 				'header-two' => 'Header Two',
 			)
 		),
-		array(
-			'id'       => 'transparent_switch',
-			'type'     => 'switch',
-			'title'    => __('Transparent Menu Switch', 'busicon'),
-			'default'  => false,
-		),
 	),
 );
 
 Redux::set_section( $opt_name, $section );
 
+/* -> START Header Default Settings. */
+
+Redux::set_section(
+	$opt_name, 
+	array(
+		'title'  => esc_html__( 'Header Default', 'busicon' ),
+		'id'     => 'header_default',
+		'subsection' => true,
+		'icon'   => 'el el-share-alt',
+		'heading' => '',
+		'fields' => array(
+			array(
+				'id'       => 'menubar_default_start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Menubar', 'busicon' ),
+				'indent' => true 
+			),
+			array(
+				'id'       => 'menubar_default_logo',
+				'type'     => 'media',
+				'title'    => esc_html__( 'Logo', 'busicon' ),
+				'desc'     => esc_html__( 'This logo only work in header default.', 'busicon' ),
+			),
+			array(
+				'id'       => 'menubar_default_search_switch',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Search Icon Switch', 'busicon' ),
+				'default'  => true,
+			),
+			array(
+				'id'       => 'menubar_default_end',
+				'type'     => 'section',
+				'indent' => false, 
+			),
+		)
+	)
+);
+
+/* -> START Header 1 Settings. */
+
 $section = array(
-	'title'      => esc_html__( 'Header Top', 'busicon' ),
-	'id'         => 'header_top',
+	'title'      => esc_html__( 'Header 1', 'busicon' ),
+	'id'         => 'busicon_menu',
 	'subsection' => true,
 	'icon'   => 'el el-share-alt',
+	'heading' => '',
 	'fields'     => array(
 		array(
-			'id'       => 'header_top_switch',
-			'type'     => 'switch',
-			'title'    => esc_html__( 'Topbar Switch', 'busicon' ),
-			'default'  => false,
+			'id'       => 'header1_general_start',
+			'type'     => 'section',
+			'title'    => esc_html__( 'General', 'busicon' ),
+			'indent' => true 
 		),
 		array(
-			'id'       => 'top_location',
+			'id'       => 'header1_transparent_menu',
+			'type'     => 'switch',
+			'title'    => __('Transparent Menu', 'busicon'),
+			'default'  => true,
+		),
+		array(
+			'id'       => 'header1_general_end',
+			'type'     => 'section',
+			'indent' => false, 
+		),
+		array(
+			'id'       => 'topbar1_start',
+			'type'     => 'section',
+			'title'    => esc_html__( 'Topbar', 'busicon' ),
+			'indent' => true 
+		),
+		array(
+			'id'       => 'topbar1_switch',
+			'type'     => 'switch',
+			'title'    => esc_html__( 'Switch', 'busicon' ),
+			'default'  => true,
+		),
+		array(
+			'id'       => 'topbar1_address',
 			'type'     => 'text',
-			'title'    => esc_html__( 'Location', 'busicon' ),
+			'title'    => esc_html__( 'Address', 'busicon' ),
 			'default'     => esc_html__( '6391 Elgin St. Celina, Delaware 10299', 'busicon' ),
 		),
 		array(
-			'id'       => 'top_phone',
+			'id'       => 'topbar1_phone',
 			'type'     => 'text',
 			'title'    => esc_html__( 'Phone Number', 'busicon' ),
 			'default'     => '(209) 555-0104',
 		),
 		array(
-			'id'       => 'top_email',
+			'id'       => 'topbar1_email',
 			'type'     => 'text',
 			'title'    => esc_html__( 'Email Address', 'busicon' ),
 			'default'     => esc_html__( 'debbie.baker@example.com', 'busicon' ),
 		),
 		array(
-			'id'          => 'location-typography',
-			'type'        => 'typography', 
-			'title'       => __('Location Typography', 'busicon'),
-			'google'      => true, 
-			'font-backup' => true,
-			'output'      => array('.top-bar .location p'),
-			'units'       =>'px',
+			'id'       => 'topbar1_bg',
+			'type'     => 'background',
+			'title'    => esc_html__( 'Background', 'busicon' ),
+			'validate' => 'color',
+			'output'    => array('.site-header1 .top-bar'),
 		),
 		array(
-			'id'          => 'contact-typography',
-			'type'        => 'typography', 
-			'title'       => __('Phone & Email Typography', 'busicon'),
-			'google'      => true, 
-			'font-backup' => true,
-			'output'      => array('.top-bar .contact ul li a'),
-			'units'       =>'px',
+			'id'       => 'topbar1_end',
+			'type'     => 'section',
+			'indent' => false, 
 		),
-	    array(         
-	        'id'       => 'top-background',
-	        'type'     => 'background',
-	        'title'    => __('Top Bar Background', 'busicon'),
-	        'subtitle' => __('Top Bar background with image, color, etc.', 'busicon'),
-	        'output'    => array('.top-bar'),
-	    ),
-	),
-);
-
-Redux::set_section( $opt_name, $section );
-
-$section = array(
-	'title'      => esc_html__( 'Header Logo', 'busicon' ),
-	'id'         => 'header_logo',
-	'subsection' => true,
-	'icon'   => 'el el-share-alt',
-	'fields'     => array(
 		array(
-			'id'       => 'default_logo',
+			'id'       => 'menubar1_start',
+			'type'     => 'section',
+			'title'    => esc_html__( 'Menubar', 'busicon' ),
+			'indent' => true 
+		),
+		array(
+			'id'       => 'menubar1_logo',
 			'type'     => 'media',
-			'title'    => esc_html__( 'Default Logo', 'busicon' ),
-			'desc'     => esc_html__( 'Upload logo here.ex: - it is work in default menu.', 'busicon' ),
+			'title'    => esc_html__( 'Logo', 'busicon' ),
+			'desc'     => esc_html__( 'This logo only work in header 1.', 'busicon' ),
 		),
-		array(
-			'id'       => 'transparent_logo',
-			'type'     => 'media',
-			'title'    => esc_html__( 'Transparent Menu Logo', 'busicon' ),
-			'desc'     => esc_html__( 'Upload logo here.ex: - it is work in transparent menu.', 'busicon' ),
-		),
-	),
-);
-
-Redux::set_section( $opt_name, $section );
-
-$section = array(
-	'title'      => esc_html__( 'Header Menu', 'busicon' ),
-	'id'         => 'busicon_menu',
-	'subsection' => true,
-	'icon'   => 'el el-share-alt',
-	'fields'     => array(
 	    array(
 			'id'       => 'header_search_switch',
 			'type'     => 'switch',
@@ -342,11 +365,22 @@ $section = array(
 			'title'     => esc_html__('Section BG Color', 'busicon'),
 			'default'  => '',
 			'output'    => array('
-				.site-header, .site-header1, .site-header2
+				.site-header1
 			'),
 			'default'  => array(
 				'background-color' => '',
 			)
+		),
+		array(
+			'id'       => 'menubar1_end',
+			'type'     => 'section',
+			'indent' => false, 
+		),
+		array(
+			'id'       => 'submenu1_start',
+			'type'     => 'section',
+			'title'    => esc_html__( 'Submenu', 'busicon' ),
+			'indent' => true 
 		),
 		array(
 			'id'        => 'submenu_bg_color',
@@ -354,13 +388,16 @@ $section = array(
 			'title'     => esc_html__('Sub Menu BG Color', 'busicon'),
 			'default'  => '',
 			'output'    => array('
-				.site-header .menu-bar .main-navigation li .sub-menu,
-				.site-header1 .menu-bar .main-navigation li .sub-menu,
-				.site-header2 .menu-bar .main-navigation li .sub-menu
+				.site-header1 .menu-bar .main-navigation li .sub-menu
 			'),
 			'default'  => array(
 				'background-color' => '',
 			)
+		),
+		array(
+			'id'       => 'submenu1_end',
+			'type'     => 'section',
+			'indent' => false, 
 		),
 	),
 );
@@ -383,6 +420,12 @@ Redux::set_section(
 				'type'     => 'section',
 				'title'    => esc_html__( 'Topbar', 'busicon' ),
 				'indent' => true 
+			),
+			array(
+				'id'       => 'topbar2_switch',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Switch', 'busicon' ),
+				'default'  => true,
 			),
 			array(
 				'id'       => 'topbar2_facebook',
@@ -522,6 +565,48 @@ Redux::set_section(
 				'type'     => 'text',
 				'title'    => __('Contact Info Title', 'busicon'),
 				'default'  => esc_html__('Contact Info', 'busicon'),
+			),
+			array(
+				'id'       => 'mobile_menu_address',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Address', 'busicon' ),
+				'default'     => esc_html__( '6391 Elgin St. Celina, Delaware 10299', 'busicon' ),
+			),
+			array(
+				'id'       => 'mobile_menu_phone',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Phone Number', 'busicon' ),
+				'default'     => '(209) 555-0104',
+			),
+			array(
+				'id'       => 'mobile_menu_email',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Email Address', 'busicon' ),
+				'default'     => esc_html__( 'debbie.baker@example.com', 'busicon' ),
+			),
+			array(
+				'id'       => 'mobile_menu_search_switch',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Search Icon Switch', 'busicon' ),
+				'default'  => true,
+			),
+			array(
+				'id'       => 'mobile_menu_btn_switch',
+				'type'     => 'switch',
+				'title'    => esc_html__( 'Button Switch', 'busicon' ),
+				'default'  => true,
+			),
+			array(
+				'id'       => 'mobile_menu_button_text',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Button Text', 'busicon' ),
+				'default'  => 'Get A Quote',
+			),
+			array(
+				'id'       => 'mobile_menu_button_link',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Button Link', 'busicon' ),
+				'default'  => '#',
 			),
 		)
 	)
