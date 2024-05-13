@@ -399,7 +399,9 @@ add_filter( 'ocdi/import_files', 'ocdi_import_files' );
 
 function ocdi_after_import_setup() {
 	
-	$main_menu = get_term_by( 'name', 'Menu 1', 'nav_menu' );
+	// Set Menu
+	
+	$main_menu = get_term_by( 'name', esc_html__('Menu 1', 'busicon'), 'nav_menu' );
 
 	set_theme_mod(
 		'nav_menu_locations',
