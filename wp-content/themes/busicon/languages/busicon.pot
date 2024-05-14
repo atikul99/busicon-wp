@@ -1,37 +1,59 @@
-#, fuzzy
+# Copyright (C) 2024 urnoit
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Busicon\n"
-"POT-Creation-Date: 2024-05-06 19:41+0600\n"
-"PO-Revision-Date: 2024-05-06 19:41+0600\n"
+"Project-Id-Version: Busicon 1.0.0\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: style.css\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
+"POT-Creation-Date: 2024-05-14T13:42:03+02:00\n"
+"PO-Revision-Date: 2024-05-14T13:42:03+02:00\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: busicon\n"
 
-#: 404.php:26 inc/option-framework.php:893
+#. Theme Name of the theme
+#: C:\xampp\htdocs\busicon\wp-content\themes\busicon\style.css
+msgid "Busicon"
+msgstr ""
+
+#. Theme URI of the theme
+#: C:\xampp\htdocs\busicon\wp-content\themes\busicon\style.css
+msgid "https://wp.urnoit.net/busicon/"
+msgstr ""
+
+#. Description of the theme
+#: C:\xampp\htdocs\busicon\wp-content\themes\busicon\style.css
+msgid "Busicon is a dynamic WordPress theme engineered for business consulting endeavors. Its user-friendly interface and flexible customization tools empower consultants to craft visually stunning websites effortlessly. Packed with features for highlighting services, team members, and client successes, Busicon ensures a polished online presence for consulting firms of all sizes."
+msgstr ""
+
+#. Author of the theme
+#: C:\xampp\htdocs\busicon\wp-content\themes\busicon\style.css
+msgid "urnoit"
+msgstr ""
+
+#. Author URI of the theme
+#: C:\xampp\htdocs\busicon\wp-content\themes\busicon\style.css
+msgid "https://themeforest.net/user/urnoit/"
+msgstr ""
+
+#: 404.php:30
+msgid "Error Page"
+msgstr ""
+
+#: 404.php:52
+#: inc/option-framework.php:978
 msgid "Oops! Page not found."
 msgstr ""
 
-#: 404.php:33 inc/option-framework.php:899
-msgid ""
-"The page you are looking for is not available or doesn’t belong to this "
-"website!"
+#: 404.php:59
+#: inc/option-framework.php:984
+msgid "The page you are looking for is not available or doesn’t belong to this website!"
 msgstr ""
 
-#: 404.php:40 inc/option-framework.php:905
+#: 404.php:66
+#: inc/option-framework.php:990
 msgid "Back to Home"
 msgstr ""
 
@@ -48,7 +70,6 @@ msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:25
-#, php-format
 msgid "Copyright © %1$s %2$s"
 msgstr ""
 
@@ -56,47 +77,55 @@ msgstr ""
 msgid "All Rights Reserved."
 msgstr ""
 
-#: functions.php:51
+#: functions.php:55
 msgid "Primary"
 msgstr ""
 
-#: functions.php:124 inc/option-framework.php:836
+#: functions.php:128
+#: inc/option-framework.php:921
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:130
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:261
+#: functions.php:265
 msgid "Home"
 msgstr ""
 
-#: functions.php:289 functions.php:294 functions.php:299
+#: functions.php:293
+#: functions.php:298
+#: functions.php:303
 msgid "Archive for"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:308
 msgid "Author"
 msgstr ""
 
-#: functions.php:309
+#: functions.php:313
 msgid "Blog Archives"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:318
 msgid "Search Results"
 msgstr ""
 
-#: functions.php:319
+#: functions.php:323
 msgid "404"
 msgstr ""
 
-#: functions.php:358
+#: functions.php:362
 msgid "Bootstrap Icon"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:7 inc/option-framework.php:201
+#: functions.php:404
+msgid "Menu 1"
+msgstr ""
+
+#: inc/cmb2-metaboxes.php:7
+#: inc/option-framework.php:201
 msgid "Header"
 msgstr ""
 
@@ -108,71 +137,59 @@ msgstr ""
 msgid "Header Two"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:29
-msgid "Show Topbar"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:30
-msgid "Hide Topbar"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:39
-msgid "Active Transparent Menu"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:40
-msgid "Deactive Transparent Menu"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:52
+#: inc/cmb2-metaboxes.php:32
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:57 inc/option-framework.php:703
+#: inc/cmb2-metaboxes.php:37
+#: inc/option-framework.php:788
 msgid "Breadcrumb Area"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:61
+#: inc/cmb2-metaboxes.php:41
 msgid "Hide breadcrumb"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:62
+#: inc/cmb2-metaboxes.php:42
 msgid "Show breadcrumb"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:75
+#: inc/cmb2-metaboxes.php:55
 msgid "Project Images"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:139
+#: inc/cmb2-metaboxes.php:119
 msgid "Project Info"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:144 single-portfolio.php:94
+#: inc/cmb2-metaboxes.php:124
+#: single-portfolio.php:94
 msgid "Client"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:149 single-portfolio.php:101
+#: inc/cmb2-metaboxes.php:129
+#: single-portfolio.php:101
 msgid "Duration"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:161
+#: inc/cmb2-metaboxes.php:141
 msgid "Block 1"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:174
+#: inc/cmb2-metaboxes.php:154
 msgid "Block 2"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:206
+#: inc/cmb2-metaboxes.php:186
 msgid "Block 3"
 msgstr ""
 
-#: inc/cmb2-metaboxes.php:238
+#: inc/cmb2-metaboxes.php:218
 msgid "Block 4"
 msgstr ""
 
-#: inc/option-framework.php:44 inc/option-framework.php:45
+#: inc/option-framework.php:44
+#: inc/option-framework.php:45
 msgid "Busicon Options"
 msgstr ""
 
@@ -180,7 +197,8 @@ msgstr ""
 msgid "Theme Information 1"
 msgstr ""
 
-#: inc/option-framework.php:170 inc/option-framework.php:176
+#: inc/option-framework.php:170
+#: inc/option-framework.php:176
 msgid "This is the tab content, HTML is allowed."
 msgstr ""
 
@@ -193,372 +211,385 @@ msgid "This is the sidebar content, HTML is allowed."
 msgstr ""
 
 #: inc/option-framework.php:203
-msgid ""
-"These are global settings for Header. You can change the setting for each "
-"page separately from the bottom of the page."
+msgid "These are global settings for Header. You can change the setting for each page separately from the bottom of the page."
 msgstr ""
 
 #: inc/option-framework.php:209
 msgid "Select Header Style"
 msgstr ""
 
-#: inc/option-framework.php:218
-msgid "Transparent Menu Switch"
+#: inc/option-framework.php:225
+msgid "Header Default"
 msgstr ""
 
-#: inc/option-framework.php:227
-msgid "Header Top"
+#: inc/option-framework.php:234
+#: inc/option-framework.php:329
+#: inc/option-framework.php:499
+msgid "Menubar"
 msgstr ""
 
-#: inc/option-framework.php:235
-msgid "Topbar Switch"
+#: inc/option-framework.php:240
+#: inc/option-framework.php:335
+#: inc/option-framework.php:505
+msgid "Logo"
 msgstr ""
 
 #: inc/option-framework.php:241
-msgid "Location"
+msgid "This logo only work in header default."
 msgstr ""
 
-#: inc/option-framework.php:242 template-parts/header-layout/header-one.php:54
+#: inc/option-framework.php:246
+#: inc/option-framework.php:341
+#: inc/option-framework.php:590
+msgid "Search Icon Switch"
+msgstr ""
+
+#: inc/option-framework.php:261
+msgid "Header 1"
+msgstr ""
+
+#: inc/option-framework.php:270
+msgid "General"
+msgstr ""
+
+#: inc/option-framework.php:276
+msgid "Transparent Menu"
+msgstr ""
+
+#: inc/option-framework.php:287
+#: inc/option-framework.php:421
+msgid "Topbar"
+msgstr ""
+
+#: inc/option-framework.php:293
+#: inc/option-framework.php:427
+msgid "Switch"
+msgstr ""
+
+#: inc/option-framework.php:299
+#: inc/option-framework.php:463
+#: inc/option-framework.php:572
+msgid "Address"
+msgstr ""
+
+#: inc/option-framework.php:300
+#: inc/option-framework.php:573
+#: template-parts/header-layout/header-one.php:37
 #: template-parts/header-layout/mobile-menu.php:71
 msgid "6391 Elgin St. Celina, Delaware 10299"
 msgstr ""
 
-#: inc/option-framework.php:247 inc/option-framework.php:487
+#: inc/option-framework.php:305
+#: inc/option-framework.php:530
+#: inc/option-framework.php:578
 msgid "Phone Number"
 msgstr ""
 
-#: inc/option-framework.php:253
+#: inc/option-framework.php:311
+#: inc/option-framework.php:584
 msgid "Email Address"
 msgstr ""
 
-#: inc/option-framework.php:254 template-parts/header-layout/header-one.php:78
-#: template-parts/header-layout/header-one.php:83
+#: inc/option-framework.php:312
+#: inc/option-framework.php:585
+#: template-parts/header-layout/header-one.php:61
+#: template-parts/header-layout/header-one.php:66
 #: template-parts/header-layout/mobile-menu.php:93
 #: template-parts/header-layout/mobile-menu.php:97
 msgid "debbie.baker@example.com"
 msgstr ""
 
-#: inc/option-framework.php:259
-msgid "Location Typography"
+#: inc/option-framework.php:317
+msgid "Background"
 msgstr ""
 
-#: inc/option-framework.php:268
-msgid "Phone & Email Typography"
+#: inc/option-framework.php:336
+msgid "This logo only work in header 1."
 msgstr ""
 
-#: inc/option-framework.php:277
-msgid "Top Bar Background"
-msgstr ""
-
-#: inc/option-framework.php:278
-msgid "Top Bar background with image, color, etc."
-msgstr ""
-
-#: inc/option-framework.php:287
-msgid "Header Logo"
-msgstr ""
-
-#: inc/option-framework.php:295
-msgid "Default Logo"
-msgstr ""
-
-#: inc/option-framework.php:296
-msgid "Upload logo here.ex: - it is work in default menu."
-msgstr ""
-
-#: inc/option-framework.php:301
-msgid "Transparent Menu Logo"
-msgstr ""
-
-#: inc/option-framework.php:302
-msgid "Upload logo here.ex: - it is work in transparent menu."
-msgstr ""
-
-#: inc/option-framework.php:310
-msgid "Header Menu"
-msgstr ""
-
-#: inc/option-framework.php:318
-msgid "Search Icon Switch"
-msgstr ""
-
-#: inc/option-framework.php:324 inc/option-framework.php:426
+#: inc/option-framework.php:347
+#: inc/option-framework.php:469
+#: inc/option-framework.php:596
 msgid "Button Switch"
 msgstr ""
 
-#: inc/option-framework.php:330 inc/option-framework.php:432
-#: inc/option-framework.php:792 inc/option-framework.php:904
+#: inc/option-framework.php:353
+#: inc/option-framework.php:475
+#: inc/option-framework.php:602
+#: inc/option-framework.php:877
+#: inc/option-framework.php:989
 msgid "Button Text"
 msgstr ""
 
-#: inc/option-framework.php:336 inc/option-framework.php:438
+#: inc/option-framework.php:359
+#: inc/option-framework.php:481
+#: inc/option-framework.php:608
 msgid "Button Link"
 msgstr ""
 
-#: inc/option-framework.php:342
+#: inc/option-framework.php:365
 msgid "Section BG Color"
 msgstr ""
 
-#: inc/option-framework.php:354
+#: inc/option-framework.php:382
+msgid "Submenu"
+msgstr ""
+
+#: inc/option-framework.php:388
 msgid "Sub Menu BG Color"
 msgstr ""
 
-#: inc/option-framework.php:375
+#: inc/option-framework.php:412
 msgid "Header 2"
 msgstr ""
 
-#: inc/option-framework.php:384
-msgid "Topbar"
-msgstr ""
-
-#: inc/option-framework.php:390
+#: inc/option-framework.php:433
 msgid "Facebook URL"
 msgstr ""
 
-#: inc/option-framework.php:391 inc/option-framework.php:397
-#: inc/option-framework.php:403 inc/option-framework.php:409
+#: inc/option-framework.php:434
+#: inc/option-framework.php:440
+#: inc/option-framework.php:446
+#: inc/option-framework.php:452
 msgid "#"
 msgstr ""
 
-#: inc/option-framework.php:396
+#: inc/option-framework.php:439
 msgid "Instagram URL"
 msgstr ""
 
-#: inc/option-framework.php:402
+#: inc/option-framework.php:445
 msgid "Twitter URL"
 msgstr ""
 
-#: inc/option-framework.php:408
+#: inc/option-framework.php:451
 msgid "Linkedin URL"
 msgstr ""
 
-#: inc/option-framework.php:414
+#: inc/option-framework.php:457
 msgid "Email"
 msgstr ""
 
-#: inc/option-framework.php:415
+#: inc/option-framework.php:458
 msgid "info@example.com"
 msgstr ""
 
-#: inc/option-framework.php:420
-msgid "Address"
-msgstr ""
-
-#: inc/option-framework.php:421
+#: inc/option-framework.php:464
 msgid "6391 Elgin St. Celina, 10299"
 msgstr ""
 
-#: inc/option-framework.php:444
+#: inc/option-framework.php:487
 msgid "Button Background"
 msgstr ""
 
-#: inc/option-framework.php:456
-msgid "Menubar"
-msgstr ""
-
-#: inc/option-framework.php:462
-msgid "Logo"
-msgstr ""
-
-#: inc/option-framework.php:463
+#: inc/option-framework.php:506
 msgid "This logo only work in header 2."
 msgstr ""
 
-#: inc/option-framework.php:468
+#: inc/option-framework.php:511
 msgid "Phone Switch"
 msgstr ""
 
-#: inc/option-framework.php:474
+#: inc/option-framework.php:517
 msgid "Phone Icon Color"
 msgstr ""
 
-#: inc/option-framework.php:481
+#: inc/option-framework.php:524
 msgid "Phone Text"
 msgstr ""
 
-#: inc/option-framework.php:504
+#: inc/option-framework.php:547
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/option-framework.php:511
+#: inc/option-framework.php:554
 msgid "Mobile Menu Logo"
 msgstr ""
 
-#: inc/option-framework.php:512
+#: inc/option-framework.php:555
 msgid "Upload logo here.ex: - it is work in mobile menu."
 msgstr ""
 
-#: inc/option-framework.php:517
+#: inc/option-framework.php:560
 msgid "Contact Info Switch"
 msgstr ""
 
-#: inc/option-framework.php:523
+#: inc/option-framework.php:566
 msgid "Contact Info Title"
 msgstr ""
 
-#: inc/option-framework.php:524
+#: inc/option-framework.php:567
 msgid "Contact Info"
 msgstr ""
 
-#: inc/option-framework.php:535
+#: inc/option-framework.php:620
 msgid "Preloader"
 msgstr ""
 
-#: inc/option-framework.php:542
+#: inc/option-framework.php:627
 msgid "Preloader Switch"
 msgstr ""
 
-#: inc/option-framework.php:554
+#: inc/option-framework.php:639
 msgid "Color"
 msgstr ""
 
-#: inc/option-framework.php:561
+#: inc/option-framework.php:646
 msgid "Site Main Color"
 msgstr ""
 
-#: inc/option-framework.php:571
+#: inc/option-framework.php:656
 msgid "Typography"
 msgstr ""
 
-#: inc/option-framework.php:578
+#: inc/option-framework.php:663
 msgid "Body Typography"
 msgstr ""
 
-#: inc/option-framework.php:588
+#: inc/option-framework.php:673
 msgid "Heading Typography H1"
 msgstr ""
 
-#: inc/option-framework.php:595 inc/option-framework.php:613
-#: inc/option-framework.php:631 inc/option-framework.php:649
-#: inc/option-framework.php:667 inc/option-framework.php:685
-#: inc/option-framework.php:727
+#: inc/option-framework.php:680
+#: inc/option-framework.php:698
+#: inc/option-framework.php:716
+#: inc/option-framework.php:734
+#: inc/option-framework.php:752
+#: inc/option-framework.php:770
+#: inc/option-framework.php:812
 msgid "Typography option with each property can be called individually."
 msgstr ""
 
-#: inc/option-framework.php:606
+#: inc/option-framework.php:691
 msgid "Heading Typography H2"
 msgstr ""
 
-#: inc/option-framework.php:624
+#: inc/option-framework.php:709
 msgid "Heading Typography H3"
 msgstr ""
 
-#: inc/option-framework.php:642
+#: inc/option-framework.php:727
 msgid "Heading Typography H4"
 msgstr ""
 
-#: inc/option-framework.php:660
+#: inc/option-framework.php:745
 msgid "Heading Typography H5"
 msgstr ""
 
-#: inc/option-framework.php:678
+#: inc/option-framework.php:763
 msgid "Heading Typography H6"
 msgstr ""
 
-#: inc/option-framework.php:710
+#: inc/option-framework.php:795
 msgid "Breadcrumb Switch"
 msgstr ""
 
-#: inc/option-framework.php:716
+#: inc/option-framework.php:801
 msgid "Breadcrumb Background"
 msgstr ""
 
-#: inc/option-framework.php:722 inc/option-framework.php:910
+#: inc/option-framework.php:807
+#: inc/option-framework.php:995
 msgid "Title Typography"
 msgstr ""
 
-#: inc/option-framework.php:744 inc/option-framework.php:983
+#: inc/option-framework.php:829
+#: inc/option-framework.php:1068
 msgid "Padding Option"
 msgstr ""
 
-#: inc/option-framework.php:745 inc/option-framework.php:984
-msgid ""
-"You can enable or disable any piece of this field. Top, Right, Bottom, Left, "
-"or Units."
+#: inc/option-framework.php:830
+#: inc/option-framework.php:1069
+msgid "You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units."
 msgstr ""
 
-#: inc/option-framework.php:762
+#: inc/option-framework.php:847
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/option-framework.php:772
+#: inc/option-framework.php:857
 msgid "Blog Page"
 msgstr ""
 
-#: inc/option-framework.php:780
+#: inc/option-framework.php:865
 msgid "Page Title"
 msgstr ""
 
-#: inc/option-framework.php:781 index.php:44
+#: inc/option-framework.php:866
+#: index.php:44
 msgid "Standard Blog"
 msgstr ""
 
-#: inc/option-framework.php:786 inc/option-framework.php:823
+#: inc/option-framework.php:871
+#: inc/option-framework.php:908
 msgid "Post Meta Switch"
 msgstr ""
 
-#: inc/option-framework.php:793 template-parts/content-search.php:41
+#: inc/option-framework.php:878
+#: template-parts/content-search.php:41
 #: template-parts/content.php:68
 msgid "Read More"
 msgstr ""
 
-#: inc/option-framework.php:803 inc/option-framework.php:812 single.php:39
+#: inc/option-framework.php:888
+#: inc/option-framework.php:897
+#: single.php:39
 msgid "Blog Details"
 msgstr ""
 
-#: inc/option-framework.php:811
+#: inc/option-framework.php:896
 msgid "Breadcrumb Title"
 msgstr ""
 
-#: inc/option-framework.php:817
+#: inc/option-framework.php:902
 msgid "Post Category Switch"
 msgstr ""
 
-#: inc/option-framework.php:843
+#: inc/option-framework.php:928
 msgid "Widget Background"
 msgstr ""
 
-#: inc/option-framework.php:852
+#: inc/option-framework.php:937
 msgid "Widget Title Typography"
 msgstr ""
 
-#: inc/option-framework.php:876
+#: inc/option-framework.php:961
 msgid "404 Page"
 msgstr ""
 
-#: inc/option-framework.php:883
+#: inc/option-framework.php:968
 msgid "Page Background"
 msgstr ""
 
-#: inc/option-framework.php:892
+#: inc/option-framework.php:977
 msgid "404 Title"
 msgstr ""
 
-#: inc/option-framework.php:898
+#: inc/option-framework.php:983
 msgid "404 Description"
 msgstr ""
 
-#: inc/option-framework.php:933
+#: inc/option-framework.php:1018
 msgid "Footer"
 msgstr ""
 
-#: inc/option-framework.php:941
+#: inc/option-framework.php:1026
 msgid "Copyright Area"
 msgstr ""
 
-#: inc/option-framework.php:949
+#: inc/option-framework.php:1034
 msgid "Copyright information"
 msgstr ""
 
-#: inc/option-framework.php:950
+#: inc/option-framework.php:1035
 msgid "Copyright &copy; 2024 Busicon | All Rights Reserved."
 msgstr ""
 
-#: inc/option-framework.php:960
+#: inc/option-framework.php:1045
 msgid "Copyright Text Color"
 msgstr ""
 
-#: inc/option-framework.php:969
+#: inc/option-framework.php:1054
 msgid "Copyright Section BG"
 msgstr ""
 
@@ -581,7 +612,6 @@ msgstr ""
 
 #. translators: 1: list of categories.
 #: inc/template-tags.php:66
-#, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
@@ -593,19 +623,17 @@ msgstr ""
 
 #. translators: 1: list of tags.
 #: inc/template-tags.php:73
-#, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
 #: inc/template-tags.php:83
-#, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100 template-parts/content-page.php:36
-#, php-format
+#: inc/template-tags.php:100
+#: template-parts/content-page.php:36
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
@@ -619,13 +647,11 @@ msgstr ""
 
 #. translators: %s: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:337
-#, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:339
-#, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
@@ -634,70 +660,60 @@ msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:343
-#, php-format
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:341
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:349
-#, php-format
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:347
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:355
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:353
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:361
-#, php-format
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:359
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:367
-#, php-format
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:365
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:373
-#, php-format
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:371
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:378
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:377
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:383
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:382
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:388
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:387
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
@@ -728,21 +744,16 @@ msgstr[1] ""
 
 #. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:397
-#, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:399
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:401
-#, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
@@ -751,9 +762,7 @@ msgid "Dismiss this notice"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
+msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:404
@@ -769,22 +778,16 @@ msgid "Update Required"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1019
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1019
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1022
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1022
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1206
@@ -795,7 +798,6 @@ msgstr ""
 
 #. translators: %s: version number
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2067
-#, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
@@ -845,14 +847,12 @@ msgstr ""
 
 #. translators: 1: install status, 2: update status
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2427
-#, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2473
-#, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
@@ -861,7 +861,6 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2477
-#, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -869,7 +868,6 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2481
-#, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -877,7 +875,6 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2485
-#, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -926,19 +923,16 @@ msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2688
-#, php-format
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2693
-#, php-format
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2699
-#, php-format
 msgid "Activate %2$s"
 msgstr ""
 
@@ -988,39 +982,35 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3583
-#, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3586
-#, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3588
-#, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3592
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3594
-#, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3594
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3602
 msgid "Show Details"
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3594
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3602
 msgid "Hide Details"
@@ -1032,19 +1022,15 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3597
-#, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3600
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3602
-#, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
@@ -1054,12 +1040,18 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3605
-#, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: search.php:35
-#, php-format
+#. Template Name of the theme
+msgid "Blog Standard"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Busicon Template"
+msgstr ""
+
+#: search.php:30
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -1077,24 +1069,19 @@ msgstr ""
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:37
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:44
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22 template-parts/content-single.php:57
+#: template-parts/content-page.php:22
+#: template-parts/content-single.php:57
 msgid "Pages:"
 msgstr ""
 
@@ -1106,38 +1093,13 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: template-parts/header-layout/header-one.php:73
+#: template-parts/header-layout/header-one.php:56
 #: template-parts/header-layout/mobile-menu.php:87
 msgid "(209) 555-0104"
 msgstr ""
 
-#: template-parts/header-layout/header-one.php:146
-#: template-parts/header-layout/header-two.php:93
+#: template-parts/header-layout/header-one.php:127
+#: template-parts/header-layout/header-two.php:74
 #: template-parts/header-layout/mobile-menu.php:124
 msgid "Get A Quote"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Busicon"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "https://wp.urnoit.net/busicon/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Busicon is a dynamic WordPress theme engineered for business consulting "
-"endeavors. Its user-friendly interface and flexible customization tools "
-"empower consultants to craft visually stunning websites effortlessly. Packed "
-"with features for highlighting services, team members, and client successes, "
-"Busicon ensures a polished online presence for consulting firms of all sizes."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "urnoit"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://themeforest.net/user/urnoit/"
 msgstr ""
