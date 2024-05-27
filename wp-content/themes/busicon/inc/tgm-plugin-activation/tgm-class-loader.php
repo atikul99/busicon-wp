@@ -48,7 +48,7 @@ function busicon_register_required_plugins() {
 		array(
 			'name'               => 'Busicon Elementor Addons',
 			'slug'               => 'busicon-elementor-addons',
-			'source'             => get_stylesheet_directory() . '/inc/tgm-plugin-activation/plugins/busicon-elementor-addons.zip',
+			'source'             => 'https://demo.urnoit.net/busicon/busicon-elementor-addons.zip',
 			'required'           => true,
 			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -59,7 +59,7 @@ function busicon_register_required_plugins() {
 		array(
 			'name'               => 'Busicon Toolkit',
 			'slug'               => 'busicon-toolkit',
-			'source'             => get_stylesheet_directory() . '/inc/tgm-plugin-activation/plugins/busicon-toolkit.zip',
+			'source'             => 'https://demo.urnoit.net/busicon/busicon-toolkit.zip',
 			'required'           => true,
 			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.

@@ -58,7 +58,7 @@ global $busicon_opt;
 		<button class="search-close"><i class="fas fa-times"></i></button>
 		<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<div class="form-group">
-				<input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="Search Here" required="">
+				<input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr('Search Here', 'busicon'); ?>" required="">
 				<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</div>
 		</form>

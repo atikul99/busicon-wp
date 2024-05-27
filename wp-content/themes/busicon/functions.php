@@ -146,9 +146,9 @@ function busicon_scripts() {
 
 	wp_enqueue_style('bootstrap-icon', get_template_directory_uri() . '/assets/css/bootstrap-icons.min.css', array(), '1.10.5');
 
-	wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/all.css', array(), '6.4.0');
+	wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), '6.4.0');
 
-	wp_enqueue_style('dm-sans', get_template_directory_uri() . '/assets/css/dm-sans.css', array(), _S_VERSION);
+	wp_enqueue_style( 'busicon-fonts', busicon_fonts_url(), array(), _S_VERSION );
 
 	wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main-style.css', array(), _S_VERSION);
 
@@ -197,19 +197,31 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * CMB2 Metaboxes
- */
-require get_template_directory() . '/inc/cmb2-metaboxes.php';
-
-/**
- * Redux framework
- */
-require get_template_directory() . '/inc/option-framework.php';
-
-/**
  * TGM Plugin Activation
  */
 require get_template_directory(). '/inc/tgm-plugin-activation/tgm-class-loader.php';
+
+/**
+ * Demo Data Import
+ */
+require get_template_directory() . '/inc/ocdi.php';
+
+/**
+ * Register Fonts
+ */
+
+function busicon_fonts_url() {
+	$font_url = '';
+
+	/*
+	Translators: If there are characters in your language that are not supported
+	by chosen font(s), translate this to 'off'. Do not translate into your own language.
+	*/
+	if ( 'off' !== _x('on', 'Google font: on or off', 'busicon' ) ) {
+		$font_url = add_query_arg( 'family', urlencode( 'DM Sans:300,400,500,600,700,800,900' ), "//fonts.googleapis.com/css" );
+	}
+	return $font_url;
+}
 
 /**
  * Menu Item Icon
@@ -373,90 +385,3 @@ function bootstrap_icons_custom_tab( $tabs = array() ) {
 
 add_filter( 'elementor/icons_manager/additional_tabs', 'bootstrap_icons_custom_tab' );
 
-/**
- * Demo Data Import
- */
-function ocdi_import_files() {
-	return [
-		[
-			'import_file_name'           => 'Demo 1',
-			'categories'                 => [ 'Category 1' ],
-			'import_file_url'            => get_template_directory_uri() . '/inc/demo-data/busicon.WordPress.xml',
-			'import_widget_file_url'     => get_template_directory_uri() . '/inc/demo-data/busicon-widgets.wie',
-			'import_customizer_file_url' => get_template_directory_uri() . '/inc/demo-data/busicon-export.dat',
-			'import_redux'               => [
-				[
-					'file_url'    => get_template_directory_uri() . '/inc/demo-data/busicon_opt.json',
-					'option_name' => 'busicon_opt',
-				],
-			],
-			'import_preview_image_url'   => get_template_directory_uri() . '/inc/demo-data/demo-thumb.jpg',
-			'preview_url'                => 'https://wp.urnoit.net/busicon/',
-		],
-	];
-}
-add_filter( 'ocdi/import_files', 'ocdi_import_files' );
-
-function ocdi_after_import_setup() {
-	
-	// Set Menu
-	
-	$main_menu = get_term_by( 'name', esc_html__('Menu 1', 'busicon'), 'nav_menu' );
-
-	set_theme_mod(
-		'nav_menu_locations',
-		[
-			'menu-1' => $main_menu->term_id,
-		]
-	);
-
-	// Get the front page.
-
-	$front_page = get_posts(
-		[
-			'post_type'              => 'page',
-			'title'                  => 'Home 1',
-			'post_status'            => 'all',
-			'numberposts'            => 1,
-			'update_post_term_cache' => false,
-			'update_post_meta_cache' => false,
-		]
-	);
-
-	if ( ! empty( $front_page ) ) {
-		update_option( 'page_on_front', $front_page[0]->ID );
-	}
-
-	// Get the blog page.
-	
-	$blog_page = get_posts(
-		[
-			'post_type'              => 'page',
-			'title'                  => 'Classic Blog',
-			'post_status'            => 'all',
-			'numberposts'            => 1,
-			'update_post_term_cache' => false,
-			'update_post_meta_cache' => false,
-		]
-	);
-
-	if ( ! empty( $blog_page ) ) {
-		update_option( 'page_for_posts', $blog_page[0]->ID );
-	}
-
-	if ( ! empty( $blog_page ) || ! empty( $front_page ) ) {
-		update_option( 'show_on_front', 'page' );
-	}
-
-	// Inactive inline font icons
-
-	update_option('elementor_experiment-e_font_icon_svg', 'inactive');
-
-	// Update the permalink structure option
-
-	$new_permalink_structure = '/%postname%/';
-
-	update_option( 'permalink_structure', $new_permalink_structure );
-
-}
-add_action( 'ocdi/after_import', 'ocdi_after_import_setup' );

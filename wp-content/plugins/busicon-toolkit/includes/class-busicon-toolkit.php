@@ -33,6 +33,16 @@ class Busicon_Toolkit {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2/init.php';
 
+		/**
+		 * The class responsible for redux option framework
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/option-framework.php';
+
+		/**
+		 * The class responsible for CMB2 metabox
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/cmb2-metaboxes.php';
+
 	}
 
 	/**
