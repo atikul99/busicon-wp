@@ -3,13 +3,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Busicon 1.0.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/busicon\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-14T13:42:03+02:00\n"
-"PO-Revision-Date: 2024-05-14T13:42:03+02:00\n"
+"POT-Creation-Date: 2024-05-27T06:16:03+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: busicon\n"
 
@@ -43,17 +44,14 @@ msgid "Error Page"
 msgstr ""
 
 #: 404.php:52
-#: inc/option-framework.php:978
 msgid "Oops! Page not found."
 msgstr ""
 
 #: 404.php:59
-#: inc/option-framework.php:984
 msgid "The page you are looking for is not available or doesn’t belong to this website!"
 msgstr ""
 
 #: 404.php:66
-#: inc/option-framework.php:990
 msgid "Back to Home"
 msgstr ""
 
@@ -82,7 +80,6 @@ msgid "Primary"
 msgstr ""
 
 #: functions.php:128
-#: inc/option-framework.php:921
 msgid "Sidebar"
 msgstr ""
 
@@ -90,507 +87,44 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:265
+#. Translators: If there are characters in your language that are not supported by chosen font(s), translate this to 'off'. Do not translate into your own language.
+#: functions.php:220
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:277
 msgid "Home"
 msgstr ""
 
-#: functions.php:293
-#: functions.php:298
-#: functions.php:303
+#: functions.php:305
+#: functions.php:310
+#: functions.php:315
 msgid "Archive for"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:320
 msgid "Author"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:325
 msgid "Blog Archives"
 msgstr ""
 
-#: functions.php:318
+#: functions.php:330
 msgid "Search Results"
 msgstr ""
 
-#: functions.php:323
+#: functions.php:335
 msgid "404"
 msgstr ""
 
-#: functions.php:362
+#: functions.php:374
 msgid "Bootstrap Icon"
 msgstr ""
 
-#: functions.php:404
+#: inc/ocdi.php:40
 msgid "Menu 1"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:7
-#: inc/option-framework.php:201
-msgid "Header"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:19
-msgid "Header One"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:20
-msgid "Header Two"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:32
-msgid "Breadcrumb"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:37
-#: inc/option-framework.php:788
-msgid "Breadcrumb Area"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:41
-msgid "Hide breadcrumb"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:42
-msgid "Show breadcrumb"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:55
-msgid "Project Images"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:119
-msgid "Project Info"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:124
-#: single-portfolio.php:94
-msgid "Client"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:129
-#: single-portfolio.php:101
-msgid "Duration"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:141
-msgid "Block 1"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:154
-msgid "Block 2"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:186
-msgid "Block 3"
-msgstr ""
-
-#: inc/cmb2-metaboxes.php:218
-msgid "Block 4"
-msgstr ""
-
-#: inc/option-framework.php:44
-#: inc/option-framework.php:45
-msgid "Busicon Options"
-msgstr ""
-
-#: inc/option-framework.php:169
-msgid "Theme Information 1"
-msgstr ""
-
-#: inc/option-framework.php:170
-#: inc/option-framework.php:176
-msgid "This is the tab content, HTML is allowed."
-msgstr ""
-
-#: inc/option-framework.php:175
-msgid "Theme Information 2"
-msgstr ""
-
-#: inc/option-framework.php:183
-msgid "This is the sidebar content, HTML is allowed."
-msgstr ""
-
-#: inc/option-framework.php:203
-msgid "These are global settings for Header. You can change the setting for each page separately from the bottom of the page."
-msgstr ""
-
-#: inc/option-framework.php:209
-msgid "Select Header Style"
-msgstr ""
-
-#: inc/option-framework.php:225
-msgid "Header Default"
-msgstr ""
-
-#: inc/option-framework.php:234
-#: inc/option-framework.php:329
-#: inc/option-framework.php:499
-msgid "Menubar"
-msgstr ""
-
-#: inc/option-framework.php:240
-#: inc/option-framework.php:335
-#: inc/option-framework.php:505
-msgid "Logo"
-msgstr ""
-
-#: inc/option-framework.php:241
-msgid "This logo only work in header default."
-msgstr ""
-
-#: inc/option-framework.php:246
-#: inc/option-framework.php:341
-#: inc/option-framework.php:590
-msgid "Search Icon Switch"
-msgstr ""
-
-#: inc/option-framework.php:261
-msgid "Header 1"
-msgstr ""
-
-#: inc/option-framework.php:270
-msgid "General"
-msgstr ""
-
-#: inc/option-framework.php:276
-msgid "Transparent Menu"
-msgstr ""
-
-#: inc/option-framework.php:287
-#: inc/option-framework.php:421
-msgid "Topbar"
-msgstr ""
-
-#: inc/option-framework.php:293
-#: inc/option-framework.php:427
-msgid "Switch"
-msgstr ""
-
-#: inc/option-framework.php:299
-#: inc/option-framework.php:463
-#: inc/option-framework.php:572
-msgid "Address"
-msgstr ""
-
-#: inc/option-framework.php:300
-#: inc/option-framework.php:573
-#: template-parts/header-layout/header-one.php:37
-#: template-parts/header-layout/mobile-menu.php:71
-msgid "6391 Elgin St. Celina, Delaware 10299"
-msgstr ""
-
-#: inc/option-framework.php:305
-#: inc/option-framework.php:530
-#: inc/option-framework.php:578
-msgid "Phone Number"
-msgstr ""
-
-#: inc/option-framework.php:311
-#: inc/option-framework.php:584
-msgid "Email Address"
-msgstr ""
-
-#: inc/option-framework.php:312
-#: inc/option-framework.php:585
-#: template-parts/header-layout/header-one.php:61
-#: template-parts/header-layout/header-one.php:66
-#: template-parts/header-layout/mobile-menu.php:93
-#: template-parts/header-layout/mobile-menu.php:97
-msgid "debbie.baker@example.com"
-msgstr ""
-
-#: inc/option-framework.php:317
-msgid "Background"
-msgstr ""
-
-#: inc/option-framework.php:336
-msgid "This logo only work in header 1."
-msgstr ""
-
-#: inc/option-framework.php:347
-#: inc/option-framework.php:469
-#: inc/option-framework.php:596
-msgid "Button Switch"
-msgstr ""
-
-#: inc/option-framework.php:353
-#: inc/option-framework.php:475
-#: inc/option-framework.php:602
-#: inc/option-framework.php:877
-#: inc/option-framework.php:989
-msgid "Button Text"
-msgstr ""
-
-#: inc/option-framework.php:359
-#: inc/option-framework.php:481
-#: inc/option-framework.php:608
-msgid "Button Link"
-msgstr ""
-
-#: inc/option-framework.php:365
-msgid "Section BG Color"
-msgstr ""
-
-#: inc/option-framework.php:382
-msgid "Submenu"
-msgstr ""
-
-#: inc/option-framework.php:388
-msgid "Sub Menu BG Color"
-msgstr ""
-
-#: inc/option-framework.php:412
-msgid "Header 2"
-msgstr ""
-
-#: inc/option-framework.php:433
-msgid "Facebook URL"
-msgstr ""
-
-#: inc/option-framework.php:434
-#: inc/option-framework.php:440
-#: inc/option-framework.php:446
-#: inc/option-framework.php:452
-msgid "#"
-msgstr ""
-
-#: inc/option-framework.php:439
-msgid "Instagram URL"
-msgstr ""
-
-#: inc/option-framework.php:445
-msgid "Twitter URL"
-msgstr ""
-
-#: inc/option-framework.php:451
-msgid "Linkedin URL"
-msgstr ""
-
-#: inc/option-framework.php:457
-msgid "Email"
-msgstr ""
-
-#: inc/option-framework.php:458
-msgid "info@example.com"
-msgstr ""
-
-#: inc/option-framework.php:464
-msgid "6391 Elgin St. Celina, 10299"
-msgstr ""
-
-#: inc/option-framework.php:487
-msgid "Button Background"
-msgstr ""
-
-#: inc/option-framework.php:506
-msgid "This logo only work in header 2."
-msgstr ""
-
-#: inc/option-framework.php:511
-msgid "Phone Switch"
-msgstr ""
-
-#: inc/option-framework.php:517
-msgid "Phone Icon Color"
-msgstr ""
-
-#: inc/option-framework.php:524
-msgid "Phone Text"
-msgstr ""
-
-#: inc/option-framework.php:547
-msgid "Mobile Menu"
-msgstr ""
-
-#: inc/option-framework.php:554
-msgid "Mobile Menu Logo"
-msgstr ""
-
-#: inc/option-framework.php:555
-msgid "Upload logo here.ex: - it is work in mobile menu."
-msgstr ""
-
-#: inc/option-framework.php:560
-msgid "Contact Info Switch"
-msgstr ""
-
-#: inc/option-framework.php:566
-msgid "Contact Info Title"
-msgstr ""
-
-#: inc/option-framework.php:567
-msgid "Contact Info"
-msgstr ""
-
-#: inc/option-framework.php:620
-msgid "Preloader"
-msgstr ""
-
-#: inc/option-framework.php:627
-msgid "Preloader Switch"
-msgstr ""
-
-#: inc/option-framework.php:639
-msgid "Color"
-msgstr ""
-
-#: inc/option-framework.php:646
-msgid "Site Main Color"
-msgstr ""
-
-#: inc/option-framework.php:656
-msgid "Typography"
-msgstr ""
-
-#: inc/option-framework.php:663
-msgid "Body Typography"
-msgstr ""
-
-#: inc/option-framework.php:673
-msgid "Heading Typography H1"
-msgstr ""
-
-#: inc/option-framework.php:680
-#: inc/option-framework.php:698
-#: inc/option-framework.php:716
-#: inc/option-framework.php:734
-#: inc/option-framework.php:752
-#: inc/option-framework.php:770
-#: inc/option-framework.php:812
-msgid "Typography option with each property can be called individually."
-msgstr ""
-
-#: inc/option-framework.php:691
-msgid "Heading Typography H2"
-msgstr ""
-
-#: inc/option-framework.php:709
-msgid "Heading Typography H3"
-msgstr ""
-
-#: inc/option-framework.php:727
-msgid "Heading Typography H4"
-msgstr ""
-
-#: inc/option-framework.php:745
-msgid "Heading Typography H5"
-msgstr ""
-
-#: inc/option-framework.php:763
-msgid "Heading Typography H6"
-msgstr ""
-
-#: inc/option-framework.php:795
-msgid "Breadcrumb Switch"
-msgstr ""
-
-#: inc/option-framework.php:801
-msgid "Breadcrumb Background"
-msgstr ""
-
-#: inc/option-framework.php:807
-#: inc/option-framework.php:995
-msgid "Title Typography"
-msgstr ""
-
-#: inc/option-framework.php:829
-#: inc/option-framework.php:1068
-msgid "Padding Option"
-msgstr ""
-
-#: inc/option-framework.php:830
-#: inc/option-framework.php:1069
-msgid "You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units."
-msgstr ""
-
-#: inc/option-framework.php:847
-msgid "Blog Settings"
-msgstr ""
-
-#: inc/option-framework.php:857
-msgid "Blog Page"
-msgstr ""
-
-#: inc/option-framework.php:865
-msgid "Page Title"
-msgstr ""
-
-#: inc/option-framework.php:866
-#: index.php:44
-msgid "Standard Blog"
-msgstr ""
-
-#: inc/option-framework.php:871
-#: inc/option-framework.php:908
-msgid "Post Meta Switch"
-msgstr ""
-
-#: inc/option-framework.php:878
-#: template-parts/content-search.php:41
-#: template-parts/content.php:68
-msgid "Read More"
-msgstr ""
-
-#: inc/option-framework.php:888
-#: inc/option-framework.php:897
-#: single.php:39
-msgid "Blog Details"
-msgstr ""
-
-#: inc/option-framework.php:896
-msgid "Breadcrumb Title"
-msgstr ""
-
-#: inc/option-framework.php:902
-msgid "Post Category Switch"
-msgstr ""
-
-#: inc/option-framework.php:928
-msgid "Widget Background"
-msgstr ""
-
-#: inc/option-framework.php:937
-msgid "Widget Title Typography"
-msgstr ""
-
-#: inc/option-framework.php:961
-msgid "404 Page"
-msgstr ""
-
-#: inc/option-framework.php:968
-msgid "Page Background"
-msgstr ""
-
-#: inc/option-framework.php:977
-msgid "404 Title"
-msgstr ""
-
-#: inc/option-framework.php:983
-msgid "404 Description"
-msgstr ""
-
-#: inc/option-framework.php:1018
-msgid "Footer"
-msgstr ""
-
-#: inc/option-framework.php:1026
-msgid "Copyright Area"
-msgstr ""
-
-#: inc/option-framework.php:1034
-msgid "Copyright information"
-msgstr ""
-
-#: inc/option-framework.php:1035
-msgid "Copyright &copy; 2024 Busicon | All Rights Reserved."
-msgstr ""
-
-#: inc/option-framework.php:1045
-msgid "Copyright Text Color"
-msgstr ""
-
-#: inc/option-framework.php:1054
-msgid "Copyright Section BG"
 msgstr ""
 
 #: inc/template-functions.php:67
@@ -1043,6 +577,10 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: index.php:44
+msgid "Standard Blog"
+msgstr ""
+
 #. Template Name of the theme
 msgid "Blog Standard"
 msgstr ""
@@ -1059,8 +597,20 @@ msgstr ""
 msgid "Project Name"
 msgstr ""
 
+#: single-portfolio.php:94
+msgid "Client"
+msgstr ""
+
+#: single-portfolio.php:101
+msgid "Duration"
+msgstr ""
+
 #: single-portfolio.php:108
 msgid "Task"
+msgstr ""
+
+#: single.php:39
+msgid "Blog Details"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -1085,6 +635,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#: template-parts/content-search.php:41
+#: template-parts/content.php:68
+msgid "Read More"
+msgstr ""
+
 #: template-parts/content-single.php:74
 msgid "Tags :"
 msgstr ""
@@ -1093,9 +648,21 @@ msgstr ""
 msgid "By"
 msgstr ""
 
+#: template-parts/header-layout/header-one.php:37
+#: template-parts/header-layout/mobile-menu.php:71
+msgid "6391 Elgin St. Celina, Delaware 10299"
+msgstr ""
+
 #: template-parts/header-layout/header-one.php:56
 #: template-parts/header-layout/mobile-menu.php:87
 msgid "(209) 555-0104"
+msgstr ""
+
+#: template-parts/header-layout/header-one.php:61
+#: template-parts/header-layout/header-one.php:66
+#: template-parts/header-layout/mobile-menu.php:93
+#: template-parts/header-layout/mobile-menu.php:97
+msgid "debbie.baker@example.com"
 msgstr ""
 
 #: template-parts/header-layout/header-one.php:127
